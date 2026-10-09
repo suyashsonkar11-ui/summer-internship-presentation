@@ -1,0 +1,11 @@
+{
+  "name": "summer-internship-presentation",
+  "version": "1.0.0",
+  "description": "MBA Summer Training Report Presentation on Recruitment and Selection Practices at SECL Bilaspur by Suyash Sonkar",
+  "scripts": {
+    "export-pdf": "node export_pdf.js"
+  },
+  "dependencies": {
+    "puppeteer": "^25.13.0"
+  }
+}
