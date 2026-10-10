@@ -42,11 +42,12 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     4: {
       heading: "Slide 4: Organisation Profile — SECL",
-      speech: "“Is slide mein SECL ka brief profile diya gaya hai. SECL 1985 mein establish hui thi aur Coal India Limited ki sabse badi coal-producing subsidiary hai, jiska headquarters Bilaspur mein hai. SECL ka scale bahut bada hai—around 42,000+ employees aur 13 operating areas hain across Chhattisgarh and Madhya Pradesh. Yahan Gevra aur Dipka jaise Asia ke largest opencast mega mines hain. Coal mining ek high-risk aur safety-critical industry hai, isliye yahan right qualifications aur medical fitness wale employees ko recruit karna bohot zaroori hota hai.”",
+      speech: "“Is slide mein SECL ka updated organisational profile aur operational scale explain kiya gaya hai. SECL 1985 mein establish hui thi aur Coal India Limited ki premier Miniratna Category-I subsidiary hai, jiska corporate headquarters Bilaspur mein hai. FY 2025–26 mein SECL ka raw coal production 176.28 Million Tonnes raha, aur 31 March 2025 tak total 57 operating mines hain jisme 38 underground aur 19 opencast mines shamil hain across 13 operating areas. Iske alawa 1 April 2024 ke anusar SECL ke paas 92,240.65 Million Tonnes ka massive coal reserve base hai, jisme Gevra aur Dipka jaise Asia ke mega opencast pits aate hain. HR perspective se, large-scale mining safety ke liye technical employees ki DGMS competency certifications aur executive cadres ki structured public sector governance ek crucial analytical balance demand karti hai.”",
       points: [
-        "Highlight corporate milestones: Established 1985, Miniratna Category-I, Coal India Limited subsidiary.",
-        "Mention operational scale: Over 180+ MT coal production and 42,000+ workforce across 13 areas.",
-        "Connect scale with HR: Mining safety and operational scale demand strict, standardized hiring."
+        "Corporate milestones: Established 1985, Bilaspur headquarters, Miniratna Category-I, Coal India Limited subsidiary.",
+        "Operational scale: 176.28 MT coal production (FY 2025–26), 57 operating mines (38 UG / 19 OC) as of 31 March 2025 across 13 areas.",
+        "Coal reserves & assets: 92,240.65 MT coal reserves (as of 1 April 2024), featuring Gevra & Dipka mega opencast pits.",
+        "HR analytical observation: Dual governance balancing technical DGMS safety certifications with public sector service rules."
       ],
       estTime: "45s"
     },

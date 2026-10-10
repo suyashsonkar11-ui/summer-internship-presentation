@@ -17,7 +17,7 @@ async function exportFullHdPresentationPdf() {
     args: [
       '--no-sandbox',
       '--disable-setuid-sandbox',
-      '--font-render-hinting=max',
+      '--font-render-hinting=medium',
       '--enable-font-antialiasing',
       '--force-color-profile=srgb'
     ]
