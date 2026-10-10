@@ -3400,10 +3400,45 @@ svg {
 }
 .kpi-benchmark {
   font-family: var(--font-code);
-  font-size: 14px;
+  font-size: 13.5px;
   color: var(--primary-accent);
-  margin-top: 5px;
+  margin-top: 6px;
   font-weight: 600;
+  line-height: 1.45;
+}
+
+.unconfirmed-data-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-code);
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  color: #ff6b4a;
+  background: rgba(255, 65, 54, 0.12);
+  border: 1px solid rgba(255, 107, 74, 0.6);
+  padding: 2px 7px;
+  border-radius: 4px;
+  margin-right: 6px;
+  margin-bottom: 2px;
+  vertical-align: 1px;
+  line-height: 1.25;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+[data-theme="architect-slate"] .unconfirmed-data-badge {
+  color: #ff7a59;
+  background: rgba(255, 122, 89, 0.12);
+  border-color: rgba(255, 122, 89, 0.55);
+}
+
+[data-theme="ivory-executive"] .unconfirmed-data-badge {
+  color: #c01538;
+  background: rgba(225, 29, 72, 0.08);
+  border-color: rgba(225, 29, 72, 0.5);
 }
 
 /* ==========================================================================
@@ -4457,6 +4492,21 @@ body.pdf-export-mode .thank-you-hero-title {
 body.pdf-export-mode .gate-ambient-halo,
 body.pdf-export-mode .defense-bg-wrapper::before {
   display: none !important;
+}
+
+body.pdf-export-mode .unconfirmed-data-badge {
+  -webkit-print-color-adjust: exact !important;
+  print-color-adjust: exact !important;
+  color: #ff6b4a !important;
+  background: rgba(255, 65, 54, 0.14) !important;
+  border: 1px solid rgba(255, 107, 74, 0.75) !important;
+}
+
+[data-theme="ivory-executive"] body.pdf-export-mode .unconfirmed-data-badge,
+body.pdf-export-mode[data-theme="ivory-executive"] .unconfirmed-data-badge {
+  color: #c01538 !important;
+  background: rgba(225, 29, 72, 0.09) !important;
+  border-color: rgba(225, 29, 72, 0.65) !important;
 }
 
 
