@@ -463,7 +463,7 @@ document.addEventListener('DOMContentLoaded', () => {
       card.innerHTML = `
         <div class="t-header">
           <span class="t-num">${String(slideNum).padStart(2, '0')}</span>
-          <span class="pillar-tag" style="font-size:9px; padding:2px 6px;">SLIDE</span>
+          <span class="pillar-tag" style="font-size:10.35px; padding:2px 6px;">SLIDE</span>
         </div>
         <div class="t-title">${title}</div>
       `;

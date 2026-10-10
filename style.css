@@ -115,6 +115,7 @@ html, body {
   background-color: var(--bg-base);
   color: var(--text-main);
   font-family: var(--font-body);
+  font-size: 21.16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow: hidden; /* App shell handles viewport scrolling */
@@ -181,7 +182,7 @@ html, body {
   color: #fff;
   font-family: var(--font-display);
   font-weight: 800;
-  font-size: 13px;
+  font-size: 14.95px;
   letter-spacing: 1.5px;
   padding: 3px 9px;
   border-radius: var(--radius-full);
@@ -190,7 +191,7 @@ html, body {
 
 .brand-title {
   font-family: var(--font-display);
-  font-size: 15px;
+  font-size: 17.25px;
   font-weight: 700;
   letter-spacing: 0.8px;
   color: var(--text-main);
@@ -203,7 +204,7 @@ html, body {
 }
 
 .deck-subtitle {
-  font-size: 14px;
+  font-size: 16.1px;
   color: var(--text-muted);
   font-weight: 500;
 }
@@ -221,7 +222,7 @@ html, body {
   padding: 4px 14px;
   border-radius: var(--radius-full);
   border: 1px solid var(--border-subtle);
-  font-size: 13px;
+  font-size: 14.95px;
   font-weight: 600;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -230,7 +231,7 @@ html, body {
 
 .pillar-dot {
   color: var(--primary-accent);
-  font-size: 14px;
+  font-size: 16.1px;
 }
 
 .header-right {
@@ -245,7 +246,7 @@ html, body {
   align-items: center;
   gap: 6px;
   font-family: var(--font-code);
-  font-size: 12px;
+  font-size: 13.8px;
   color: var(--text-muted);
   background: var(--bg-glass);
   padding: 4px 10px;
@@ -296,7 +297,7 @@ html, body {
   align-items: center;
   gap: 4px;
   font-family: var(--font-code);
-  font-size: 13px;
+  font-size: 14.95px;
   font-weight: 700;
   color: var(--text-main);
   background: var(--bg-glass);
@@ -446,7 +447,7 @@ svg {
 }
 .hint-text {
   font-family: var(--font-code);
-  font-size: 13px;
+  font-size: 14.95px;
   color: var(--text-dim);
   letter-spacing: 1.5px;
   text-transform: uppercase;
@@ -494,7 +495,7 @@ svg {
 
 .section-tag {
   font-family: var(--font-code);
-  font-size: 13.5px;
+  font-size: 15.52px;
   font-weight: 700;
   color: var(--primary-accent);
   letter-spacing: 1.8px;
@@ -503,7 +504,7 @@ svg {
 
 .slide-heading {
   font-family: var(--font-display);
-  font-size: 32px;
+  font-size: 36.8px;
   font-weight: 700;
   letter-spacing: -0.4px;
   color: var(--text-main);
@@ -559,7 +560,7 @@ svg {
 }
 
 .tcs-icon {
-  font-size: 24px;
+  font-size: 27.6px;
   line-height: 1;
   flex-shrink: 0;
 }
@@ -572,14 +573,14 @@ svg {
 
 .tcs-content strong {
   font-family: var(--font-display);
-  font-size: 16px;
+  font-size: 18.4px;
   font-weight: 700;
   color: var(--primary-accent);
   letter-spacing: 0.3px;
 }
 
 .tcs-content span {
-  font-size: 15px;
+  font-size: 17.25px;
   line-height: 1.45;
   color: var(--text-muted);
 }
@@ -597,7 +598,7 @@ svg {
 
 .fcc-title {
   font-family: var(--font-code);
-  font-size: 13px;
+  font-size: 14.95px;
   font-weight: 800;
   color: var(--secondary-accent);
   letter-spacing: 1px;
@@ -605,7 +606,7 @@ svg {
 }
 
 .framework-callout-card p {
-  font-size: 14.5px;
+  font-size: 16.67px;
   line-height: 1.45;
   color: var(--text-muted);
 }
@@ -622,7 +623,7 @@ svg {
 
 .af-label {
   font-family: var(--font-code);
-  font-size: 13px;
+  font-size: 14.95px;
   font-weight: 800;
   color: var(--accent-cyan);
   letter-spacing: 1px;
@@ -631,7 +632,7 @@ svg {
 }
 
 .academic-framing-box p {
-  font-size: 14.5px;
+  font-size: 16.67px;
   line-height: 1.45;
   color: var(--text-muted);
 }
@@ -643,13 +644,13 @@ svg {
 }
 
 .c-info strong {
-  font-size: 15px;
+  font-size: 17.25px;
   color: var(--text-main);
   font-weight: 700;
 }
 
 .c-info span {
-  font-size: 13px;
+  font-size: 14.95px;
   color: var(--text-dim);
   line-height: 1.35;
 }
@@ -661,7 +662,7 @@ svg {
   gap: 6px;
   padding: 6px 14px;
   border-radius: var(--radius-full);
-  font-size: 13.5px;
+  font-size: 15.52px;
   font-weight: 700;
   letter-spacing: 0.8px;
   text-transform: uppercase;
@@ -691,18 +692,18 @@ svg {
 }
 .card-section-header h3 {
   font-family: var(--font-display);
-  font-size: 22px;
+  font-size: 25.3px;
   font-weight: 700;
   color: var(--text-main);
 }
 .card-section-header h4 {
   font-family: var(--font-display);
-  font-size: 18.5px;
+  font-size: 21.28px;
   font-weight: 700;
   color: var(--text-main);
 }
 .sub-caption {
-  font-size: 14px;
+  font-size: 16.1px;
   color: var(--text-muted);
 }
 
@@ -876,7 +877,7 @@ svg {
 
 .inst-hi-title {
   font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: 15px;
+  font-size: 17.25px;
   font-weight: 700;
   color: #ffffff;
   letter-spacing: 0.2px;
@@ -890,7 +891,7 @@ svg {
 }
 
 .inst-hi-sub {
-  font-size: 12px;
+  font-size: 13.8px;
   color: #cbd5e1;
   font-weight: 400;
   letter-spacing: 0.1px;
@@ -903,7 +904,7 @@ svg {
 
 .inst-en-title {
   font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
-  font-size: 18px;
+  font-size: 20.7px;
   font-weight: 700;
   color: #ffffff;
   letter-spacing: 0.3px;
@@ -918,7 +919,7 @@ svg {
 }
 
 .inst-en-sub {
-  font-size: 12px;
+  font-size: 13.8px;
   color: #cbd5e1;
   font-weight: 400;
   letter-spacing: 0.1px;
@@ -942,7 +943,7 @@ svg {
   align-items: center;
   gap: 6px;
   font-family: var(--font-code);
-  font-size: 12.5px;
+  font-size: 14.37px;
   font-weight: 700;
   letter-spacing: 0.6px;
   padding: 5px 13px;
@@ -966,7 +967,7 @@ svg {
 
 .pill-dot-gold {
   color: #facc15;
-  font-size: 12px;
+  font-size: 13.8px;
   line-height: 1;
 }
 
@@ -1022,7 +1023,7 @@ svg {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-size: 14px;
+  font-size: 16.1px;
   font-weight: 600;
   color: #cbd5e1;
 }
@@ -1032,13 +1033,13 @@ svg {
 }
 
 .lineage-step .step-icon {
-  font-size: 14px;
+  font-size: 16.1px;
 }
 
 .step-sep {
   color: #c084fc;
   font-weight: 700;
-  font-size: 15px;
+  font-size: 17.25px;
 }
 
 [data-theme="ivory-executive"] .step-sep {
@@ -1079,7 +1080,7 @@ svg {
   background: linear-gradient(135deg, rgba(88, 28, 135, 0.65), rgba(67, 10, 30, 0.6));
   border: 1px solid rgba(212, 175, 55, 0.45);
   font-family: var(--font-code);
-  font-size: 12.5px;
+  font-size: 14.37px;
   font-weight: 700;
   letter-spacing: 2.2px;
   color: #fef08a;
@@ -1110,7 +1111,7 @@ svg {
 
 .title-eyebrow {
   font-family: 'Cinzel', serif;
-  font-size: 16px;
+  font-size: 18.4px;
   font-weight: 600;
   letter-spacing: 3.5px;
   color: #d8b4fe;
@@ -1135,7 +1136,7 @@ svg {
 
 .title-emphasis-text {
   font-family: 'Syne', sans-serif;
-  font-size: 42px;
+  font-size: 48.3px;
   font-weight: 800;
   letter-spacing: -0.2px;
   text-transform: uppercase;
@@ -1157,7 +1158,7 @@ svg {
 
 .title-focus-context {
   font-family: 'Syne', var(--font-display);
-  font-size: 20px;
+  font-size: 23px;
   font-weight: 700;
   letter-spacing: 0.8px;
   color: #f8fafc;
@@ -1176,7 +1177,7 @@ svg {
   align-items: center;
   justify-content: center;
   gap: 12px;
-  font-size: 15.5px;
+  font-size: 17.83px;
   font-weight: 500;
   color: #cbd5e1;
   letter-spacing: 0.3px;
@@ -1235,7 +1236,7 @@ svg {
   align-items: center;
   gap: 6px;
   font-family: var(--font-code);
-  font-size: 13px;
+  font-size: 14.95px;
   font-weight: 700;
   letter-spacing: 1.5px;
   color: #d4af37;
@@ -1265,7 +1266,7 @@ svg {
 
 .candidate-hero-name {
   font-family: 'Syne', sans-serif;
-  font-size: 23px;
+  font-size: 26.45px;
   font-weight: 800;
   color: #ffffff;
   letter-spacing: 0.4px;
@@ -1277,7 +1278,7 @@ svg {
 }
 
 .candidate-spec {
-  font-size: 14.5px;
+  font-size: 16.67px;
   font-weight: 600;
   color: #c084fc;
   margin-bottom: 10px;
@@ -1288,7 +1289,7 @@ svg {
 }
 
 .academic-dept {
-  font-size: 16.5px;
+  font-size: 18.97px;
   font-weight: 700;
   color: #ffffff;
   margin-bottom: 2px;
@@ -1299,7 +1300,7 @@ svg {
 }
 
 .academic-univ {
-  font-size: 14.5px;
+  font-size: 16.67px;
   font-weight: 500;
   color: #cbd5e1;
   margin-bottom: 10px;
@@ -1310,7 +1311,7 @@ svg {
 }
 
 .host-enterprise-name {
-  font-size: 16.5px;
+  font-size: 18.97px;
   font-weight: 700;
   color: #ffffff;
   margin-bottom: 2px;
@@ -1321,7 +1322,7 @@ svg {
 }
 
 .host-psu-pedigree {
-  font-size: 13.5px;
+  font-size: 15.52px;
   font-weight: 500;
   color: #94a3b8;
   margin-bottom: 8px;
@@ -1335,7 +1336,7 @@ svg {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 13.5px;
+  font-size: 15.52px;
   margin-top: 5px;
   padding-top: 5px;
   border-top: 1px dashed rgba(255, 255, 255, 0.08);
@@ -1359,7 +1360,7 @@ svg {
   font-weight: 700;
   color: #fef08a;
   letter-spacing: 1.2px;
-  font-size: 14px;
+  font-size: 16.1px;
 }
 
 [data-theme="ivory-executive"] .meta-field-code {
@@ -1369,7 +1370,7 @@ svg {
 .meta-field-val {
   font-weight: 600;
   color: #f1f5f9;
-  font-size: 14px;
+  font-size: 16.1px;
 }
 
 [data-theme="ivory-executive"] .meta-field-val {
@@ -1404,7 +1405,7 @@ svg {
 
 .motif-step {
   font-family: var(--font-code);
-  font-size: 12px;
+  font-size: 13.8px;
   font-weight: 600;
   color: #94a3b8;
   letter-spacing: 0.5px;
@@ -1433,7 +1434,7 @@ svg {
 .motif-arr {
   color: #a855f7;
   font-weight: 700;
-  font-size: 12px;
+  font-size: 13.8px;
 }
 
 /* 5. Defense Academic Footer */
@@ -1443,7 +1444,7 @@ svg {
   justify-content: space-between;
   padding-top: 10px;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
-  font-size: 13.5px;
+  font-size: 15.52px;
   color: #94a3b8;
   width: 100%;
 }
@@ -1461,7 +1462,7 @@ svg {
 }
 
 .footer-shield {
-  font-size: 14px;
+  font-size: 16.1px;
 }
 
 .footer-doc-title {
@@ -1474,7 +1475,7 @@ svg {
 }
 
 .footer-center-dept {
-  font-size: 13px;
+  font-size: 14.95px;
   color: #94a3b8;
   text-align: center;
 }
@@ -1543,13 +1544,13 @@ svg {
   gap: 3px;
 }
 .g-label {
-  font-size: 13px;
+  font-size: 14.95px;
   font-weight: 600;
   color: var(--text-dim);
   text-transform: uppercase;
 }
 .g-value {
-  font-size: 16px;
+  font-size: 18.4px;
   font-weight: 600;
   color: var(--text-main);
 }
@@ -1572,7 +1573,7 @@ svg {
 .bullet-list-styled li {
   position: relative;
   padding-left: 22px;
-  font-size: 16.5px;
+  font-size: 18.97px;
   line-height: 1.45;
   color: var(--text-muted);
 }
@@ -1581,7 +1582,7 @@ svg {
   position: absolute;
   left: 4px;
   color: var(--primary-accent);
-  font-size: 22px;
+  font-size: 25.3px;
   line-height: 1;
 }
 .bullet-list-styled li strong {
@@ -1592,7 +1593,7 @@ svg {
   gap: 8px;
 }
 .bullet-list-styled.compact li {
-  font-size: 15px;
+  font-size: 17.25px;
   line-height: 1.4;
 }
 
@@ -1621,7 +1622,7 @@ svg {
   background: var(--bg-glass);
   border: 1px solid var(--border-glass);
   font-family: var(--font-display);
-  font-size: 15px;
+  font-size: 17.25px;
   font-weight: 700;
   color: var(--text-main);
   padding: 5px 14px;
@@ -1629,7 +1630,7 @@ svg {
 }
 .step-days {
   font-family: var(--font-code);
-  font-size: 13.5px;
+  font-size: 15.52px;
   font-weight: 600;
   color: var(--text-muted);
 }
@@ -1638,7 +1639,7 @@ svg {
   font-weight: 700;
 }
 .step-title {
-  font-size: 13px;
+  font-size: 14.95px;
   color: var(--text-dim);
   max-width: 110px;
 }
@@ -1651,7 +1652,7 @@ svg {
 
 .step-arrow {
   color: var(--border-glass);
-  font-size: 16px;
+  font-size: 18.4px;
   font-weight: 700;
 }
 
@@ -1673,7 +1674,7 @@ svg {
   flex-shrink: 0;
 }
 .quote-text {
-  font-size: 16px;
+  font-size: 18.4px;
   line-height: 1.45;
   color: var(--text-muted);
 }
@@ -1692,7 +1693,7 @@ svg {
 .rotation-bar-label {
   display: flex;
   justify-content: space-between;
-  font-size: 13.5px;
+  font-size: 15.52px;
   color: var(--text-muted);
   margin-bottom: 6px;
   font-weight: 600;
@@ -1703,7 +1704,7 @@ svg {
   border-radius: var(--radius-full);
   overflow: hidden;
   font-family: var(--font-code);
-  font-size: 11.5px;
+  font-size: 13.23px;
   font-weight: 700;
   text-align: center;
   line-height: 20px;
@@ -1731,12 +1732,12 @@ svg {
 }
 .m-num {
   font-family: var(--font-display);
-  font-size: 25px;
+  font-size: 28.75px;
   font-weight: 800;
   color: var(--primary-accent);
 }
 .m-txt {
-  font-size: 13.5px;
+  font-size: 15.52px;
   color: var(--text-dim);
 }
 
@@ -1764,7 +1765,7 @@ svg {
 }
 
 .card-lead {
-  font-size: 15.5px;
+  font-size: 17.83px;
   color: var(--text-muted);
   margin-bottom: 12px;
   line-height: 1.45;
@@ -1784,13 +1785,13 @@ svg {
   border: 1px solid var(--border-subtle);
   padding: 8px 12px;
   border-radius: var(--radius-sm);
-  font-size: 15px;
+  font-size: 17.25px;
   font-weight: 600;
   color: var(--text-main);
 }
 .c-num {
   font-family: var(--font-code);
-  font-size: 13px;
+  font-size: 14.95px;
   color: var(--primary-accent);
   background: rgba(255, 65, 54, 0.12);
   padding: 3px 7px;
@@ -1807,14 +1808,14 @@ svg {
 }
 .problem-tag {
   font-family: var(--font-code);
-  font-size: 13px;
+  font-size: 14.95px;
   font-weight: 700;
   color: var(--primary-accent);
   letter-spacing: 1px;
   margin-bottom: 4px;
 }
 .problem-box p {
-  font-size: 15px;
+  font-size: 17.25px;
   line-height: 1.45;
   color: var(--text-muted);
 }
@@ -1823,12 +1824,12 @@ svg {
   display: flex;
   gap: 12px;
   margin-bottom: 12px;
-  font-size: 15.5px;
+  font-size: 17.83px;
   line-height: 1.4;
   color: var(--text-muted);
 }
 .feat-icon {
-  font-size: 20px;
+  font-size: 23px;
   flex-shrink: 0;
 }
 .feature-item strong {
@@ -1846,18 +1847,18 @@ svg {
   display: flex;
   align-items: flex-start;
   gap: 10px;
-  font-size: 15.5px;
+  font-size: 17.83px;
   line-height: 1.4;
   color: var(--text-main);
 }
 .chk {
   color: var(--primary-accent);
   font-weight: 800;
-  font-size: 15px;
+  font-size: 17.25px;
 }
 
 .framing-tag {
-  font-size: 13.5px;
+  font-size: 15.52px;
   font-style: italic;
   color: var(--text-dim);
   border-top: 1px solid var(--border-subtle);
@@ -1905,14 +1906,14 @@ svg {
   gap: 2px;
 }
 .fact-title {
-  font-size: 12px;
+  font-size: 13.8px;
   font-weight: 700;
   color: var(--primary-accent);
   text-transform: uppercase;
   letter-spacing: 0.8px;
 }
 .fact-desc {
-  font-size: 14.5px;
+  font-size: 16.67px;
   font-weight: 600;
   color: var(--text-main);
   line-height: 1.35;
@@ -1934,14 +1935,14 @@ svg {
 }
 .sb-title {
   font-family: var(--font-code);
-  font-size: 12px;
+  font-size: 13.8px;
   font-weight: 800;
   color: var(--primary-accent);
   letter-spacing: 0.8px;
 }
 .sb-pill {
   font-family: var(--font-code);
-  font-size: 11px;
+  font-size: 12.65px;
   font-weight: 700;
   background: rgba(255, 65, 54, 0.18);
   color: #fff;
@@ -1971,20 +1972,20 @@ svg {
 }
 .sb-val {
   font-family: var(--font-display);
-  font-size: 16.5px;
+  font-size: 18.97px;
   font-weight: 800;
   color: var(--text-main);
   line-height: 1.2;
 }
 .sb-lbl {
-  font-size: 11.5px;
+  font-size: 13.23px;
   font-weight: 600;
   color: var(--text-dim);
   margin-top: 3px;
   line-height: 1.3;
 }
 .sb-sub {
-  font-size: 10.5px;
+  font-size: 12.08px;
   font-weight: 600;
   color: var(--primary-accent);
   margin-top: 2px;
@@ -2042,14 +2043,14 @@ svg {
 }
 .crc-label {
   font-family: var(--font-code);
-  font-size: 11px;
+  font-size: 12.65px;
   font-weight: 800;
   color: #ff8c42;
   letter-spacing: 0.8px;
 }
 .crc-badge {
   font-family: var(--font-code);
-  font-size: 11px;
+  font-size: 12.65px;
   font-weight: 700;
   color: var(--text-dim);
   background: rgba(255, 255, 255, 0.06);
@@ -2064,13 +2065,13 @@ svg {
 }
 .crc-number {
   font-family: var(--font-display);
-  font-size: 16.5px;
+  font-size: 18.97px;
   font-weight: 800;
   color: #fff;
   letter-spacing: 0.3px;
 }
 .crc-subtext {
-  font-size: 12px;
+  font-size: 13.8px;
   color: var(--text-muted);
   line-height: 1.3;
 }
@@ -2088,7 +2089,7 @@ svg {
   gap: 3px;
 }
 .cgi-label {
-  font-size: 12px;
+  font-size: 13.8px;
   font-weight: 700;
   color: var(--text-muted);
   text-transform: uppercase;
@@ -2101,7 +2102,7 @@ svg {
 }
 .ftag {
   font-family: var(--font-body);
-  font-size: 11.5px;
+  font-size: 13.23px;
   font-weight: 600;
   color: var(--text-main);
   background: rgba(255, 255, 255, 0.05);
@@ -2134,10 +2135,10 @@ svg {
   gap: 10px;
 }
 #slide-4 .takeaway-callout-strip strong {
-  font-size: 14px;
+  font-size: 16.1px;
 }
 #slide-4 .takeaway-callout-strip span {
-  font-size: 13px;
+  font-size: 14.95px;
   line-height: 1.4;
 }
 
@@ -2162,7 +2163,7 @@ svg {
 }
 .vm-badge {
   font-family: var(--font-code);
-  font-size: 12px;
+  font-size: 13.8px;
   font-weight: 800;
   letter-spacing: 1.3px;
   color: var(--primary-accent);
@@ -2173,14 +2174,14 @@ svg {
 }
 .vm-text {
   font-family: var(--font-display);
-  font-size: 15.5px;
+  font-size: 17.83px;
   font-weight: 600;
   line-height: 1.42;
   color: var(--text-main);
   font-style: italic;
 }
 .vm-subtext {
-  font-size: 13px;
+  font-size: 14.95px;
   color: var(--text-muted);
   line-height: 1.42;
   margin-top: 5px;
@@ -2217,14 +2218,14 @@ svg {
   backdrop-filter: blur(10px);
   padding: 8px 12px;
   border-radius: var(--radius-sm);
-  font-size: 13px;
+  font-size: 14.95px;
   line-height: 1.4;
   color: var(--text-main);
 }
 .sc-badge {
   display: inline-block;
   font-family: var(--font-code);
-  font-size: 11.5px;
+  font-size: 13.23px;
   font-weight: 800;
   color: var(--primary-accent);
   background: rgba(255, 65, 54, 0.18);
@@ -2265,14 +2266,14 @@ svg {
   width: 100%;
   border-collapse: collapse;
   text-align: left;
-  font-size: 16.5px;
+  font-size: 18.97px;
 }
 
 .presentation-table th {
   background: rgba(0, 0, 0, 0.45);
   padding: 12px 18px;
   font-family: var(--font-code);
-  font-size: 14px;
+  font-size: 16.1px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -2293,14 +2294,14 @@ svg {
 .dept-badge-pill {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 17.5px;
+  font-size: 20.13px;
   color: var(--text-main);
 }
 .red-accent-pill {
   color: var(--primary-accent);
 }
 .dept-sub {
-  font-size: 13.5px;
+  font-size: 15.52px;
   color: var(--text-dim);
   margin-top: 2px;
 }
@@ -2310,13 +2311,13 @@ svg {
   border: 1px solid var(--border-subtle);
   padding: 5px 12px;
   border-radius: var(--radius-full);
-  font-size: 14.5px;
+  font-size: 16.67px;
   font-weight: 600;
   color: var(--secondary-accent);
 }
 
 .detail-cell {
-  font-size: 16px;
+  font-size: 18.4px;
   color: var(--text-muted);
   line-height: 1.45;
 }
@@ -2351,7 +2352,7 @@ svg {
 }
 .tc-badge {
   font-family: var(--font-code);
-  font-size: 13px;
+  font-size: 14.95px;
   font-weight: 800;
   color: var(--primary-accent);
   letter-spacing: 1px;
@@ -2359,7 +2360,7 @@ svg {
   margin-bottom: 3px;
 }
 .training-caption-box p {
-  font-size: 14.5px;
+  font-size: 16.67px;
   color: var(--text-muted);
   line-height: 1.4;
 }
@@ -2383,7 +2384,7 @@ svg {
 }
 .dpc-badge {
   font-family: var(--font-code);
-  font-size: 13px;
+  font-size: 14.95px;
   font-weight: 800;
   color: var(--primary-accent);
   background: rgba(255, 65, 54, 0.16);
@@ -2392,12 +2393,12 @@ svg {
 }
 .dpc-header h4 {
   font-family: var(--font-display);
-  font-size: 21px;
+  font-size: 24.15px;
   font-weight: 700;
   color: var(--text-main);
 }
 .dpc-sub {
-  font-size: 14.5px;
+  font-size: 16.67px;
   color: var(--text-dim);
 }
 .dpc-stages-row {
@@ -2418,25 +2419,25 @@ svg {
 }
 .dpc-num {
   font-family: var(--font-code);
-  font-size: 18px;
+  font-size: 20.7px;
   font-weight: 800;
   color: var(--secondary-accent);
 }
 .dpc-info strong {
-  font-size: 16px;
+  font-size: 18.4px;
   display: block;
   color: var(--text-main);
   margin-bottom: 2px;
 }
 .dpc-info span {
-  font-size: 14px;
+  font-size: 16.1px;
   color: var(--text-dim);
   line-height: 1.35;
 }
 .dpc-connector {
   color: var(--primary-accent);
   font-weight: 800;
-  font-size: 18px;
+  font-size: 20.7px;
 }
 .dpc-highlight {
   border-color: rgba(255, 65, 54, 0.4);
@@ -2474,7 +2475,7 @@ svg {
 .comp-badge {
   display: inline-block;
   font-family: var(--font-code);
-  font-size: 13.5px;
+  font-size: 15.52px;
   font-weight: 800;
   letter-spacing: 1.5px;
   padding: 5px 14px;
@@ -2495,7 +2496,7 @@ svg {
 
 .comp-title {
   font-family: var(--font-display);
-  font-size: 34px;
+  font-size: 39.1px;
   font-weight: 800;
   color: var(--text-main);
   margin-bottom: 12px;
@@ -2503,14 +2504,14 @@ svg {
 
 .purpose-label, .out-label {
   font-family: var(--font-code);
-  font-size: 13.5px;
+  font-size: 15.52px;
   font-weight: 700;
   color: var(--text-dim);
   letter-spacing: 1px;
 }
 
 .purpose-text {
-  font-size: 18.5px;
+  font-size: 21.28px;
   font-weight: 600;
   color: var(--text-main);
   margin-top: 5px;
@@ -2528,7 +2529,7 @@ svg {
   display: grid;
   grid-template-columns: 160px 1fr;
   gap: 14px;
-  font-size: 16px;
+  font-size: 18.4px;
   line-height: 1.45;
   padding: 8px 14px;
   background: rgba(0, 0, 0, 0.22);
@@ -2538,13 +2539,13 @@ svg {
 .cml-dim {
   font-weight: 700;
   color: var(--secondary-accent);
-  font-size: 14px;
+  font-size: 16.1px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
 .cml-desc {
   color: var(--text-muted);
-  font-size: 16px;
+  font-size: 18.4px;
 }
 .cml-desc strong {
   color: var(--text-main);
@@ -2560,7 +2561,7 @@ svg {
 }
 .cib-tag {
   font-family: var(--font-code);
-  font-size: 13px;
+  font-size: 14.95px;
   font-weight: 800;
   color: var(--secondary-accent);
   display: block;
@@ -2568,7 +2569,7 @@ svg {
   letter-spacing: 0.8px;
 }
 .comp-insight-box p {
-  font-size: 15.5px;
+  font-size: 17.83px;
   line-height: 1.5;
   color: var(--text-muted);
 }
@@ -2591,7 +2592,7 @@ svg {
   border-color: rgba(255, 65, 54, 0.35);
 }
 .out-val {
-  font-size: 18.5px;
+  font-size: 21.28px;
   font-weight: 700;
   color: var(--text-main);
 }
@@ -2616,7 +2617,7 @@ svg {
   justify-content: center;
   font-family: var(--font-display);
   font-weight: 800;
-  font-size: 16px;
+  font-size: 18.4px;
   color: var(--primary-accent);
   box-shadow: 0 0 20px rgba(255, 65, 54, 0.35);
 }
@@ -2631,11 +2632,11 @@ svg {
   background: rgba(255, 65, 54, 0.08);
 }
 .banner-icon {
-  font-size: 26px;
+  font-size: 29.9px;
   flex-shrink: 0;
 }
 .banner-content {
-  font-size: 16.5px;
+  font-size: 18.97px;
   line-height: 1.45;
   color: var(--text-muted);
 }
@@ -2679,12 +2680,12 @@ svg {
   gap: 10px;
 }
 .lh-desc {
-  font-size: 15px;
+  font-size: 17.25px;
   color: var(--text-dim);
 }
 .lc-tag {
   font-family: var(--font-code);
-  font-size: 13.5px;
+  font-size: 15.52px;
   font-weight: 800;
   color: var(--primary-accent);
   background: rgba(255, 65, 54, 0.15);
@@ -2693,7 +2694,7 @@ svg {
 }
 .lifecycle-header h3 {
   font-family: var(--font-display);
-  font-size: 23px;
+  font-size: 26.45px;
   font-weight: 700;
   color: var(--text-main);
 }
@@ -2721,7 +2722,7 @@ svg {
 
 .s-step-num {
   font-family: var(--font-code);
-  font-size: 14px;
+  font-size: 16.1px;
   font-weight: 800;
   color: var(--primary-accent);
   background: rgba(255, 65, 54, 0.15);
@@ -2734,12 +2735,12 @@ svg {
   flex-direction: column;
 }
 .s-step-info strong {
-  font-size: 16.5px;
+  font-size: 18.97px;
   color: var(--text-main);
   margin-bottom: 2px;
 }
 .s-step-info span {
-  font-size: 14.5px;
+  font-size: 16.67px;
   color: var(--text-muted);
   line-height: 1.4;
 }
@@ -2770,14 +2771,14 @@ svg {
 }
 .principle-tag {
   font-family: var(--font-code);
-  font-size: 13.5px;
+  font-size: 15.52px;
   font-weight: 800;
   color: var(--primary-accent);
   letter-spacing: 1px;
   margin-bottom: 4px;
 }
 .principle-card p {
-  font-size: 17.5px;
+  font-size: 20.13px;
   font-style: italic;
   font-weight: 600;
   color: var(--text-main);
@@ -2806,7 +2807,7 @@ svg {
 }
 .spec-focus-tag {
   font-family: var(--font-code);
-  font-size: 13.5px;
+  font-size: 15.52px;
   font-weight: 700;
   color: var(--secondary-accent);
   letter-spacing: 1px;
@@ -2858,13 +2859,13 @@ svg {
 }
 .mp-q-badge {
   font-family: var(--font-code);
-  font-size: 14px;
+  font-size: 16.1px;
   font-weight: 800;
   color: var(--primary-accent);
   letter-spacing: 1px;
 }
 .mp-q-box p {
-  font-size: 15.5px;
+  font-size: 17.83px;
   line-height: 1.45;
   color: var(--text-muted);
 }
@@ -2878,7 +2879,7 @@ svg {
 }
 .gap-label {
   font-family: var(--font-code);
-  font-size: 14px;
+  font-size: 16.1px;
   font-weight: 800;
   color: var(--primary-accent);
   letter-spacing: 1px;
@@ -2891,12 +2892,12 @@ svg {
   justify-content: center;
   gap: 8px;
   font-family: var(--font-display);
-  font-size: 17px;
+  font-size: 19.55px;
   font-weight: 700;
   flex-wrap: wrap;
 }
 .formula-note {
-  font-size: 14px;
+  font-size: 16.1px;
   color: var(--text-dim);
   text-align: center;
   margin-top: 6px;
@@ -2908,11 +2909,11 @@ svg {
   border-radius: var(--radius-sm);
   border: 1px solid var(--border-subtle);
   color: var(--text-main);
-  font-size: 16px;
+  font-size: 18.4px;
 }
 .f-op {
   color: var(--primary-accent);
-  font-size: 20px;
+  font-size: 23px;
   font-weight: 800;
 }
 .f-result {
@@ -2921,7 +2922,7 @@ svg {
   color: var(--primary-accent);
   padding: 6px 14px;
   border-radius: var(--radius-sm);
-  font-size: 16px;
+  font-size: 18.4px;
 }
 
 /* SECL Specific Routes Box */
@@ -2933,7 +2934,7 @@ svg {
 }
 .srb-title {
   font-family: var(--font-code);
-  font-size: 13.5px;
+  font-size: 15.52px;
   font-weight: 800;
   color: var(--secondary-accent);
   display: block;
@@ -2945,7 +2946,7 @@ svg {
   gap: 5px;
 }
 .srb-pill {
-  font-size: 15px;
+  font-size: 17.25px;
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid var(--border-subtle);
   padding: 7px 12px;
@@ -2975,7 +2976,7 @@ svg {
 .matrix-header {
   background: rgba(0, 0, 0, 0.45);
   font-family: var(--font-code);
-  font-size: 13.5px;
+  font-size: 15.52px;
   font-weight: 700;
   color: var(--text-dim);
   text-transform: uppercase;
@@ -2988,7 +2989,7 @@ svg {
   gap: 3px;
 }
 .sit-tag {
-  font-size: 12.5px;
+  font-size: 14.37px;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -2998,11 +2999,11 @@ svg {
 .surplus-tag { color: var(--accent-cyan); }
 .future-tag { color: #a855f7; }
 .sit-cell strong {
-  font-size: 16.5px;
+  font-size: 18.97px;
   color: var(--text-main);
 }
 .sit-cell p {
-  font-size: 14.5px;
+  font-size: 16.67px;
   color: var(--text-dim);
   line-height: 1.35;
 }
@@ -3013,12 +3014,12 @@ svg {
   gap: 3px;
 }
 .action-badge {
-  font-size: 15.5px;
+  font-size: 17.83px;
   font-weight: 700;
   color: var(--text-main);
 }
 .resp-cell p {
-  font-size: 15px;
+  font-size: 17.25px;
   color: var(--text-muted);
   line-height: 1.4;
 }
@@ -3067,7 +3068,7 @@ svg {
 }
 .w-tag {
   font-family: var(--font-display);
-  font-size: 17.5px;
+  font-size: 20.13px;
   font-weight: 700;
   color: var(--primary-accent);
   margin-bottom: 6px;
@@ -3084,7 +3085,7 @@ svg {
 .mini-bullets li {
   position: relative;
   padding-left: 16px;
-  font-size: 16px;
+  font-size: 18.4px;
   line-height: 1.45;
   color: var(--text-muted);
 }
@@ -3098,7 +3099,7 @@ svg {
   left: 2px;
   color: var(--primary-accent);
   font-weight: 800;
-  font-size: 18px;
+  font-size: 20.7px;
   line-height: 1.2;
 }
 
@@ -3119,19 +3120,19 @@ svg {
   align-items: flex-start;
 }
 .c-icon {
-  font-size: 24px;
+  font-size: 27.6px;
   flex-shrink: 0;
   line-height: 1;
 }
 .c-content strong {
-  font-size: 16.5px;
+  font-size: 18.97px;
   color: var(--text-main);
   display: block;
   font-weight: 700;
   margin-bottom: 3px;
 }
 .c-content p {
-  font-size: 15px;
+  font-size: 17.25px;
   color: var(--text-muted);
   line-height: 1.4;
 }
@@ -3169,7 +3170,7 @@ svg {
   border: 1px solid var(--border-subtle);
   padding: 12px 16px;
   border-radius: var(--radius-sm);
-  font-size: 16px;
+  font-size: 18.4px;
   line-height: 1.45;
   color: var(--text-muted);
 }
@@ -3181,7 +3182,7 @@ svg {
 }
 .ch-badge {
   font-family: var(--font-code);
-  font-size: 13.5px;
+  font-size: 15.52px;
   font-weight: 800;
   color: var(--primary-accent);
   background: rgba(255, 65, 54, 0.15);
@@ -3208,7 +3209,7 @@ svg {
 }
 .f-num {
   font-family: var(--font-code);
-  font-size: 14px;
+  font-size: 16.1px;
   font-weight: 800;
   color: var(--primary-accent);
   background: rgba(255, 65, 54, 0.15);
@@ -3222,7 +3223,7 @@ svg {
   margin-top: 1px;
 }
 .finding-row p {
-  font-size: 15.5px;
+  font-size: 17.83px;
   line-height: 1.45;
   color: var(--text-muted);
 }
@@ -3268,7 +3269,7 @@ svg {
   border: 1px solid var(--border-subtle);
   padding: 10px 14px;
   border-radius: var(--radius-sm);
-  font-size: 15px;
+  font-size: 17.25px;
   color: var(--text-muted);
 }
 .route-active {
@@ -3278,11 +3279,11 @@ svg {
 }
 .route-pill strong {
   color: var(--text-main);
-  font-size: 16.5px;
+  font-size: 18.97px;
   display: block;
 }
 .route-pill span {
-  font-size: 14.5px;
+  font-size: 16.67px;
   color: var(--text-muted);
 }
 
@@ -3296,7 +3297,7 @@ svg {
 }
 .fa-title {
   font-family: var(--font-code);
-  font-size: 13.5px;
+  font-size: 15.52px;
   font-weight: 800;
   color: var(--primary-accent);
   letter-spacing: 1px;
@@ -3313,7 +3314,7 @@ svg {
   display: flex;
   align-items: center;
   gap: 6px;
-  font-size: 14px;
+  font-size: 16.1px;
   font-weight: 700;
   background: rgba(255, 255, 255, 0.05);
   padding: 6px 10px;
@@ -3326,12 +3327,12 @@ svg {
 }
 .fn-num {
   font-family: var(--font-code);
-  font-size: 12.5px;
+  font-size: 14.37px;
   color: var(--primary-accent);
 }
 .fn-arrow {
   color: var(--border-glass);
-  font-size: 14px;
+  font-size: 16.1px;
 }
 
 .data-principle-card {
@@ -3342,20 +3343,20 @@ svg {
 }
 .dp-badge {
   font-family: var(--font-code);
-  font-size: 13.5px;
+  font-size: 15.52px;
   font-weight: 800;
   color: var(--primary-accent);
   letter-spacing: 1px;
 }
 .data-principle-card p {
-  font-size: 16.5px;
+  font-size: 18.97px;
   font-weight: 700;
   color: var(--text-main);
   margin: 5px 0;
   font-style: italic;
 }
 .dp-sub {
-  font-size: 13.5px;
+  font-size: 15.52px;
   color: var(--text-dim);
 }
 
@@ -3381,30 +3382,30 @@ svg {
 
 .kpi-tag {
   font-family: var(--font-code);
-  font-size: 13px;
+  font-size: 14.95px;
   font-weight: 800;
   color: var(--secondary-accent);
   letter-spacing: 0.8px;
 }
 .kpi-name {
   font-family: var(--font-display);
-  font-size: 18px;
+  font-size: 20.7px;
   font-weight: 700;
   color: var(--text-main);
   margin: 3px 0;
 }
 .kpi-desc {
-  font-size: 15px;
+  font-size: 17.25px;
   color: var(--text-muted);
   line-height: 1.4;
 }
 .kpi-benchmark {
   font-family: var(--font-code);
-  font-size: 13.5px;
+  font-size: 14.5px;
   color: var(--primary-accent);
   margin-top: 6px;
   font-weight: 600;
-  line-height: 1.45;
+  line-height: 1.4;
 }
 
 .unconfirmed-data-badge {
@@ -3412,7 +3413,7 @@ svg {
   align-items: center;
   justify-content: center;
   font-family: var(--font-code);
-  font-size: 10.5px;
+  font-size: 11px;
   font-weight: 800;
   letter-spacing: 0.6px;
   text-transform: uppercase;
@@ -3420,7 +3421,7 @@ svg {
   background: rgba(255, 65, 54, 0.12);
   border: 1px solid rgba(255, 107, 74, 0.6);
   padding: 2px 7px;
-  border-radius: 4px;
+  border-radius: var(--radius-sm);
   margin-right: 6px;
   margin-bottom: 2px;
   vertical-align: 1px;
@@ -3467,14 +3468,14 @@ svg {
 
 .model-badge {
   font-family: var(--font-code);
-  font-size: 13.5px;
+  font-size: 15.52px;
   font-weight: 800;
   color: var(--primary-accent);
   letter-spacing: 1.5px;
 }
 .model-title {
   font-family: var(--font-display);
-  font-size: 25px;
+  font-size: 28.75px;
   font-weight: 800;
   color: var(--text-main);
   margin-bottom: 12px;
@@ -3495,7 +3496,7 @@ svg {
   border: 1px solid var(--border-subtle);
   padding: 8px 14px;
   border-radius: var(--radius-sm);
-  font-size: 15.5px;
+  font-size: 17.83px;
   color: var(--text-muted);
 }
 .m-step strong {
@@ -3515,7 +3516,7 @@ svg {
 .m-arrow {
   text-align: center;
   color: var(--border-glass);
-  font-size: 14px;
+  font-size: 16.1px;
   line-height: 1;
 }
 
@@ -3575,7 +3576,7 @@ svg {
 
 .thank-you-hero-title {
   font-family: var(--font-display);
-  font-size: 84px;
+  font-size: 96.6px;
   font-weight: 800;
   letter-spacing: 6px;
   line-height: 1.1;
@@ -3590,7 +3591,7 @@ svg {
 
 .thank-you-sub-title {
   font-family: var(--font-body);
-  font-size: 32px;
+  font-size: 36.8px;
   font-weight: 500;
   color: #e2e8f0;
   letter-spacing: 2px;
@@ -3608,7 +3609,7 @@ svg {
 
 .tys-name {
   font-family: var(--font-display);
-  font-size: 24px;
+  font-size: 27.6px;
   font-weight: 700;
   color: #f1f5f9;
   letter-spacing: 1px;
@@ -3616,7 +3617,7 @@ svg {
 
 .tys-detail {
   font-family: var(--font-body);
-  font-size: 18px;
+  font-size: 20.7px;
   font-weight: 400;
   color: #94a3b8;
   letter-spacing: 0.5px;
@@ -3660,7 +3661,7 @@ svg {
   padding: 6px 14px;
   border-radius: var(--radius-sm);
   font-family: var(--font-body);
-  font-size: 13.5px;
+  font-size: 15.52px;
   font-weight: 600;
   cursor: pointer;
   transition: var(--transition);
@@ -3709,7 +3710,7 @@ svg {
 }
 
 .slide-status-text {
-  font-size: 12.5px;
+  font-size: 14.37px;
   color: var(--text-dim);
   font-weight: 500;
 }
@@ -3729,7 +3730,7 @@ svg {
   color: var(--text-muted);
   padding: 6px 12px;
   border-radius: var(--radius-sm);
-  font-size: 13px;
+  font-size: 14.95px;
   font-weight: 600;
   cursor: pointer;
   transition: var(--transition);
@@ -3796,14 +3797,14 @@ svg {
 
 .mic-badge {
   font-family: var(--font-code);
-  font-size: 10px;
+  font-size: 11.5px;
   font-weight: 800;
   color: var(--primary-accent);
   letter-spacing: 1px;
 }
 .notes-header h3 {
   font-family: var(--font-display);
-  font-size: 13.5px;
+  font-size: 15.52px;
   font-weight: 700;
   color: var(--text-main);
 }
@@ -3823,7 +3824,7 @@ svg {
   color: var(--primary-accent);
   padding: 4px 10px;
   border-radius: var(--radius-sm);
-  font-size: 11px;
+  font-size: 12.65px;
   font-weight: 700;
   cursor: pointer;
   transition: var(--transition);
@@ -3840,7 +3841,7 @@ svg {
   background: none;
   border: none;
   color: var(--text-muted);
-  font-size: 14px;
+  font-size: 16.1px;
   cursor: pointer;
   padding: 4px;
 }
@@ -3868,12 +3869,12 @@ svg {
   top: 4px;
   left: 8px;
   font-family: serif;
-  font-size: 26px;
+  font-size: 29.9px;
   color: var(--primary-accent);
   line-height: 1;
 }
 .speech-text {
-  font-size: 12.5px;
+  font-size: 14.37px;
   line-height: 1.5;
   color: #fff;
   font-style: italic;
@@ -3887,7 +3888,7 @@ svg {
 }
 .ctx-tag {
   font-family: var(--font-code);
-  font-size: 9.5px;
+  font-size: 10.93px;
   font-weight: 800;
   color: var(--text-dim);
   letter-spacing: 0.8px;
@@ -3902,7 +3903,7 @@ svg {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 11px;
+  font-size: 12.65px;
   color: var(--text-dim);
 }
 .timing-badge {
@@ -3961,7 +3962,7 @@ svg {
 }
 .modal-header h2 {
   font-family: var(--font-display);
-  font-size: 20px;
+  font-size: 23px;
   color: var(--text-main);
 }
 .close-modal-btn {
@@ -3972,7 +3973,7 @@ svg {
   height: 32px;
   border-radius: 8px;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 16.1px;
 }
 
 .grid-thumbnails-container {
@@ -4010,13 +4011,13 @@ svg {
 }
 .t-num {
   font-family: var(--font-code);
-  font-size: 10.5px;
+  font-size: 12.08px;
   font-weight: 800;
   color: var(--primary-accent);
 }
 .t-title {
   font-family: var(--font-display);
-  font-size: 12px;
+  font-size: 13.8px;
   font-weight: 700;
   color: var(--text-main);
   line-height: 1.3;
@@ -4048,7 +4049,7 @@ svg {
   background: rgba(255, 75, 43, 0.06);
 }
 .ecc-icon {
-  font-size: 28px;
+  font-size: 32.2px;
   flex-shrink: 0;
   display: flex;
   align-items: center;
@@ -4061,14 +4062,14 @@ svg {
 }
 .ecc-title {
   font-family: var(--font-display);
-  font-size: 14.5px;
+  font-size: 16.67px;
   font-weight: 700;
   color: var(--text-main);
   display: flex;
   align-items: center;
 }
 .ecc-desc {
-  font-size: 12px;
+  font-size: 13.8px;
   color: var(--text-muted);
   line-height: 1.4;
 }
@@ -4508,5 +4509,22 @@ body.pdf-export-mode[data-theme="ivory-executive"] .unconfirmed-data-badge {
   background: rgba(225, 29, 72, 0.09) !important;
   border-color: rgba(225, 29, 72, 0.65) !important;
 }
+
+@media print {
+  .unconfirmed-data-badge {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color: #ff6b4a !important;
+    background: rgba(255, 65, 54, 0.14) !important;
+    border: 1px solid rgba(255, 107, 74, 0.75) !important;
+  }
+
+  [data-theme="ivory-executive"] .unconfirmed-data-badge {
+    color: #c01538 !important;
+    background: rgba(225, 29, 72, 0.09) !important;
+    border-color: rgba(225, 29, 72, 0.65) !important;
+  }
+}
+
 
 
