@@ -62,85 +62,79 @@ document.addEventListener('DOMContentLoaded', () => {
       estTime: "55s"
     },
     6: {
-      heading: "Slide 6: Recruitment & Selection — Concepts & Differences",
-      speech: "“Ye slide ek basic HR concept explain karti hai: Recruitment aur Selection ke beech ka difference. Simple words mein kahein toh: Recruitment ek positive process hai, jiska main purpose vacancies advertise karna aur zyada se zyada qualified candidates ko attract karna hai. Jabki Selection ek screening ya filtering process hai, jisme tests aur interviews ke through unsuited candidates ko eliminate karke right person ko choose kiya jata hai. Ek important point ye tha ki sirf large applicant pool hona successful recruitment nahi hai; job specification clear honi chahiye taaki right candidates apply karein.”",
+      heading: "Slide 6: Recruitment & Selection Process — Step-by-Step Flow",
+      speech: "“Now let us look at the recruitment and selection process. SECL mein ye process 9 systematic stages mein complete hoti hai. Sabse pehle Manpower Requisition se vacancy identify hoti hai. Uske baad Job Analysis aur Job Specification banti hai, jisme duties aur qualifications decide hoti hain. Phir national newspapers aur online portal par notification nikala jata hai. Next, applications ki screening hoti hai aur Computer Based Test (CBT) aur personal interviews conduct hote hain. Selected candidates ka document verification aur DGMS safety rules ke under Initial Medical Examination (IME) hota hai. Finally, appointment and joining ke baad Executive Establishment mein service records bante hain aur MDI Bilaspur mein induction training start hoti hai.”",
       points: [
-        "Core difference: Recruitment attracts candidates (Positive pool); Selection evaluates and filters (Screening).",
-        "Tools used: Recruitment uses advertisements and portals; Selection uses CBT exams, interviews, and medical fitness checks.",
-        "Key viva takeaway: Sourcing volume without clear job specifications creates administrative burden."
-      ],
-      estTime: "50s"
-    },
-    7: {
-      heading: "Slide 7: Recruitment & Selection Process — Step-by-Step Flow",
-      speech: "“Now let us look at the recruitment and selection process. SECL mein ye process 8 systematic steps mein complete hoti hai. Sabse pehle Manpower Requisition se vacancy identify hoti hai. Uske baad Job Analysis aur Job Specification banti hai, jisme duties aur qualifications decide hoti hain. Phir national newspapers aur online portal par notification nikala jata hai. Next, applications ki screening hoti hai aur Computer Based Test (CBT) aur personal interviews conduct hote hain. Selected candidates ka document verification aur DGMS safety rules ke under Initial Medical Examination (IME) hota hai. Finally, offer letter issue hota hai aur MDI Bilaspur mein induction training start hoti hai.”",
-      points: [
-        "Trace the 8 steps: Requisition → Job Analysis → Job Spec → Advertising → Screening → Tests/Interview → Medical → Joining.",
-        "Explain Job Analysis: Defines job duties, tasks, and responsibilities.",
-        "Explain Job Specification: Specifies qualifications, skills, experience, and eligibility standards."
+        "Trace the 9 stages: Manpower Requirement → Job Analysis → Job Specification → Recruitment → Screening → Selection → Appointment & Joining → Employee Administration → Induction & Development.",
+        "Explain Job Analysis: Defines job duties, tasks, and responsibilities in mining operations.",
+        "Explain Job Specification: Specifies qualifications, skills, experience, and DGMS safety certifications."
       ],
       estTime: "55s"
     },
-    8: {
-      heading: "Slide 8: Manpower Planning & Recruitment Connection",
+    7: {
+      heading: "Slide 7: Manpower Planning & Recruitment Connection",
       speech: "“Manpower planning meri study ka bohot important part hai. Iska basic purpose ye samajhna hai ki organisation ko kitne employees chahiye aur kis type ki skills required hain. Simple formula hai: Required Workforce minus Available Workforce equals Manpower Gap. Agar gap positive hai, toh recruitment ki zaroorat hoti hai. SECL mein different intake routes hote hain: Open MT exam through CIL, internal departmental promotions, land-loser employment under rehabilitation policy, aur compassionate appointment under NCWA Clause 9.3.0. Yahan se mujhe clear hua ki recruitment actually manpower planning ki demand se start hota hai.”",
       points: [
         "4 core questions: How many? What skills? When needed? Where placed?",
         "Formula: Required Workforce − Available Workforce = Manpower Gap.",
+        "Core upstream principle: Recruitment is strictly demand-driven and authorized by approved manpower limits.",
         "SECL intake channels: CIL open competitive exam, internal promotions, land acquisition R&R, NCWA 9.3.0 compassionate cases."
       ],
       estTime: "55s"
     },
-    9: {
-      heading: "Slide 9: Internship Work & Practical Learning",
-      speech: "“Is slide mein meri practical internship activities aur professional learning ka summary hai. EE department mein maine dekha ki executive service records, transfers aur joining reports kitni accuracy ke sath maintain kiye jate hain. Manpower department mein land-loser rehabilitation cases aur compassionate appointment files ka verification observe kiya. IR department mein trade union correspondence aur wage agreement implementation samajhne ko mila. Aur HRD mein new joinees ke induction aur safety training modules dekhe. Is exposure se meri documentation, professional communication aur corporate confidentiality ki understanding kaafi improve hui.”",
+    8: {
+      heading: "Slide 8: Internship Work & Practical Learning",
+      speech: "“Is slide mein meri practical internship activities aur operational desk exposure ka summary hai. EE department mein maine dekha ki executive service records, transfer orders aur joining reports kitni accuracy ke sath maintain kiye jate hain. Manpower department mein sanctioned post limits ke according vacancies evaluate karna, land-loser rehabilitation cases aur compassionate appointments ki verification observe ki. IR department mein Joint Consultative Committees aur trade union correspondence samajhne ko mila. Aur HRD mein Management Trainees ke induction aur safety training modules dekhe. Is real exposure se public sector HR governance aur accurate documentation ki importance bohot clear hui.”",
       points: [
-        "Practical observations: EE service records, Manpower intake casework, IR union interaction, HRD MDI training sessions.",
-        "Professional skills acquired: Official documentation, professional communication, workplace confidentiality, analytical thinking.",
-        "Core takeaway: Public sector HR decisions depend heavily on accurate records and official approvals."
+        "Practical Learning: Documentation & records, Manpower casework, Employee relations, Training & development.",
+        "Core takeaway: Public sector HR decisions depend heavily on accurate records, official approvals, and clear statutory rules."
       ],
-      estTime: "50s"
+      estTime: "45s"
+    },
+    9: {
+      heading: "Slide 10: Challenges & Key Findings",
+      speech: "“Challenges — Mujhe kya difficulties aayi?\n\n1. Limited Internship Duration: Internship sirf 30 days ki thi, isliye har HR department ko detail mein samajhne ka time limited tha.\n2. Different Departmental Processes: Har department ka kaam aur working process alag tha, isliye sabhi processes ko samajhna ek challenge tha.\n3. Confidentiality of HR Records: Employees ke personal records confidential hote hain, isliye un sabhi records ko access karna possible nahi tha.\n4. Limited Access to Recruitment Statistics: Internal recruitment ka complete data available nahi tha, isliye recruitment statistics ka detailed analysis nahi kar paya.\n\nKey Findings — Maine kya seekha?\n\n1. Recruitment is Connected with Manpower Planning: Hiring se pehle organization ko pata hona chahiye ki kitne employees ki zarurat hai.\n2. Recruitment and Selection are Different: Recruitment mein candidates ko apply karne ke liye attract kiya jata hai, jabki selection mein suitable candidate choose kiya jata hai.\n3. HR Functions Depend on Coordination: HR ke different departments ko milkar kaam karna padta hai, tabhi work smoothly hota hai.\n4. Employee Administration Continues After Selection: Candidate select hone ke baad bhi joining formalities aur employee records maintain karne padte hain.\n5. Training Supports Employee Development: Training se employees ko apna kaam samajhne aur skills improve karne mein help milti hai.\n\nPractical Example:\nAgar SECL mein kisi post ke liye employee hire hota hai, toh pehle manpower requirement identify hoti hai, phir recruitment aur selection hota. Selection ke baad joining formalities complete hoti hain aur employee ko training di ja sakti hai.\n\nConclusion:\nOverall, meri internship se maine seekha ki effective HR management ke liye proper planning, coordination, documentation aur employee training bahut important hain.”",
+      points: [
+        "Challenges: 1. Limited Internship Duration (30 days), 2. Different Departmental Processes, 3. Confidentiality of HR Records, 4. Limited Access to Recruitment Statistics.",
+        "Key Findings: 1. Recruitment Connected with Manpower Planning, 2. Recruitment & Selection are Different, 3. HR Coordination, 4. Post-Selection Administration, 5. Training.",
+        "Practical Example: SECL post hiring: Manpower requirement → Recruitment & Selection → Joining formalities → Employee training.",
+        "Conclusion: Proper planning, coordination, documentation aur employee training effective HR management ke liye essential hain."
+      ],
+      estTime: "55s"
     },
     10: {
       heading: "Slide 10: Challenges & Key Findings",
-      speech: "“Internship ke dauran kuch practical challenges the. 42,000 employees ki large organisation ko 30 days mein comprehensively samajhna ek bada task tha. Also, PSU personnel records confidential hote hain, isliye maine procedural workflows par focus kiya. Major findings ki baat karein toh: Pehla finding ye tha ki recruitment hamesha approved manpower planning se start hota hai. Second, recruitment aur selection ka purpose alag hota hai. Third, selection complete hote hi EE department employee records manage karta hai. Fourth, continuous mining operations ke liye healthy Industrial Relations zaroori hain. Aur fifth, MDI Bilaspur mein training theoretical knowledge ko practical mining safety se connect karti hai.”",
+      speech: "“Challenges — Mujhe kya difficulties aayi?\n\n1. Limited Internship Duration: Internship sirf 30 days ki thi, isliye har HR department ko detail mein samajhne ka time limited tha.\n2. Different Departmental Processes: Har department ka kaam aur working process alag tha, isliye sabhi processes ko samajhna ek challenge tha.\n3. Confidentiality of HR Records: Employees ke personal records confidential hote hain, isliye un sabhi records ko access karna possible nahi tha.\n4. Limited Access to Recruitment Statistics: Internal recruitment ka complete data available nahi tha, isliye recruitment statistics ka detailed analysis nahi kar paya.\n\nKey Findings — Maine kya seekha?\n\n1. Recruitment is Connected with Manpower Planning: Hiring se pehle organization ko pata hona chahiye ki kitne employees ki zarurat hai.\n2. Recruitment and Selection are Different: Recruitment mein candidates ko apply karne ke liye attract kiya jata hai, jabki selection mein suitable candidate choose kiya jata hai.\n3. HR Functions Depend on Coordination: HR ke different departments ko milkar kaam karna padta hai, tabhi work smoothly hota hai.\n4. Employee Administration Continues After Selection: Candidate select hone ke baad bhi joining formalities aur employee records maintain karne padte hain.\n5. Training Supports Employee Development: Training se employees ko apna kaam samajhne aur skills improve karne mein help milti hai.\n\nPractical Example:\nAgar SECL mein kisi post ke liye employee hire hota hai, toh pehle manpower requirement identify hoti hai, phir recruitment aur selection hota. Selection ke baad joining formalities complete hoti hain aur employee ko training di ja sakti hai.\n\nConclusion:\nOverall, meri internship se maine seekha ki effective HR management ke liye proper planning, coordination, documentation aur employee training bahut important hain.”",
       points: [
-        "Address internship constraints: 30-day timeline, large workforce scale, confidentiality of personnel files.",
-        "Key findings: Demand-driven recruitment, distinct roles of attraction vs screening, post-selection EE continuity, vital role of IR and HRD.",
-        "Analytical synthesis: Public sector HR succeeds through standardized, auditable procedural governance."
+        "Challenges: 1. Limited Internship Duration (30 days), 2. Different Departmental Processes, 3. Confidentiality of HR Records, 4. Limited Access to Recruitment Statistics.",
+        "Key Findings: 1. Recruitment Connected with Manpower Planning, 2. Recruitment & Selection are Different, 3. HR Coordination, 4. Post-Selection Administration, 5. Training.",
+        "Practical Example: SECL post hiring: Manpower requirement → Recruitment & Selection → Joining formalities → Employee training.",
+        "Conclusion: Proper planning, coordination, documentation aur employee training effective HR management ke liye essential hain."
       ],
       estTime: "55s"
     },
     11: {
-      heading: "Slide 11: Key Findings & HR Insights",
-      speech: "“Is slide mein hum analytical perspective dekhte hain. Ek important insight ye hai ki manpower requirement ko pura karne ke liye external recruitment hi akela tareeqa nahi hota. Organisation internal promotion, transfer, retraining, ya surplus areas se redeployment bhi kar sakti hai. Dusra, recruitment funnel ko evaluate karne ke liye standard HR metrics use hote hain—jaise Time-to-Fill, Selection Ratio, aur Joining Ratio. Kyunki SECL ke exact internal recruitment figures confidential hote hain, maine yahan standard academic metrics framework explain kiya hai, bina kisi artificial numbers ko invent kiye.”",
+      heading: "Slide 11: Conclusion",
+      speech: "“My summer internship at SECL helped me understand recruitment, selection, manpower planning and other HR functions. Through departmental exposure, I learned about documentation, employee relations, employment-related cases and training. The internship connected my academic knowledge with practical HR activities and improved my understanding of Human Resource Management.”",
       points: [
-        "5 manpower pathways: Recruitment, Promotion, Transfer, Retraining, Redeployment.",
-        "Explain recruitment funnel: Requisition → Online Application → CBT Exam → Interview → Medical → Final Posting.",
-        "HR analytics metrics: Time-to-Fill, Selection Ratio, Joining Ratio, Early Attrition."
+        "Core synthesis: Understanding recruitment, selection, manpower planning and other HR functions.",
+        "Departmental exposure: Practical learning in documentation, employee relations, employment-related cases and training.",
+        "Academic linkage: Bridging academic knowledge with practical HR activities to advance HRM understanding."
       ],
-      estTime: "55s"
-    },
-    12: {
-      heading: "Slide 12: Conclusion & Practical Suggestions",
-      speech: "“To conclude my presentation, SECL mein meri summer training ek great learning experience thi. Mujhe samajh aaya ki recruitment koi isolated activity nahi hai, balki Manpower Planning, Selection, EE, IR aur HRD ka ek complete integrated chain hai. SECL ke liye meri suggestions hain: Manpower planning aur recruitment timeline ko aur fast align karna, digital records ko integrate karna, aur specialized training ko expand karna. Future MBA interns ke liye suggestion hai ki har department ke liye clear learning goals set karein aur textbook theory ko real workplace files se compare karein. This internship gave me great practical confidence in HR management.”",
-      points: [
-        "Integrated HR model: Manpower → Recruitment → Selection → Joining → EE → IR → HRD.",
-        "Suggestions for SECL: Demand linkage, faster digital screening, integrated records, specialized training.",
-        "Suggestions for interns: Clear weekly learning goals, mentor discussions, bridging theory with practice."
-      ],
-      estTime: "60s"
-    },
-    13: {
-      heading: "Slide 13: Thank You & Questions",
-      speech: "“Thank you everyone for listening to my presentation. I hope I was able to explain my summer training experience, recruitment and selection process, and the HR learning I gained at SECL Bilaspur. Respected faculty members aur panel, thank you very much for your time and guidance. I am now happy to answer any questions and discuss my report.”",
-      points: [
-        "Express warm gratitude to respected faculty guides and examination panel.",
-        "State readiness to answer viva questions on recruitment, manpower planning, and SECL HR.",
-        "Conclude presentation and open for viva questions and discussion."
-      ],
-      estTime: "30s"
+      estTime: "35s"
     }
+  };
+
+  const hrAnalysisNotesBackup = {
+    heading: "Slide 10: HR Analysis & Workforce Dynamics",
+    speech: "“Is slide mein hum recruitment and workforce dynamics ka detailed HR analysis aur proposed evaluation metrics dekhte hain. Pehla key point ye hai ki recruitment hamesha systematic manpower forecasts se match hona chahiye. Manpower gaps ko address karne ke liye external hiring ke alawa internal promotions aur inter-area transfers bhi decisive mechanisms hain. Accurate documentation public-sector governance aur audit compliance ko support karti hai, jabki Manpower, EE, IR aur HRD ka cross-departmental coordination operations ko seamless banata hai. Iske sath humne recruitment effectiveness evaluate karne ke liye Time-to-Fill, Selection Ratio aur Joining Ratio jaise conceptual HR metrics propose kiye hain.”",
+    points: [
+      "Workforce alignment: Recruitment matches systematic manpower planning forecasts.",
+      "Internal routes: Departmental promotions & inter-area transfers address vacancies rapidly.",
+      "Governance & Synergy: Accurate personnel documentation and inter-wing coordination.",
+      "Proposed HR metrics: Time-to-Fill (hiring speed), Selection Ratio, and Joining Ratio."
+    ],
+    estTime: "45s"
   };
 
   // =========================================================================
@@ -344,7 +338,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function updateNotes() {
     const slideNum = currentSlideIndex + 1;
-    const noteData = speakerNotesData[slideNum];
+    const activeSlide = slides[currentSlideIndex];
+    const slideTitle = activeSlide ? (activeSlide.getAttribute('data-slide-title') || '') : '';
+
+    let noteData = speakerNotesData[slideNum];
+    if (slideTitle && slideTitle.toLowerCase().includes('hr analysis')) {
+      noteData = hrAnalysisNotesBackup;
+    }
 
     if (noteData) {
       notesSlideHeading.textContent = noteData.heading;
