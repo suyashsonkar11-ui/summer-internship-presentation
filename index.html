@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=JetBrains+Mono:wght@400;600&family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
   
-  <link rel="stylesheet" href="style.css?v=2.1">
+  <link rel="stylesheet" href="style.css?v=3.0">
 </head>
 <body>
 
@@ -26,13 +26,19 @@
     <!-- Persistent Top Bar (Fixed Header) -->
     <header class="deck-header">
       <div class="header-left">
-        <div class="brand-badge">
+        <div class="brand-badge" id="headerBrandBadge" role="button" tabindex="0" title="Go to Home / Slide 1">
           <span class="brand-pill">SECL</span>
           <span class="brand-title">HR&A SUMMER INTERNSHIP REPORT</span>
         </div>
       </div>
 
       <div class="header-right">
+        <!-- Home Button (Directly Visible Upfront) -->
+        <button class="home-nav-btn" id="btnGoHome" title="Go to First Slide / Home (Key: H or Home)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+          <span>HOME</span>
+        </button>
+
         <!-- Presentation Timer -->
         <div class="deck-timer" id="deckTimer" title="Presentation Time (Click to reset)">
           <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
@@ -40,17 +46,17 @@
         </div>
 
         <!-- Theme Picker -->
-        <div class="theme-switcher" title="Switch Theme">
-          <button class="theme-btn active" data-set-theme="crimson-glow" title="Crimson Aura (Modern Glow)"></button>
-          <button class="theme-btn" data-set-theme="architect-slate" title="Architectural Slate (Minimal Dark)"></button>
-          <button class="theme-btn" data-set-theme="ivory-executive" title="Executive Ivory (Clean Light)"></button>
+        <div class="theme-switcher" role="radiogroup" aria-label="Color Theme Switcher" title="Switch Theme">
+          <button class="theme-btn" data-set-theme="crimson-glow" title="Red Theme (Original)" aria-label="Red Theme (Original)" role="radio" aria-checked="false"></button>
+          <button class="theme-btn" data-set-theme="blue-corporate" title="Corporate Blue Theme" aria-label="Corporate Blue Theme" role="radio" aria-checked="false"></button>
+          <button class="theme-btn active" data-set-theme="white-monochrome" title="Minimalist Monochrome Theme (Design Reference)" aria-label="Minimalist Monochrome Theme" role="radio" aria-checked="true"></button>
         </div>
 
         <!-- Slide Counter Pill -->
         <div class="slide-counter-badge" id="slideCounterBadge" title="Current Slide">
           <span id="currentSlideNum">01</span>
           <span class="counter-sep">/</span>
-          <span id="totalSlidesNum">11</span>
+          <span id="totalSlidesNum">09</span>
         </div>
 
         <!-- Grid View Button -->
@@ -244,143 +250,14 @@
           </div>
         </section>
 
-        <!-- ========================================================
-             SLIDE 3: Introduction to the Study (Clean Light Layout)
-             ======================================================== -->
-        <section class="slide-card slide-light" data-slide-id="3" data-slide-title="Introduction to the Study" id="slide-3">
-          <div class="slide-header-bar reveal-element">
-            <div class="slide-title-group">
-              <span class="section-tag"><span class="tag-red-dot">●</span> 03. THEORETICAL FOUNDATION</span>
-              <h2 class="slide-heading">INTRODUCTION — HR LIFECYCLE &amp; OBJECTIVES<span class="title-red-dot">.</span></h2>
-            </div>
-            <div class="header-pills">
-              <span class="pill-badge pill-glass">HRM 5-STAGE LIFECYCLE</span>
-              <span class="pill-badge pill-coal">RESEARCH SCOPE</span>
-            </div>
-          </div>
-
-          <div class="slide-content-layout three-column-grid">
-            <!-- Box 1: Background of HRM -->
-            <div class="column-card glass-panel reveal-element delay-1">
-              <div>
-                <div class="card-section-header">
-                  <div class="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg></div>
-                  <h3>Background of HRM</h3>
-                </div>
-                <p class="card-lead">HRM operates through a connected 5-stage employee lifecycle:</p>
-                
-                <div class="vertical-cycle-list">
-                  <div class="cycle-pill">
-                    <span class="c-num">01</span>
-                    <div class="c-info">
-                      <strong>Acquisition</strong>
-                      <span>Finding, selecting & hiring new employees</span>
-                    </div>
-                  </div>
-                  <div class="cycle-pill">
-                    <span class="c-num">02</span>
-                    <div class="c-info">
-                      <strong>Development</strong>
-                      <span>Induction at MDI, training & skill building</span>
-                    </div>
-                  </div>
-                  <div class="cycle-pill">
-                    <span class="c-num">03</span>
-                    <div class="c-info">
-                      <strong>Utilisation</strong>
-                      <span>Placing employees in the right departments & mines</span>
-                    </div>
-                  </div>
-                  <div class="cycle-pill">
-                    <span class="c-num">04</span>
-                    <div class="c-info">
-                      <strong>Engagement</strong>
-                      <span>Employee motivation, welfare & workplace recognition</span>
-                    </div>
-                  </div>
-                  <div class="cycle-pill">
-                    <span class="c-num">05</span>
-                    <div class="c-info">
-                      <strong>Maintenance</strong>
-                      <span>Service records, union relations & legal compliance</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-
-            <!-- Box 2: Why Recruitment & Selection? -->
-            <div class="column-card glass-panel reveal-element delay-2">
-              <div>
-                <div class="card-section-header">
-                  <div class="icon-circle red-glow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></div>
-                  <h3>Why Recruitment & Selection?</h3>
-                </div>
-                
-                <div class="feature-item">
-                  <div class="feat-icon">🎯</div>
-                  <div>
-                    <strong>Attraction vs Evaluation:</strong>
-                    <span>Recruitment attracts a pool of potential candidates; selection evaluates candidates against job specifications.</span>
-                  </div>
-                </div>
-
-                <div class="feature-item">
-                  <div class="feat-icon">🌊</div>
-                  <div>
-                    <strong>Entry Point of HR:</strong>
-                    <span>Forms the foundational gateway of the employee relationship, setting organizational capability and productivity.</span>
-                  </div>
-                </div>
-
-                <div class="feature-item">
-                  <div class="feat-icon">⚖️</div>
-                  <div>
-                    <strong>Statutory Compliance:</strong>
-                    <span>Public sector coal mining requires strict adherence to constitutional reservation rules and DGMS safety norms.</span>
-                  </div>
-                </div>
-
-                <div class="feature-item">
-                  <div class="feat-icon">⚡</div>
-                  <div>
-                    <strong>Operational Synergy:</strong>
-                    <span>Right selection directly safeguards continuous coal output and eliminates costly operational errors.</span>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-
-            <!-- Box 3: Study Objectives -->
-            <div class="column-card glass-panel highlight-border reveal-element delay-3">
-              <div>
-                <div class="card-section-header">
-                  <div class="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg></div>
-                  <h3>Objectives of the Study</h3>
-                </div>
-
-                <ul class="checklist-styled">
-                  <li><span class="chk">✓</span> <span><strong>Understand Recruitment &amp; Selection:</strong> Study concepts, differences, and practical selection methods.</span></li>
-                  <li><span class="chk">✓</span> <span><strong>Study Manpower Planning:</strong> Understand workforce forecasting, vacancies, and gap calculations.</span></li>
-                  <li><span class="chk">✓</span> <span><strong>Learn About Different HR Functions:</strong> Explore the interconnected roles of EE, Manpower, IR, and HRD.</span></li>
-                  <li><span class="chk">✓</span> <span><strong>Observe Practical HR Activities:</strong> Gain firsthand exposure to official files, documentation, and casework.</span></li>
-                  <li><span class="chk">✓</span> <span><strong>Understand the Employee Life Cycle:</strong> Trace employee progression from acquisition to administration.</span></li>
-                </ul>
-              </div>
-
-            </div>
-          </div>
-        </section>
 
         <!-- ========================================================
-             SLIDE 4: Organisation Profile — SECL (Clean Light Layout)
+             SLIDE 3: Organisation Profile — SECL (Clean Light Layout)
              ======================================================== -->
-        <section class="slide-card slide-light" data-slide-id="4" data-slide-title="Organisation Profile — SECL" id="slide-4">
+        <section class="slide-card slide-light" data-slide-id="3" data-slide-title="Organisation Profile — SECL" id="slide-4">
           <div class="slide-header-bar reveal-element">
             <div class="slide-title-group">
-              <span class="section-tag"><span class="tag-red-dot">●</span> 04. ORGANISATIONAL CONTEXT</span>
+              <span class="section-tag"><span class="tag-red-dot">●</span> 03. ORGANISATIONAL CONTEXT</span>
               <h2 class="slide-heading">ORGANISATION PROFILE — SECL<span class="title-red-dot">.</span></h2>
             </div>
             <div class="header-pills">
@@ -535,12 +412,12 @@
         </section>
 
         <!-- ========================================================
-             SLIDE 5: Departmental Exposure (Vibrant Red Field Layout)
+             SLIDE 4: Departmental Exposure (Vibrant Red Field Layout)
              ======================================================== -->
-        <section class="slide-card slide-red-field" data-slide-id="5" data-slide-title="Departmental Exposure" id="slide-5">
+        <section class="slide-card slide-red-field" data-slide-id="4" data-slide-title="Departmental Exposure" id="slide-5">
           <div class="slide-header-bar reveal-element">
             <div class="slide-title-group">
-              <span class="section-tag"><span class="tag-red-dot">●</span> 05. ROTATIONAL EXPOSURE</span>
+              <span class="section-tag"><span class="tag-red-dot">●</span> 04. ROTATIONAL EXPOSURE</span>
               <h2 class="slide-heading">DEPARTMENTAL EXPOSURE &amp; ROTATION<span class="title-red-dot">.</span></h2>
             </div>
             <div class="header-pills">
@@ -626,12 +503,12 @@
         </section>
 
         <!-- ========================================================
-             SLIDE 6: Recruitment & Selection Process (Clean Light Layout)
+             SLIDE 5: Recruitment & Selection Process (Clean Light Layout)
              ======================================================== -->
-        <section class="slide-card slide-light" data-slide-id="6" data-slide-title="Complete Lifecycle Process" id="slide-6">
+        <section class="slide-card slide-light" data-slide-id="5" data-slide-title="Complete Lifecycle Process" id="slide-6">
           <div class="slide-header-bar reveal-element">
             <div class="slide-title-group">
-              <span class="section-tag"><span class="tag-red-dot">●</span> 06. OPERATIONAL WORKFLOW</span>
+              <span class="section-tag"><span class="tag-red-dot">●</span> 05. OPERATIONAL WORKFLOW</span>
               <h2 class="slide-heading">RECRUITMENT &amp; SELECTION PROCESS<span class="title-red-dot">.</span></h2>
             </div>
             <div class="header-pills">
@@ -804,12 +681,12 @@
         </section>
 
         <!-- ========================================================
-             SLIDE 7: Manpower Planning & Recruitment Linkage (Dark Layout)
+             SLIDE 6: Manpower Planning & Recruitment Linkage (Dark Layout)
              ======================================================== -->
-        <section class="slide-card slide-dark" data-slide-id="7" data-slide-title="Manpower Planning Linkage" id="slide-7">
+        <section class="slide-card slide-dark" data-slide-id="6" data-slide-title="Manpower Planning Linkage" id="slide-7">
           <div class="slide-header-bar reveal-element">
             <div class="slide-title-group">
-              <span class="section-tag"><span class="tag-red-dot">●</span> 07. UPSTREAM STRATEGY</span>
+              <span class="section-tag"><span class="tag-red-dot">●</span> 06. UPSTREAM STRATEGY</span>
               <h2 class="slide-heading">MANPOWER PLANNING &amp; GAP FORMULA<span class="title-red-dot">.</span></h2>
             </div>
             <div class="header-pills">
@@ -900,12 +777,12 @@
         </section>
 
         <!-- ========================================================
-             SLIDE 8: Internship Work & Learning (Vibrant Red Field Layout)
+             SLIDE 7: Internship Work & Learning (Vibrant Red Field Layout)
              ======================================================== -->
-        <section class="slide-card slide-red-field" data-slide-id="8" data-slide-title="Internship Work & Learning" id="slide-8">
+        <section class="slide-card slide-red-field" data-slide-id="7" data-slide-title="Internship Work & Learning" id="slide-8">
           <div class="slide-header-bar reveal-element">
             <div class="slide-title-group">
-              <span class="section-tag"><span class="tag-red-dot">●</span> 08. PRACTICAL EXPERIENCES</span>
+              <span class="section-tag"><span class="tag-red-dot">●</span> 07. PRACTICAL EXPERIENCES</span>
               <h2 class="slide-heading">INTERNSHIP WORK &amp; PRACTICAL LEARNING<span class="title-red-dot">.</span></h2>
             </div>
             <div class="header-pills">
@@ -982,12 +859,12 @@
         </section>
 
         <!-- ========================================================
-             SLIDE 9: Challenges & Key Findings (Clean Light Layout)
+             SLIDE 8: Challenges & Key Findings (Clean Light Layout)
              ======================================================== -->
-        <section class="slide-card slide-light" data-slide-id="9" data-slide-title="Challenges & Findings" id="slide-9">
+        <section class="slide-card slide-light" data-slide-id="8" data-slide-title="Challenges & Findings" id="slide-9">
           <div class="slide-header-bar reveal-element">
             <div class="slide-title-group">
-              <span class="section-tag"><span class="tag-red-dot">●</span> 09. CRITICAL ANALYSIS</span>
+              <span class="section-tag"><span class="tag-red-dot">●</span> 08. CRITICAL ANALYSIS</span>
               <h2 class="slide-heading">CHALLENGES &amp; KEY FINDINGS<span class="title-red-dot">.</span></h2>
             </div>
             <div class="header-pills">
@@ -1067,107 +944,12 @@
         </section>
 
         <!-- ========================================================
-             SLIDE 10: HR Analysis & Workforce Dynamics (Dark Layout)
+             SLIDE 9: Conclusion (Design Theme)
              ======================================================== -->
-        <section class="slide-card slide-dark" data-slide-id="10" data-slide-title="HR Analysis & Workforce Dynamics" id="slide-10">
+        <section class="slide-card slide-dark" data-slide-id="9" data-slide-title="Conclusion" id="slide-11">
           <div class="slide-header-bar reveal-element">
             <div class="slide-title-group">
-              <span class="section-tag"><span class="tag-red-dot">●</span> 10. HR ANALYSIS &amp; WORKFORCE DYNAMICS</span>
-              <h2 class="slide-heading">HR ANALYSIS &amp; WORKFORCE DYNAMICS<span class="title-red-dot">.</span></h2>
-            </div>
-            <div class="header-pills">
-              <span class="pill-badge pill-red">CHAPTER 7 &amp; 8 SYNTHESIS</span>
-              <span class="pill-badge pill-coal">HR PERFORMANCE METRICS</span>
-            </div>
-          </div>
-
-          <div class="slide-content-layout">
-            <!-- Full Width HR Analysis & Suggested HR Metrics -->
-            <div class="analysis-full-panel glass-panel reveal-element delay-1">
-              <div>
-                <div class="card-section-header">
-                  <div class="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg></div>
-                  <div>
-                    <h3>HR Analysis: Recruitment &amp; Workforce Dynamics</h3>
-                    <p class="sub-caption">Analytical observations connecting recruitment with broader workforce strategy</p>
-                  </div>
-                </div>
-
-                <div class="routes-flow-container routes-grid-2x2">
-                  <div class="route-pill route-active">
-                    <span class="r-icon">🎯</span>
-                    <div>
-                      <strong>1. Recruitment Should Match Workforce Requirements:</strong>
-                      <span>Recruitment must strictly align with workforce forecasts derived from systematic manpower planning.</span>
-                    </div>
-                  </div>
-                  <div class="route-pill">
-                    <span class="r-icon">🔄</span>
-                    <div>
-                      <strong>2. Promotion and Transfer Address Manpower Needs:</strong>
-                      <span>Departmental promotions and inter-area transfers also address manpower needs without external hiring delay.</span>
-                    </div>
-                  </div>
-                  <div class="route-pill">
-                    <span class="r-icon">📁</span>
-                    <div>
-                      <strong>3. Accurate Documentation Supports HR Administration:</strong>
-                      <span>Accurate documentation in EE and Manpower supports reliable, auditable public-sector personnel governance.</span>
-                    </div>
-                  </div>
-                  <div class="route-pill">
-                    <span class="r-icon">🤝</span>
-                    <div>
-                      <strong>4. Coordination Between HR Departments is Important:</strong>
-                      <span>Continuous synergy among Manpower, EE, IR, and HRD ensures seamless execution from hiring to training.</span>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Suggested HR Metrics Model (Academic Proposal) -->
-                <div class="card-section-header" style="margin-top: 18px;">
-                  <div class="icon-circle red-glow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg></div>
-                  <div>
-                    <h3>Suggested HR Metrics</h3>
-                    <p class="sub-caption">Academic performance indicators proposed for recruitment evaluation</p>
-                  </div>
-                </div>
-
-                <div class="kpi-metrics-grid" style="grid-template-columns: repeat(3, 1fr); gap: 16px;">
-                  <div class="kpi-card">
-                    <div class="kpi-tag">HIRING SPEED</div>
-                    <div class="kpi-name">Time-to-Fill</div>
-                    <div class="kpi-desc">Days taken from manpower vacancy approval to candidate joining.</div>
-                    <div class="kpi-benchmark"><span class="unconfirmed-data-badge">CONCEPTUAL</span> Speed metric</div>
-                  </div>
-
-                  <div class="kpi-card">
-                    <div class="kpi-tag">COMPETITION RATIO</div>
-                    <div class="kpi-name">Selection Ratio</div>
-                    <div class="kpi-desc">Proportion of candidates selected relative to total applicant pool.</div>
-                    <div class="kpi-benchmark"><span class="unconfirmed-data-badge">CONCEPTUAL</span> Selectivity index</div>
-                  </div>
-
-                  <div class="kpi-card">
-                    <div class="kpi-tag">OFFER ACCEPTANCE</div>
-                    <div class="kpi-name">Joining Ratio</div>
-                    <div class="kpi-desc">Percentage of selected candidates who accept offer and formally join.</div>
-                    <div class="kpi-benchmark"><span class="unconfirmed-data-badge">CONCEPTUAL</span> Offer yield rate</div>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </section>
-
-        <!-- ========================================================
-             SLIDE 11: Conclusion (Design Theme)
-             ======================================================== -->
-        <section class="slide-card slide-dark" data-slide-id="11" data-slide-title="Conclusion" id="slide-11">
-          <div class="slide-header-bar reveal-element">
-            <div class="slide-title-group">
-              <span class="section-tag"><span class="tag-red-dot">●</span> 11. CONCLUSION</span>
+              <span class="section-tag"><span class="tag-red-dot">●</span> 09. CONCLUSION</span>
               <h2 class="slide-heading">CONCLUSION<span class="title-red-dot">.</span></h2>
             </div>
             <div class="header-pills">
@@ -1212,6 +994,10 @@
     <!-- Slide Bottom Control Bar (Fixed Footer) -->
     <footer class="deck-footer">
       <div class="footer-left">
+        <button class="nav-btn home-nav-btn" id="btnFooterHome" title="First Slide / Home (H)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+          <span>Home</span>
+        </button>
         <button class="nav-btn" id="btnPrev" title="Previous Slide (Up Arrow / PageUp)">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
           <span>Prev</span>
@@ -1225,9 +1011,9 @@
       <!-- Center Progress Line -->
       <div class="footer-center">
         <div class="slide-progress-track">
-          <div class="slide-progress-bar" id="slideProgressBar" style="width: 9.09%;"></div>
+          <div class="slide-progress-bar" id="slideProgressBar" style="width: 11.11%;"></div>
         </div>
-        <span class="slide-status-text" id="slideStatusText">Slide 1: Title Slide</span>
+        <span class="slide-status-text" id="slideStatusText">Slide 1 of 9: Title Slide</span>
       </div>
 
       <div class="footer-right">
@@ -1334,7 +1120,7 @@
                 Download Full HD 16:9 PDF
                 <span class="pill-badge pill-red" style="font-size: 12.65px; padding: 2px 8px; margin-left: 8px;">Recommended</span>
               </div>
-              <div class="ecc-desc">Exact 1920 × 1080 Full HD widescreen canvas. All 11 slides with zero side cut-off, razor-sharp vector typography, and full brightness.</div>
+              <div class="ecc-desc">Exact 1920 × 1080 Full HD widescreen canvas. All 9 slides with zero side cut-off, razor-sharp vector typography, and full brightness.</div>
             </div>
           </a>
 
@@ -1351,6 +1137,6 @@
 
   </div>
 
-  <script src="app.js?v=2.1"></script>
+  <script src="app.js?v=2.5"></script>
 </body>
 </html>

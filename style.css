@@ -44,6 +44,23 @@
   --transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
   --slide-scale: 1;
   --print-zoom: 1;
+
+  /* ========================================================================
+     STANDARDIZED TYPOGRAPHY DESIGN TOKENS (1920 × 1080 Design Canvas)
+     ======================================================================== */
+  --heading-font-size: 56px;
+  --subheading-font-size: 32px;
+  --body-font-size: 22px;
+  --bullet-font-size: 22px;
+  --card-body-font-size: 20px;
+  --chart-label-font-size: 18px;
+  --caption-font-size: 16px;
+
+  /* Standard Line Heights */
+  --line-height-heading: 1.15;
+  --line-height-subheading: 1.25;
+  --line-height-body: 1.5;
+  --line-height-card: 1.4;
 }
 
 /* Theme 2: Architectural Slate (Minimalist Editorial Dark/Stone) */
@@ -267,30 +284,75 @@ html, body {
 }
 
 /* Theme Switcher */
+/* ==========================================================================
+   THREE-COLOR THEME SWITCHER (Pill-shaped Outer Shell with 3 Circular Buttons)
+   ========================================================================== */
 .theme-switcher {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 6px;
-  background: var(--bg-glass);
-  padding: 3px 6px;
+  justify-content: center;
+  gap: 8px;
+  background: #eaedf2; /* light-grey rounded outer shell */
+  padding: 4px 8px;
   border-radius: var(--radius-full);
-  border: 1px solid var(--border-subtle);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.08), 0 2px 6px rgba(0, 0, 0, 0.16);
+  height: 32px;
+  box-sizing: border-box;
+  flex-shrink: 0;
 }
 
 .theme-btn {
-  width: 14px;
-  height: 14px;
+  width: 18px;
+  height: 18px;
   border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.4);
+  border: none;
   cursor: pointer;
-  transition: var(--transition);
+  padding: 0;
+  margin: 0;
+  position: relative;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.28);
+  outline: none;
 }
-.theme-btn[data-set-theme="crimson-glow"] { background: #ff4136; }
-.theme-btn[data-set-theme="architect-slate"] { background: #38bdf8; }
-.theme-btn[data-set-theme="ivory-executive"] { background: #f4f5f8; border-color: #000; }
+.theme-btn:focus-visible {
+  outline: 2px solid #245bbf;
+  outline-offset: 2px;
+}
+.theme-btn[data-set-theme="crimson-glow"],
+.theme-btn[data-set-theme="red"] {
+  background: #e6281b;
+}
+.theme-btn[data-set-theme="blue-corporate"],
+.theme-btn[data-set-theme="blue"],
+.theme-btn[data-set-theme="architect-slate"] {
+  background: #245bbf;
+}
+.theme-btn[data-set-theme="white-monochrome"],
+.theme-btn[data-set-theme="white"],
+.theme-btn[data-set-theme="ivory-executive"] {
+  background: #ffffff;
+  box-shadow: inset 0 0 0 1px #cbd5e1, 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+.theme-btn:hover {
+  transform: scale(1.15);
+}
 .theme-btn.active {
-  transform: scale(1.25);
-  box-shadow: 0 0 8px currentColor;
+  transform: scale(1.18);
+}
+.theme-btn[data-set-theme="crimson-glow"].active,
+.theme-btn[data-set-theme="red"].active {
+  box-shadow: 0 0 0 2px #eaedf2, 0 0 0 4px #e6281b, 0 2px 8px rgba(230, 40, 27, 0.4);
+}
+.theme-btn[data-set-theme="blue-corporate"].active,
+.theme-btn[data-set-theme="blue"].active,
+.theme-btn[data-set-theme="architect-slate"].active {
+  box-shadow: 0 0 0 2px #eaedf2, 0 0 0 4px #245bbf, 0 2px 8px rgba(36, 91, 191, 0.4);
+}
+.theme-btn[data-set-theme="white-monochrome"].active,
+.theme-btn[data-set-theme="white"].active,
+.theme-btn[data-set-theme="ivory-executive"].active {
+  box-shadow: 0 0 0 2px #eaedf2, 0 0 0 4px #334155, 0 2px 8px rgba(0, 0, 0, 0.28);
 }
 
 /* Slide Counter */
@@ -334,6 +396,53 @@ html, body {
   color: var(--text-main);
   border-color: var(--border-glass);
   transform: translateY(-1px);
+}
+
+/* Home Navigation Buttons (Front & Center) — Always Visible Across All Themes */
+.home-nav-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  background: rgba(255, 255, 255, 0.15) !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.5) !important;
+  color: #ffffff !important;
+  padding: 6px 14px !important;
+  border-radius: 999px !important;
+  font-family: "Oswald", "Inter", sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  letter-spacing: 1px !important;
+  text-transform: uppercase !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  user-select: none !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3) !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+.home-nav-btn svg {
+  width: 16px !important;
+  height: 16px !important;
+  flex-shrink: 0 !important;
+  stroke: #ffffff !important;
+}
+.home-nav-btn:hover {
+  background: rgba(255, 255, 255, 0.28) !important;
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.8) !important;
+  transform: translateY(-1px) scale(1.03) !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35) !important;
+}
+
+.brand-badge {
+  cursor: pointer;
+  transition: var(--transition);
+}
+.brand-badge:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.1);
 }
 
 /* Base SVG containment: prevent unconstrained expansion in flex/grid contexts */
@@ -6590,4 +6699,4770 @@ body.pdf-export-mode[data-theme="ivory-executive"] .unconfirmed-data-badge {
 }
 #slide-10 .kpi-benchmark {
   font-size: 17.5px !important;
+}
+
+/* ==========================================================================
+   CORPORATE REFERENCE COVER STAGE (Active in Blue & White Themes)
+   Inspired by Slide 1 of the Reference Presentation ("SMART INNOVATION EVERYDAY")
+   ========================================================================== */
+.corporate-cover-stage {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  padding: 36px 44px;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+/* Slide 1 Master 4K Cinematic Cover — Display across ALL themes */
+.cinematic-cover-stage,
+[data-theme="crimson-glow"] .cinematic-cover-stage,
+[data-theme="blue-corporate"] .cinematic-cover-stage,
+[data-theme="architect-slate"] .cinematic-cover-stage,
+[data-theme="white-monochrome"] .cinematic-cover-stage,
+[data-theme="ivory-executive"] .cinematic-cover-stage {
+  display: flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.corporate-cover-stage {
+  display: none !important;
+}
+
+.corp-cover-frame {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  padding: 32px 42px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  background: #ffffff;
+  border: 1.5px solid #6596df;
+  box-shadow: 0 16px 48px rgba(36, 91, 191, 0.12);
+  overflow: hidden;
+}
+
+.corner-tick {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-color: #245bbf;
+  border-style: solid;
+  pointer-events: none;
+}
+.corner-tick.top-left {
+  top: -2px;
+  left: -2px;
+  border-width: 3.5px 0 0 3.5px;
+  border-top-left-radius: 16px;
+}
+.corner-tick.top-right {
+  top: -2px;
+  right: -2px;
+  border-width: 3.5px 3.5px 0 0;
+  border-top-right-radius: 16px;
+}
+.corner-tick.bottom-left {
+  bottom: -2px;
+  left: -2px;
+  border-width: 0 0 3.5px 3.5px;
+  border-bottom-left-radius: 16px;
+}
+.corner-tick.bottom-right {
+  bottom: -2px;
+  right: -2px;
+  border-width: 0 3.5px 3.5px 0;
+  border-bottom-right-radius: 16px;
+}
+
+.corp-cover-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #d8e0e8;
+  padding-bottom: 18px;
+}
+
+.cch-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.cch-univ-logo-wrap {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cch-univ-seal {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+}
+
+.cch-univ-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.cch-univ-name {
+  font-family: var(--font-display);
+  font-size: 19px;
+  font-weight: 800;
+  color: #1877b9;
+  letter-spacing: 0.5px;
+}
+
+.cch-univ-meta {
+  font-size: 13px;
+  color: #5d6672;
+  font-weight: 500;
+}
+
+.cch-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cch-badge {
+  background: #ebf4fc;
+  color: #1877b9;
+  font-weight: 700;
+  font-size: 12px;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  border: 1px solid #b9d8f5;
+  letter-spacing: 0.5px;
+}
+
+.cch-badge-psu {
+  background: #245bbf;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 12px;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  letter-spacing: 0.5px;
+}
+
+.corp-cover-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 36px;
+  align-items: center;
+  flex: 1;
+  padding: 20px 0;
+  min-height: 0;
+}
+
+.corp-cover-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cct-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #245bbf;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.cct-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #245bbf;
+}
+
+.cct-main-title {
+  font-family: var(--font-display);
+  font-size: 46px;
+  font-weight: 800;
+  line-height: 1.12;
+  color: #1877b9;
+  letter-spacing: -0.5px;
+  margin: 0 0 14px 0;
+}
+
+.cct-highlight {
+  color: #245bbf;
+}
+
+.cct-subtitle {
+  font-size: 16.5px;
+  line-height: 1.5;
+  color: #5d6672;
+  margin: 0 0 22px 0;
+  max-width: 95%;
+}
+
+.cct-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.cct-card {
+  background: #f7f9fc;
+  border: 1px solid #d8e0e8;
+  border-radius: 8px;
+  padding: 12px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.cct-card-lbl {
+  font-size: 10.5px;
+  font-weight: 700;
+  color: #3979d4;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+.cct-card-val {
+  font-size: 15px;
+  font-weight: 700;
+  color: #252b33;
+}
+
+.cct-card-sub {
+  font-size: 12px;
+  color: #5d6672;
+  line-height: 1.35;
+}
+
+.corp-cover-visual {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  max-height: 480px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ccv-art-wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1.5px solid #6596df;
+  box-shadow: 0 12px 32px rgba(36, 91, 191, 0.16);
+}
+
+.ccv-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.ccv-glass-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(180deg, transparent 0%, rgba(13, 37, 77, 0.94) 100%);
+  padding: 20px 24px;
+  color: #ffffff;
+}
+
+.ccv-hud-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #77a9ed;
+  margin-bottom: 8px;
+}
+
+.ccv-pulse {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #36c5f0;
+  box-shadow: 0 0 8px #36c5f0;
+}
+
+.ccv-hud-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  border-top: 1px solid rgba(101, 150, 223, 0.35);
+  padding-top: 8px;
+}
+
+.ccv-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.ccv-s-num {
+  font-size: 15px;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.ccv-s-lbl {
+  font-size: 11px;
+  color: #e5eeff;
+}
+
+.corp-cover-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #718096;
+  border-top: 1px solid #d8e0e8;
+  padding-top: 12px;
+}
+
+
+/* ==========================================================================
+   THEME 2: BLUE CORPORATE THEME (Exact Reference Presentation Aesthetic)
+   Recreation of the 12-Slide Blue/White/Slate Overview Reference
+   - High-contrast alternating palette:
+     * Slide 1: Crisp White (#FFFFFF) with Cobalt Tech Frame
+     * Slide 2: Vibrant Solid Cobalt Blue (#174BB3 / #1A4CB0)
+     * Slide 3: Crisp White (#FFFFFF / #F8FAFC)
+     * Slide 4: Dark Slate / Anthracite (#151922 / #181D28)
+     * Slide 5: Crisp White (#FFFFFF / #F8FAFC)
+     * Slide 6: Vibrant Solid Cobalt Blue (#174BB3 / #1A4CB0)
+     * Slide 7: Dark Slate / Anthracite (#151922 / #181D28)
+     * Slide 8: Dark Cyber Tech (#0D121B / #101624)
+     * Slide 9: Crisp White (#FFFFFF / #F8FAFC)
+     * Slide 10: Dark Slate / Anthracite (#151922 / #181D28)
+     * Slide 11: Vibrant Solid Cobalt Blue (#174BB3 / #1A4CB0)
+   - Prominent, large font sizes throughout all slides
+   - High-visibility Slide 6 Process Flowchart strip
+   - Front & center Home navigation button
+   ========================================================================== */
+[data-theme="blue-corporate"],
+[data-theme="architect-slate"] {
+  /* Prompt Token Standards */
+  --bg-base: #174bb3;
+  --bg-surface: #143d94;
+  --bg-surface-solid: #143d94;
+  --bg-glass: rgba(20, 61, 148, 0.88);
+  --bg-glass-hover: rgba(23, 75, 179, 0.95);
+
+  --border-subtle: rgba(101, 150, 223, 0.35);
+  --border-glow: #6596df;
+  --border-glass: rgba(101, 150, 223, 0.4);
+
+  --primary-accent: #174bb3;
+  --primary-glow: rgba(119, 169, 237, 0.45);
+  --secondary-accent: #2563eb;
+  --accent-cyan: #38bdf8;
+
+  --text-main: #ffffff;
+  --text-muted: #e5eeff;
+  --text-dim: #cbd5e1;
+
+  --shadow-card: 0 8px 24px rgba(7, 27, 58, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  --shadow-glow: 0 0 25px rgba(119, 169, 237, 0.3);
+
+  --font-condensed: "Oswald", -apple-system, sans-serif;
+  --font-clean: "Inter", -apple-system, sans-serif;
+}
+
+[data-theme="blue-corporate"] html,
+[data-theme="blue-corporate"] body,
+[data-theme="architect-slate"] html,
+[data-theme="architect-slate"] body {
+  background-color: #0b1e42 !important;
+  color: #e5eeff !important;
+  font-family: "Inter", -apple-system, sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+}
+
+[data-theme="blue-corporate"] .deck-container,
+[data-theme="blue-corporate"] .slide-viewport,
+[data-theme="blue-corporate"] .slides-track,
+[data-theme="architect-slate"] .deck-container,
+[data-theme="architect-slate"] .slide-viewport,
+[data-theme="architect-slate"] .slides-track {
+  background-color: #0b1e42 !important;
+}
+
+/* Header & Footer Navigation */
+[data-theme="blue-corporate"] .deck-header,
+[data-theme="architect-slate"] .deck-header {
+  background: rgba(11, 30, 66, 0.94) !important;
+  border-bottom: 1.5px solid #2563eb !important;
+  backdrop-filter: blur(16px) !important;
+  box-shadow: 0 4px 20px rgba(7, 27, 58, 0.6) !important;
+}
+[data-theme="blue-corporate"] .brand-pill,
+[data-theme="architect-slate"] .brand-pill {
+  background: #2563eb !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 12px rgba(37, 99, 235, 0.6) !important;
+  font-family: "Oswald", sans-serif !important;
+  font-size: 13.5px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.05em !important;
+}
+[data-theme="blue-corporate"] .brand-title,
+[data-theme="architect-slate"] .brand-title {
+  color: #ffffff !important;
+  font-family: "Oswald", sans-serif !important;
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.04em !important;
+}
+[data-theme="blue-corporate"] .home-nav-btn,
+[data-theme="architect-slate"] .home-nav-btn {
+  background: #174bb3 !important;
+  border: 1.5px solid #60a5fa !important;
+  color: #ffffff !important;
+  font-family: "Oswald", sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.08em !important;
+  box-shadow: 0 2px 10px rgba(37, 99, 235, 0.4) !important;
+}
+[data-theme="blue-corporate"] .home-nav-btn:hover,
+[data-theme="architect-slate"] .home-nav-btn:hover {
+  background: #2563eb !important;
+  border-color: #93c5fd !important;
+  transform: translateY(-1px) scale(1.03) !important;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.6) !important;
+}
+[data-theme="blue-corporate"] .deck-timer,
+[data-theme="blue-corporate"] .slide-counter-badge,
+[data-theme="blue-corporate"] .icon-action-btn,
+[data-theme="architect-slate"] .deck-timer,
+[data-theme="architect-slate"] .slide-counter-badge,
+[data-theme="architect-slate"] .icon-action-btn {
+  background: rgba(20, 61, 148, 0.85) !important;
+  border-color: #3b82f6 !important;
+  color: #e5eeff !important;
+}
+[data-theme="blue-corporate"] .deck-timer svg,
+[data-theme="architect-slate"] .deck-timer svg {
+  stroke: #60a5fa !important;
+}
+[data-theme="blue-corporate"] .icon-action-btn:hover,
+[data-theme="architect-slate"] .icon-action-btn:hover {
+  background: #2563eb !important;
+  border-color: #93c5fd !important;
+  color: #ffffff !important;
+}
+
+[data-theme="blue-corporate"] .deck-footer,
+[data-theme="architect-slate"] .deck-footer {
+  background: rgba(11, 30, 66, 0.94) !important;
+  border-top: 1.5px solid #2563eb !important;
+  box-shadow: 0 -4px 20px rgba(7, 27, 58, 0.6) !important;
+}
+[data-theme="blue-corporate"] .nav-btn,
+[data-theme="blue-corporate"] .footer-action-btn,
+[data-theme="architect-slate"] .nav-btn,
+[data-theme="architect-slate"] .footer-action-btn {
+  background: rgba(20, 61, 148, 0.85) !important;
+  border-color: #3b82f6 !important;
+  color: #e5eeff !important;
+  font-family: "Oswald", sans-serif !important;
+  font-size: 14px !important;
+  letter-spacing: 0.05em !important;
+}
+[data-theme="blue-corporate"] .nav-btn.primary-nav-btn,
+[data-theme="architect-slate"] .nav-btn.primary-nav-btn {
+  background: #2563eb !important;
+  border-color: #93c5fd !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 14px rgba(37, 99, 235, 0.5) !important;
+}
+[data-theme="blue-corporate"] .slide-progress-track,
+[data-theme="architect-slate"] .slide-progress-track {
+  background: rgba(255, 255, 255, 0.18) !important;
+}
+[data-theme="blue-corporate"] .slide-progress-bar,
+[data-theme="architect-slate"] .slide-progress-bar {
+  background: linear-gradient(90deg, #2563eb, #38bdf8) !important;
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.5) !important;
+}
+[data-theme="blue-corporate"] .slide-status-text,
+[data-theme="architect-slate"] .slide-status-text {
+  color: #e5eeff !important;
+  font-family: "Inter", sans-serif !important;
+  font-size: 13.5px !important;
+  font-weight: 600 !important;
+}
+[data-theme="blue-corporate"] .footer-action-btn.highlight-btn,
+[data-theme="architect-slate"] .footer-action-btn.highlight-btn {
+  background: rgba(37, 99, 235, 0.35) !important;
+  border-color: #60a5fa !important;
+  color: #ffffff !important;
+}
+
+/* ==========================================================================
+   GLOBAL TYPOGRAPHY SCALE IN BLUE THEME (LARGE & PROMINENT SIZES)
+   ========================================================================== */
+[data-theme="blue-corporate"] .slide-heading,
+[data-theme="architect-slate"] .slide-heading {
+  font-family: "Oswald", sans-serif !important;
+  font-size: 38px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.8px !important;
+  text-transform: uppercase !important;
+  line-height: 1.15 !important;
+  margin-bottom: 8px !important;
+}
+
+[data-theme="blue-corporate"] .section-tag,
+[data-theme="architect-slate"] .section-tag {
+  font-family: "Oswald", sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  letter-spacing: 1.2px !important;
+  text-transform: uppercase !important;
+  padding: 4px 14px !important;
+  border-radius: 4px !important;
+}
+
+[data-theme="blue-corporate"] .card-section-header h3,
+[data-theme="architect-slate"] .card-section-header h3 {
+  font-family: "Oswald", sans-serif !important;
+  font-size: 24px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.5px !important;
+  text-transform: uppercase !important;
+  line-height: 1.2 !important;
+}
+
+[data-theme="blue-corporate"] .card-lead,
+[data-theme="architect-slate"] .card-lead {
+  font-size: 16.5px !important;
+  line-height: 1.55 !important;
+  font-weight: 500 !important;
+}
+
+[data-theme="blue-corporate"] .bullet-list-styled li,
+[data-theme="architect-slate"] .bullet-list-styled li {
+  font-size: 15.5px !important;
+  line-height: 1.55 !important;
+}
+
+[data-theme="blue-corporate"] .mini-bullets li,
+[data-theme="architect-slate"] .mini-bullets li {
+  font-size: 15.5px !important;
+  line-height: 1.55 !important;
+}
+
+
+/* ==========================================================================
+   GROUP 1: SOLID VIBRANT COBALT BLUE SLIDES (Slides 2, 6, 11)
+   Matching the rich blue presentation slides in the reference
+   ========================================================================== */
+[data-theme="blue-corporate"] #slide-2,
+[data-theme="blue-corporate"] #slide-6,
+[data-theme="blue-corporate"] #slide-11,
+[data-theme="architect-slate"] #slide-2,
+[data-theme="architect-slate"] #slide-6,
+[data-theme="architect-slate"] #slide-11 {
+  background: radial-gradient(circle at 35% 25%, #225cd4 0%, #174bb3 50%, #0f3687 100%) !important;
+  color: #ffffff !important;
+  border: 1.5px solid #3b82f6 !important;
+}
+
+[data-theme="blue-corporate"] #slide-2 .slide-heading,
+[data-theme="blue-corporate"] #slide-6 .slide-heading,
+[data-theme="blue-corporate"] #slide-11 .slide-heading,
+[data-theme="architect-slate"] #slide-2 .slide-heading,
+[data-theme="architect-slate"] #slide-6 .slide-heading,
+[data-theme="architect-slate"] #slide-11 .slide-heading {
+  color: #ffffff !important;
+}
+
+[data-theme="blue-corporate"] #slide-2 .section-tag,
+[data-theme="blue-corporate"] #slide-6 .section-tag,
+[data-theme="blue-corporate"] #slide-11 .section-tag,
+[data-theme="architect-slate"] #slide-2 .section-tag,
+[data-theme="architect-slate"] #slide-6 .section-tag,
+[data-theme="architect-slate"] #slide-11 .section-tag {
+  background: rgba(255, 255, 255, 0.18) !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.4) !important;
+  color: #ffffff !important;
+}
+
+/* Slide 2: Executive Summary Cards on Cobalt Blue */
+[data-theme="blue-corporate"] #slide-2 .column-card,
+[data-theme="architect-slate"] #slide-2 .column-card {
+  background: rgba(255, 255, 255, 0.12) !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.28) !important;
+  color: #ffffff !important;
+  backdrop-filter: blur(10px) !important;
+}
+[data-theme="blue-corporate"] #slide-2 .glance-box,
+[data-theme="architect-slate"] #slide-2 .glance-box {
+  background: rgba(11, 30, 66, 0.55) !important;
+  border: 1px solid rgba(255, 255, 255, 0.22) !important;
+}
+[data-theme="blue-corporate"] #slide-2 .g-label,
+[data-theme="architect-slate"] #slide-2 .g-label {
+  color: #93c5fd !important;
+  font-size: 13.5px !important;
+  font-weight: 700 !important;
+}
+[data-theme="blue-corporate"] #slide-2 .g-value,
+[data-theme="architect-slate"] #slide-2 .g-value {
+  color: #ffffff !important;
+  font-size: 24px !important;
+  font-weight: 800 !important;
+}
+[data-theme="blue-corporate"] #slide-2 .g-value.highlight,
+[data-theme="blue-corporate"] #slide-2 .g-value.accent,
+[data-theme="architect-slate"] #slide-2 .g-value.highlight,
+[data-theme="architect-slate"] #slide-2 .g-value.accent {
+  color: #38bdf8 !important;
+}
+[data-theme="blue-corporate"] #slide-2 .step-node,
+[data-theme="architect-slate"] #slide-2 .step-node {
+  background: rgba(11, 30, 66, 0.55) !important;
+  border: 1px solid rgba(255, 255, 255, 0.22) !important;
+}
+[data-theme="blue-corporate"] #slide-2 .step-badge,
+[data-theme="architect-slate"] #slide-2 .step-badge {
+  background: #2563eb !important;
+  color: #ffffff !important;
+  font-size: 14px !important;
+  font-weight: 800 !important;
+}
+[data-theme="blue-corporate"] #slide-2 .step-days,
+[data-theme="architect-slate"] #slide-2 .step-days {
+  color: #38bdf8 !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+}
+[data-theme="blue-corporate"] #slide-2 .step-title,
+[data-theme="architect-slate"] #slide-2 .step-title {
+  color: #ffffff !important;
+  font-size: 16.5px !important;
+  font-weight: 700 !important;
+}
+[data-theme="blue-corporate"] #slide-2 .step-subtext,
+[data-theme="architect-slate"] #slide-2 .step-subtext {
+  color: #dbeafe !important;
+  font-size: 14px !important;
+}
+[data-theme="blue-corporate"] #slide-2 .step-arrow,
+[data-theme="architect-slate"] #slide-2 .step-arrow {
+  color: #60a5fa !important;
+}
+[data-theme="blue-corporate"] #slide-2 .takeaway-callout-strip,
+[data-theme="architect-slate"] #slide-2 .takeaway-callout-strip {
+  background: rgba(11, 30, 66, 0.7) !important;
+  border: 1.5px solid #60a5fa !important;
+  color: #ffffff !important;
+  font-size: 15.5px !important;
+}
+[data-theme="blue-corporate"] #slide-2 .exec-portrait-card,
+[data-theme="architect-slate"] #slide-2 .exec-portrait-card {
+  border: 2px solid #60a5fa !important;
+  background: rgba(255, 255, 255, 0.12) !important;
+}
+[data-theme="blue-corporate"] #slide-2 .exec-portrait-caption,
+[data-theme="architect-slate"] #slide-2 .exec-portrait-caption {
+  background: rgba(11, 30, 66, 0.9) !important;
+  border-top: 1px solid #60a5fa !important;
+}
+[data-theme="blue-corporate"] #slide-2 .epc-tag,
+[data-theme="architect-slate"] #slide-2 .epc-tag {
+  color: #38bdf8 !important;
+}
+[data-theme="blue-corporate"] #slide-2 .epc-text,
+[data-theme="architect-slate"] #slide-2 .epc-text {
+  color: #ffffff !important;
+  font-size: 15px !important;
+}
+[data-theme="blue-corporate"] #slide-2 .exec-metric-card,
+[data-theme="architect-slate"] #slide-2 .exec-metric-card {
+  background: rgba(255, 255, 255, 0.14) !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.28) !important;
+}
+[data-theme="blue-corporate"] #slide-2 .em-val,
+[data-theme="architect-slate"] #slide-2 .em-val {
+  color: #ffffff !important;
+  font-size: 46px !important;
+  font-weight: 800 !important;
+}
+[data-theme="blue-corporate"] #slide-2 .em-plus,
+[data-theme="architect-slate"] #slide-2 .em-plus {
+  color: #38bdf8 !important;
+  font-size: 36px !important;
+}
+[data-theme="blue-corporate"] #slide-2 .em-label,
+[data-theme="architect-slate"] #slide-2 .em-label {
+  color: #e5eeff !important;
+  font-size: 15px !important;
+  font-weight: 600 !important;
+}
+
+/* Slide 6: HIGH-VISIBILITY Process Flowchart Strip on Cobalt Blue */
+[data-theme="blue-corporate"] #slide-6 .process-flowchart-strip,
+[data-theme="blue-corporate"] #slide-6 .process-flow-strip,
+[data-theme="architect-slate"] #slide-6 .process-flowchart-strip,
+[data-theme="architect-slate"] #slide-6 .process-flow-strip {
+  background: #ffffff !important;
+  border: 2px solid #bfdbfe !important;
+  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.28) !important;
+  padding: 4px 8px !important;
+}
+[data-theme="blue-corporate"] #slide-6 .pfs-step,
+[data-theme="architect-slate"] #slide-6 .pfs-step {
+  background: #f0f7ff !important;
+  border: 1.5px solid #93c5fd !important;
+  padding: 2px 5px !important;
+}
+[data-theme="blue-corporate"] #slide-6 .pfs-num,
+[data-theme="architect-slate"] #slide-6 .pfs-num {
+  background: #174bb3 !important;
+  color: #ffffff !important;
+  font-family: var(--font-body) !important;
+  font-size: 15px !important;
+  font-weight: 800 !important;
+  width: 20px !important;
+  height: 20px !important;
+}
+[data-theme="blue-corporate"] #slide-6 .pfs-arrow,
+[data-theme="architect-slate"] #slide-6 .pfs-arrow {
+  color: #2563eb !important;
+  font-size: 14px !important;
+  font-weight: 900 !important;
+}
+[data-theme="blue-corporate"] #slide-6 .principle-card,
+[data-theme="blue-corporate"] #slide-6 .spec-card,
+[data-theme="architect-slate"] #slide-6 .principle-card,
+[data-theme="architect-slate"] #slide-6 .spec-card {
+  background: #ffffff !important;
+  border: 1.5px solid #bfdbfe !important;
+  color: #0f172a !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2) !important;
+}
+[data-theme="blue-corporate"] #slide-6 .principle-tag,
+[data-theme="blue-corporate"] #slide-6 .spec-focus-tag,
+[data-theme="architect-slate"] #slide-6 .principle-tag,
+[data-theme="architect-slate"] #slide-6 .spec-focus-tag {
+  color: #174bb3 !important;
+  font-size: 13.5px !important;
+  font-weight: 800 !important;
+}
+[data-theme="blue-corporate"] #slide-6 .principle-card h3,
+[data-theme="blue-corporate"] #slide-6 .spec-card h3,
+[data-theme="architect-slate"] #slide-6 .principle-card h3,
+[data-theme="architect-slate"] #slide-6 .spec-card h3 {
+  color: #0f172a !important;
+  font-size: 24px !important;
+}
+[data-theme="blue-corporate"] #slide-6 .bullet-list-styled li,
+[data-theme="architect-slate"] #slide-6 .bullet-list-styled li {
+  color: #1e293b !important;
+  font-size: 15.5px !important;
+  font-weight: 500 !important;
+}
+[data-theme="blue-corporate"] #slide-6 .bullet-list-styled li strong,
+[data-theme="architect-slate"] #slide-6 .bullet-list-styled li strong {
+  color: #0f172a !important;
+  font-weight: 800 !important;
+}
+
+/* Slide 11: Conclusion on Cobalt Blue */
+[data-theme="blue-corporate"] #slide-11 .conclusion-hero-card,
+[data-theme="architect-slate"] #slide-11 .conclusion-hero-card {
+  background: rgba(255, 255, 255, 0.12) !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.3) !important;
+  color: #ffffff !important;
+  backdrop-filter: blur(10px) !important;
+}
+[data-theme="blue-corporate"] #slide-11 .quote-bar-decor,
+[data-theme="architect-slate"] #slide-11 .quote-bar-decor {
+  background: #38bdf8 !important;
+  width: 5px !important;
+}
+[data-theme="blue-corporate"] #slide-11 .concl-lead-text,
+[data-theme="architect-slate"] #slide-11 .concl-lead-text {
+  color: #ffffff !important;
+  font-size: 21px !important;
+  line-height: 1.6 !important;
+  font-weight: 600 !important;
+}
+[data-theme="blue-corporate"] #slide-11 .concl-takeaway-card,
+[data-theme="architect-slate"] #slide-11 .concl-takeaway-card {
+  background: rgba(255, 255, 255, 0.14) !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.28) !important;
+  color: #ffffff !important;
+  font-size: 15.5px !important;
+}
+[data-theme="blue-corporate"] #slide-11 .concl-takeaway-card strong,
+[data-theme="architect-slate"] #slide-11 .concl-takeaway-card strong {
+  color: #38bdf8 !important;
+  font-size: 16.5px !important;
+}
+[data-theme="blue-corporate"] #slide-11 .concl-summary-banner,
+[data-theme="architect-slate"] #slide-11 .concl-summary-banner {
+  background: #0b1e42 !important;
+  border: 1.5px solid #3b82f6 !important;
+  color: #ffffff !important;
+  font-size: 16px !important;
+}
+
+
+/* ==========================================================================
+   SLIDE 1: MASTER 4K COVER ACROSS ALL THEMES
+   ========================================================================== */
+#slide-1,
+[data-theme="crimson-glow"] #slide-1,
+[data-theme="blue-corporate"] #slide-1,
+[data-theme="architect-slate"] #slide-1,
+[data-theme="white-monochrome"] #slide-1,
+[data-theme="ivory-executive"] #slide-1 {
+  padding: 0 !important;
+  background: #08090d !important;
+  position: relative !important;
+  overflow: hidden !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+[data-theme="blue-corporate"] #slide-1 {
+  border: 1.5px solid #2563eb !important;
+}
+[data-theme="white-monochrome"] #slide-1 {
+  border: 1.5px solid #343434 !important;
+}
+
+/* ==========================================================================
+   GROUP 2: CRISP LIGHT WHITE EDITORIAL SLIDES (Slides 3, 5, 9)
+   Matching the white background cards with blue accents in the reference
+   ========================================================================== */
+[data-theme="blue-corporate"] #slide-3,
+[data-theme="blue-corporate"] #slide-5,
+[data-theme="blue-corporate"] #slide-9,
+[data-theme="architect-slate"] #slide-3,
+[data-theme="architect-slate"] #slide-5,
+[data-theme="architect-slate"] #slide-9 {
+  background: #ffffff !important;
+  color: #0f172a !important;
+  border: 1px solid #d8e0e8 !important;
+}
+
+[data-theme="blue-corporate"] #slide-3 .slide-heading,
+[data-theme="blue-corporate"] #slide-5 .slide-heading,
+[data-theme="blue-corporate"] #slide-9 .slide-heading,
+[data-theme="architect-slate"] #slide-3 .slide-heading,
+[data-theme="architect-slate"] #slide-5 .slide-heading,
+[data-theme="architect-slate"] #slide-9 .slide-heading {
+  color: #0f172a !important;
+}
+
+[data-theme="blue-corporate"] #slide-3 .section-tag,
+[data-theme="blue-corporate"] #slide-5 .section-tag,
+[data-theme="blue-corporate"] #slide-9 .section-tag,
+[data-theme="architect-slate"] #slide-3 .section-tag,
+[data-theme="architect-slate"] #slide-5 .section-tag,
+[data-theme="architect-slate"] #slide-9 .section-tag {
+  background: #eff6ff !important;
+  color: #1d4ed8 !important;
+  border: 1.5px solid #bfdbfe !important;
+}
+
+/* Slide 3: Introduction Cards */
+[data-theme="blue-corporate"] #slide-3 .column-card,
+[data-theme="architect-slate"] #slide-3 .column-card {
+  background: #ffffff !important;
+  border: 1.5px solid #dbeafe !important;
+  color: #0f172a !important;
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.06) !important;
+}
+[data-theme="blue-corporate"] #slide-3 .card-section-header h3,
+[data-theme="architect-slate"] #slide-3 .card-section-header h3 {
+  color: #1e40af !important;
+}
+[data-theme="blue-corporate"] #slide-3 .card-lead,
+[data-theme="architect-slate"] #slide-3 .card-lead {
+  color: #334155 !important;
+  font-size: 16px !important;
+}
+[data-theme="blue-corporate"] #slide-3 .cycle-pill,
+[data-theme="architect-slate"] #slide-3 .cycle-pill {
+  background: #f8fafc !important;
+  border: 1px solid #e2e8f0 !important;
+}
+[data-theme="blue-corporate"] #slide-3 .c-num,
+[data-theme="architect-slate"] #slide-3 .c-num {
+  background: #2563eb !important;
+  color: #ffffff !important;
+  font-size: 15px !important;
+  font-weight: 800 !important;
+}
+[data-theme="blue-corporate"] #slide-3 .c-info strong,
+[data-theme="architect-slate"] #slide-3 .c-info strong {
+  color: #0f172a !important;
+  font-size: 15.5px !important;
+}
+[data-theme="blue-corporate"] #slide-3 .c-info span,
+[data-theme="architect-slate"] #slide-3 .c-info span {
+  color: #475569 !important;
+  font-size: 14px !important;
+}
+[data-theme="blue-corporate"] #slide-3 .checklist-styled li,
+[data-theme="architect-slate"] #slide-3 .checklist-styled li {
+  color: #1e293b !important;
+  font-size: 15.5px !important;
+}
+[data-theme="blue-corporate"] #slide-3 .chk,
+[data-theme="architect-slate"] #slide-3 .chk {
+  background: #eff6ff !important;
+  color: #2563eb !important;
+  border: 1px solid #bfdbfe !important;
+}
+
+/* Slide 5: Departmental Exposure Cards */
+[data-theme="blue-corporate"] #slide-5 .dept-col-card,
+[data-theme="architect-slate"] #slide-5 .dept-col-card {
+  background: #ffffff !important;
+  border: 1.5px solid #dbeafe !important;
+  color: #0f172a !important;
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.06) !important;
+}
+[data-theme="blue-corporate"] #slide-5 .dept-col-badge,
+[data-theme="architect-slate"] #slide-5 .dept-col-badge {
+  background: #2563eb !important;
+  color: #ffffff !important;
+  font-family: "Oswald", sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.05em !important;
+}
+[data-theme="blue-corporate"] #slide-5 .dept-col-duration,
+[data-theme="architect-slate"] #slide-5 .dept-col-duration {
+  color: #1d4ed8 !important;
+  font-size: 15.5px !important;
+  font-weight: 700 !important;
+}
+[data-theme="blue-corporate"] #slide-5 .dept-col-title,
+[data-theme="architect-slate"] #slide-5 .dept-col-title {
+  color: #0f172a !important;
+  font-family: "Oswald", sans-serif !important;
+  font-size: 22px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+}
+[data-theme="blue-corporate"] #slide-5 .dept-col-role,
+[data-theme="architect-slate"] #slide-5 .dept-col-role {
+  color: #2563eb !important;
+  font-size: 14.5px !important;
+  font-weight: 600 !important;
+}
+[data-theme="blue-corporate"] #slide-5 .dept-col-bullets li,
+[data-theme="architect-slate"] #slide-5 .dept-col-bullets li {
+  color: #334155 !important;
+  font-size: 15px !important;
+  line-height: 1.55 !important;
+}
+[data-theme="blue-corporate"] #slide-5 .dept-col-bullets strong,
+[data-theme="architect-slate"] #slide-5 .dept-col-bullets strong {
+  color: #0f172a !important;
+  font-weight: 700 !important;
+}
+[data-theme="blue-corporate"] #slide-5 .takeaway-callout-strip,
+[data-theme="architect-slate"] #slide-5 .takeaway-callout-strip {
+  background: #eff6ff !important;
+  border: 1.5px solid #bfdbfe !important;
+  color: #1e40af !important;
+  font-size: 15.5px !important;
+  font-weight: 600 !important;
+}
+
+/* Slide 9: Challenges & Key Findings */
+[data-theme="blue-corporate"] #slide-9 .challenge-item,
+[data-theme="architect-slate"] #slide-9 .challenge-item {
+  background: #f8fafc !important;
+  border: 1.5px solid #dbeafe !important;
+  color: #0f172a !important;
+}
+[data-theme="blue-corporate"] #slide-9 .ch-badge,
+[data-theme="architect-slate"] #slide-9 .ch-badge {
+  background: #dc2626 !important;
+  color: #ffffff !important;
+  font-size: 14px !important;
+  font-weight: 800 !important;
+}
+[data-theme="blue-corporate"] #slide-9 .ch-text,
+[data-theme="architect-slate"] #slide-9 .ch-text {
+  color: #0f172a !important;
+  font-size: 15.5px !important;
+  line-height: 1.5 !important;
+}
+[data-theme="blue-corporate"] #slide-9 .finding-row,
+[data-theme="architect-slate"] #slide-9 .finding-row {
+  background: #f8fafc !important;
+  border: 1.5px solid #dbeafe !important;
+}
+[data-theme="blue-corporate"] #slide-9 .f-num,
+[data-theme="architect-slate"] #slide-9 .f-num {
+  background: #2563eb !important;
+  color: #ffffff !important;
+  font-family: "Oswald", sans-serif !important;
+  font-size: 15px !important;
+  font-weight: 800 !important;
+}
+[data-theme="blue-corporate"] #slide-9 .finding-row .f-text,
+[data-theme="architect-slate"] #slide-9 .finding-row .f-text {
+  color: #0f172a !important;
+  font-size: 15.5px !important;
+  line-height: 1.5 !important;
+}
+[data-theme="blue-corporate"] #slide-9 .findings-takeaway-strip,
+[data-theme="architect-slate"] #slide-9 .findings-takeaway-strip {
+  background: #eff6ff !important;
+  border: 1.5px solid #bfdbfe !important;
+  color: #1e40af !important;
+  font-size: 15.5px !important;
+  font-weight: 600 !important;
+}
+
+
+/* ==========================================================================
+   GROUP 3: DARK SLATE & CYBER TECH SLIDES (Slides 4, 7, 8, 10)
+   Matching the dark console and analytical slides in the reference
+   ========================================================================== */
+[data-theme="blue-corporate"] #slide-4,
+[data-theme="blue-corporate"] #slide-7,
+[data-theme="blue-corporate"] #slide-8,
+[data-theme="blue-corporate"] #slide-10,
+[data-theme="architect-slate"] #slide-4,
+[data-theme="architect-slate"] #slide-7,
+[data-theme="architect-slate"] #slide-8,
+[data-theme="architect-slate"] #slide-10 {
+  background: #141824 !important;
+  color: #ffffff !important;
+  border: 1.5px solid rgba(59, 130, 246, 0.4) !important;
+}
+
+[data-theme="blue-corporate"] #slide-4 .slide-heading,
+[data-theme="blue-corporate"] #slide-7 .slide-heading,
+[data-theme="blue-corporate"] #slide-8 .slide-heading,
+[data-theme="blue-corporate"] #slide-10 .slide-heading,
+[data-theme="architect-slate"] #slide-4 .slide-heading,
+[data-theme="architect-slate"] #slide-7 .slide-heading,
+[data-theme="architect-slate"] #slide-8 .slide-heading,
+[data-theme="architect-slate"] #slide-10 .slide-heading {
+  color: #ffffff !important;
+}
+
+[data-theme="blue-corporate"] #slide-4 .section-tag,
+[data-theme="blue-corporate"] #slide-7 .section-tag,
+[data-theme="blue-corporate"] #slide-8 .section-tag,
+[data-theme="blue-corporate"] #slide-10 .section-tag,
+[data-theme="architect-slate"] #slide-4 .section-tag,
+[data-theme="architect-slate"] #slide-7 .section-tag,
+[data-theme="architect-slate"] #slide-8 .section-tag,
+[data-theme="architect-slate"] #slide-10 .section-tag {
+  background: #1e2538 !important;
+  color: #38bdf8 !important;
+  border: 1.5px solid rgba(56, 189, 248, 0.45) !important;
+}
+
+/* Slide 4: Organisation Profile Containers */
+[data-theme="blue-corporate"] #slide-4 .column-card,
+[data-theme="blue-corporate"] #slide-4 .profile-left-column,
+[data-theme="blue-corporate"] #slide-4 .profile-right-column,
+[data-theme="architect-slate"] #slide-4 .column-card,
+[data-theme="architect-slate"] #slide-4 .profile-left-column,
+[data-theme="architect-slate"] #slide-4 .profile-right-column {
+  background: #1c2234 !important;
+  border: 1.5px solid rgba(59, 130, 246, 0.35) !important;
+  color: #ffffff !important;
+}
+[data-theme="blue-corporate"] #slide-4 .card-section-header h3,
+[data-theme="architect-slate"] #slide-4 .card-section-header h3 {
+  color: #ffffff !important;
+}
+[data-theme="blue-corporate"] #slide-4 .fact-card,
+[data-theme="architect-slate"] #slide-4 .fact-card {
+  background: #161b2a !important;
+  border: 1px solid rgba(59, 130, 246, 0.3) !important;
+}
+[data-theme="blue-corporate"] #slide-4 .fact-title,
+[data-theme="architect-slate"] #slide-4 .fact-title {
+  color: #60a5fa !important;
+  font-size: 16.5px !important;
+  font-weight: 700 !important;
+}
+[data-theme="blue-corporate"] #slide-4 .fact-desc,
+[data-theme="architect-slate"] #slide-4 .fact-desc {
+  color: #f1f5f9 !important;
+  font-size: 15px !important;
+}
+[data-theme="blue-corporate"] #slide-4 .secl-manpower-stats-box,
+[data-theme="architect-slate"] #slide-4 .secl-manpower-stats-box {
+  background: #161b2a !important;
+  border: 1px solid rgba(59, 130, 246, 0.3) !important;
+}
+[data-theme="blue-corporate"] #slide-4 .sb-title,
+[data-theme="architect-slate"] #slide-4 .sb-title {
+  color: #cbd5e1 !important;
+  font-size: 14px !important;
+}
+[data-theme="blue-corporate"] #slide-4 .sb-val,
+[data-theme="architect-slate"] #slide-4 .sb-val {
+  color: #38bdf8 !important;
+  font-size: 34px !important;
+  font-weight: 800 !important;
+}
+[data-theme="blue-corporate"] #slide-4 .sb-lbl,
+[data-theme="architect-slate"] #slide-4 .sb-lbl {
+  color: #ffffff !important;
+  font-size: 15px !important;
+}
+[data-theme="blue-corporate"] #slide-4 .coal-reserves-card,
+[data-theme="architect-slate"] #slide-4 .coal-reserves-card {
+  background: #161b2a !important;
+  border: 1px solid rgba(59, 130, 246, 0.3) !important;
+}
+[data-theme="blue-corporate"] #slide-4 .crc-number,
+[data-theme="architect-slate"] #slide-4 .crc-number {
+  color: #38bdf8 !important;
+  font-size: 42px !important;
+  font-weight: 800 !important;
+}
+[data-theme="blue-corporate"] #slide-4 .crc-subtext,
+[data-theme="architect-slate"] #slide-4 .crc-subtext {
+  color: #cbd5e1 !important;
+  font-size: 14.5px !important;
+}
+[data-theme="blue-corporate"] #slide-4 .ops-overview-card,
+[data-theme="architect-slate"] #slide-4 .ops-overview-card {
+  background: #161b2a !important;
+  border: 1px solid rgba(59, 130, 246, 0.3) !important;
+}
+[data-theme="blue-corporate"] #slide-4 .ops-pill-tag,
+[data-theme="architect-slate"] #slide-4 .ops-pill-tag {
+  color: #38bdf8 !important;
+  font-size: 13.5px !important;
+}
+[data-theme="blue-corporate"] #slide-4 .ops-text,
+[data-theme="architect-slate"] #slide-4 .ops-text {
+  color: #ffffff !important;
+  font-size: 15px !important;
+}
+
+/* Slide 7: Manpower Planning Linkage */
+[data-theme="blue-corporate"] #slide-7 .mp-q-box,
+[data-theme="architect-slate"] #slide-7 .mp-q-box {
+  background: #1c2234 !important;
+  border: 1.5px solid rgba(59, 130, 246, 0.35) !important;
+}
+[data-theme="blue-corporate"] #slide-7 .mp-q-badge,
+[data-theme="architect-slate"] #slide-7 .mp-q-badge {
+  color: #38bdf8 !important;
+  font-size: 16px !important;
+  font-weight: 800 !important;
+}
+[data-theme="blue-corporate"] #slide-7 .mp-q-box p,
+[data-theme="architect-slate"] #slide-7 .mp-q-box p {
+  color: #ffffff !important;
+  font-size: 15.5px !important;
+}
+[data-theme="blue-corporate"] #slide-7 .gap-formula-card,
+[data-theme="architect-slate"] #slide-7 .gap-formula-card {
+  background: #1c2234 !important;
+  border: 1.5px solid rgba(59, 130, 246, 0.35) !important;
+  border-left: 5px solid #38bdf8 !important;
+}
+[data-theme="blue-corporate"] #slide-7 .gap-label,
+[data-theme="architect-slate"] #slide-7 .gap-label {
+  color: #38bdf8 !important;
+  font-size: 15px !important;
+  font-weight: 800 !important;
+}
+[data-theme="blue-corporate"] #slide-7 .f-term,
+[data-theme="architect-slate"] #slide-7 .f-term {
+  background: #141824 !important;
+  border: 1px solid rgba(59, 130, 246, 0.3) !important;
+  color: #ffffff !important;
+  font-size: 20px !important;
+}
+[data-theme="blue-corporate"] #slide-7 .f-result,
+[data-theme="architect-slate"] #slide-7 .f-result {
+  background: #2563eb !important;
+  border: 1.5px solid #93c5fd !important;
+  color: #ffffff !important;
+  font-size: 22px !important;
+  font-weight: 800 !important;
+  box-shadow: 0 0 16px rgba(37, 99, 235, 0.6) !important;
+}
+[data-theme="blue-corporate"] #slide-7 .formula-note,
+[data-theme="architect-slate"] #slide-7 .formula-note {
+  color: #cbd5e1 !important;
+  font-size: 15px !important;
+}
+[data-theme="blue-corporate"] #slide-7 .secl-routes-box,
+[data-theme="architect-slate"] #slide-7 .secl-routes-box {
+  background: #1c2234 !important;
+  border: 1.5px solid rgba(59, 130, 246, 0.35) !important;
+}
+[data-theme="blue-corporate"] #slide-7 .srb-title,
+[data-theme="architect-slate"] #slide-7 .srb-title {
+  color: #38bdf8 !important;
+  font-size: 15px !important;
+  font-weight: 700 !important;
+}
+[data-theme="blue-corporate"] #slide-7 .srb-pill,
+[data-theme="architect-slate"] #slide-7 .srb-pill {
+  background: #141824 !important;
+  border: 1px solid rgba(59, 130, 246, 0.3) !important;
+  color: #cbd5e1 !important;
+  font-size: 15px !important;
+}
+[data-theme="blue-corporate"] #slide-7 .srb-pill strong,
+[data-theme="architect-slate"] #slide-7 .srb-pill strong {
+  color: #ffffff !important;
+}
+
+/* Slide 8: Internship Work & Practical Learning (Dark Cyber Console) */
+[data-theme="blue-corporate"] #slide-8,
+[data-theme="architect-slate"] #slide-8 {
+  background: #0d121c !important;
+  border: 1.5px solid rgba(56, 189, 248, 0.4) !important;
+}
+[data-theme="blue-corporate"] #slide-8 .work-card,
+[data-theme="architect-slate"] #slide-8 .work-card {
+  background: #151d2c !important;
+  border: 1.5px solid rgba(59, 130, 246, 0.4) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4) !important;
+}
+[data-theme="blue-corporate"] #slide-8 .w-tag,
+[data-theme="architect-slate"] #slide-8 .w-tag {
+  color: #38bdf8 !important;
+  font-family: "Oswald", sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.05em !important;
+  border-bottom: 1.5px solid rgba(56, 189, 248, 0.35) !important;
+}
+[data-theme="blue-corporate"] #slide-8 .mini-bullets li,
+[data-theme="architect-slate"] #slide-8 .mini-bullets li {
+  color: #cbd5e1 !important;
+  font-size: 15.5px !important;
+  line-height: 1.55 !important;
+}
+[data-theme="blue-corporate"] #slide-8 .mini-bullets li strong,
+[data-theme="architect-slate"] #slide-8 .mini-bullets li strong {
+  color: #ffffff !important;
+  font-weight: 700 !important;
+}
+
+/* Slide 10: HR Analysis & Workforce Dynamics */
+[data-theme="blue-corporate"] #slide-10 .routes-grid-2x2 .route-pill,
+[data-theme="blue-corporate"] #slide-10 .route-pill,
+[data-theme="architect-slate"] #slide-10 .routes-grid-2x2 .route-pill,
+[data-theme="architect-slate"] #slide-10 .route-pill {
+  background: #ffffff !important;
+  border: 1.5px solid #bfdbfe !important;
+  color: #1e293b !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06) !important;
+}
+[data-theme="blue-corporate"] #slide-10 .routes-grid-2x2 .route-pill.route-active,
+[data-theme="blue-corporate"] #slide-10 .route-pill.route-active,
+[data-theme="architect-slate"] #slide-10 .routes-grid-2x2 .route-pill.route-active,
+[data-theme="architect-slate"] #slide-10 .route-pill.route-active {
+  background: #f0f7ff !important;
+  border: 1.5px solid #93c5fd !important;
+  border-left: 5px solid #2563eb !important;
+}
+[data-theme="blue-corporate"] #slide-10 .routes-grid-2x2 .route-pill strong,
+[data-theme="blue-corporate"] #slide-10 .route-pill strong,
+[data-theme="architect-slate"] #slide-10 .routes-grid-2x2 .route-pill strong,
+[data-theme="architect-slate"] #slide-10 .route-pill strong {
+  color: #0f172a !important;
+}
+[data-theme="blue-corporate"] #slide-10 .routes-grid-2x2 .route-pill span,
+[data-theme="blue-corporate"] #slide-10 .route-pill span,
+[data-theme="architect-slate"] #slide-10 .routes-grid-2x2 .route-pill span,
+[data-theme="architect-slate"] #slide-10 .route-pill span {
+  color: #1e293b !important;
+}
+[data-theme="blue-corporate"] #slide-10 .kpi-card,
+[data-theme="architect-slate"] #slide-10 .kpi-card {
+  background: #ffffff !important;
+  border: 1.5px solid #bfdbfe !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06) !important;
+}
+[data-theme="blue-corporate"] #slide-10 .kpi-tag,
+[data-theme="architect-slate"] #slide-10 .kpi-tag {
+  color: #2563eb !important;
+  font-size: 20px !important;
+  font-weight: 800 !important;
+}
+[data-theme="blue-corporate"] #slide-10 .kpi-name,
+[data-theme="architect-slate"] #slide-10 .kpi-name {
+  color: #0f172a !important;
+  font-size: 38px !important;
+}
+[data-theme="blue-corporate"] #slide-10 .kpi-desc,
+[data-theme="architect-slate"] #slide-10 .kpi-desc {
+  color: #1e293b !important;
+  font-size: 23px !important;
+}
+[data-theme="blue-corporate"] #slide-10 .kpi-benchmark,
+[data-theme="architect-slate"] #slide-10 .kpi-benchmark {
+  color: #2563eb !important;
+  font-size: 18px !important;
+}
+
+
+/* ==========================================================================
+   BLUE THEME MODALS & SPEAKER NOTES DRAWER
+   ========================================================================== */
+[data-theme="blue-corporate"] .modal-card,
+[data-theme="architect-slate"] .modal-card {
+  background: #143d94 !important;
+  border: 1.5px solid #3b82f6 !important;
+  color: #ffffff !important;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.6) !important;
+}
+[data-theme="blue-corporate"] .speaker-notes-drawer,
+[data-theme="architect-slate"] .speaker-notes-drawer {
+  background: #143d94 !important;
+  border-left: 2px solid #3b82f6 !important;
+  color: #ffffff !important;
+}
+[data-theme="blue-corporate"] .notes-header h3,
+[data-theme="architect-slate"] .notes-header h3 {
+  color: #ffffff !important;
+}
+[data-theme="blue-corporate"] .notes-bubble,
+[data-theme="architect-slate"] .notes-bubble {
+  background: #0f2e73 !important;
+  border: 1px solid #3b82f6 !important;
+}
+[data-theme="blue-corporate"] .speech-text,
+[data-theme="architect-slate"] .speech-text {
+  color: #ffffff !important;
+  font-size: 16px !important;
+  line-height: 1.6 !important;
+}
+[data-theme="blue-corporate"] .notes-context-box,
+[data-theme="architect-slate"] .notes-context-box {
+  background: #0f2e73 !important;
+  border: 1px solid #3b82f6 !important;
+}
+[data-theme="blue-corporate"] .notes-context-box li,
+[data-theme="architect-slate"] .notes-context-box li {
+  color: #e5eeff !important;
+  font-size: 15px !important;
+}
+
+
+/* ==========================================================================
+   THEME 3: MINIMALIST MONOCHROME CORPORATE THEME (ENHANCED VISIBILITY & LARGE FONTS)
+   Recreation of the 12-Slide Black-and-White Overview Reference
+   - Bold condensed uppercase typography (Oswald)
+   - Alternating black (#080808) and off-white (#F7F7F3) slides
+   - Clean rectangular cards with subtle borders
+   - High-contrast editorial columns and grids
+   - Integrated grayscale photography with crisp contrast
+   - Preserves 100% of factual SECL internship data and slides
+   - High-visibility process flowchart strip & prominent legible font sizes
+   ========================================================================== */
+
+/* Design Tokens & Root Styling */
+[data-theme="white-monochrome"],
+[data-theme="ivory-executive"] {
+  --bg-black: #080808;
+  --bg-black-card: #141414;
+  --border-black: #343434;
+  --border-black-subtle: #242424;
+  --text-black-heading: #FFFFFF;
+  --text-black-body: #E6E6E6;
+  --text-black-muted: #A6A6A6;
+  --text-black-dim: #777777;
+
+  --bg-white: #F7F7F3;
+  --bg-white-card: #FFFFFF;
+  --border-white: #D8D8D2;
+  --border-white-subtle: #E2E2DC;
+  --text-white-heading: #111111;
+  --text-white-body: #303030;
+  --text-white-muted: #777777;
+  --text-white-dim: #999999;
+
+  --accent-red-dot: #e6281b;
+
+  --font-condensed: "Oswald", "Bebas Neue", "Anton", -apple-system, sans-serif;
+  --font-clean: "Inter", "Plus Jakarta Sans", -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+/* Ambient glow disabled for ultra-crisp monochrome editorial feel */
+[data-theme="white-monochrome"] .ambient-glow,
+[data-theme="ivory-executive"] .ambient-glow {
+  display: none !important;
+}
+
+[data-theme="white-monochrome"] html,
+[data-theme="white-monochrome"] body,
+[data-theme="ivory-executive"] html,
+[data-theme="ivory-executive"] body {
+  background-color: #080808 !important;
+  color: #E6E6E6 !important;
+  font-family: "Inter", "Plus Jakarta Sans", -apple-system, sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+}
+
+[data-theme="white-monochrome"] .deck-container,
+[data-theme="white-monochrome"] .slide-viewport,
+[data-theme="white-monochrome"] .slides-track,
+[data-theme="ivory-executive"] .deck-container,
+[data-theme="ivory-executive"] .slide-viewport,
+[data-theme="ivory-executive"] .slides-track {
+  background-color: #080808 !important;
+}
+
+/* Persistent Header (Fixed Top Bar) */
+[data-theme="white-monochrome"] .deck-header,
+[data-theme="ivory-executive"] .deck-header {
+  background: #080808 !important;
+  border-bottom: 1px solid #343434 !important;
+  box-shadow: none !important;
+}
+
+[data-theme="white-monochrome"] .brand-pill,
+[data-theme="ivory-executive"] .brand-pill {
+  background: #FFFFFF !important;
+  color: #080808 !important;
+  font-family: "Oswald", sans-serif !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.05em !important;
+  font-size: 13px !important;
+  padding: 3px 10px !important;
+  border-radius: 4px !important;
+}
+
+[data-theme="white-monochrome"] .brand-title,
+[data-theme="ivory-executive"] .brand-title {
+  color: #FFFFFF !important;
+  font-family: "Oswald", sans-serif !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.04em !important;
+  text-transform: uppercase !important;
+  font-size: 14.5px !important;
+}
+
+[data-theme="white-monochrome"] .home-nav-btn,
+[data-theme="ivory-executive"] .home-nav-btn {
+  background: #FFFFFF !important;
+  border: 1.5px solid #FFFFFF !important;
+  color: #080808 !important;
+  font-family: "Oswald", sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.08em !important;
+  border-radius: 6px !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.35) !important;
+}
+[data-theme="white-monochrome"] .home-nav-btn svg,
+[data-theme="ivory-executive"] .home-nav-btn svg {
+  stroke: #080808 !important;
+}
+[data-theme="white-monochrome"] .home-nav-btn:hover,
+[data-theme="ivory-executive"] .home-nav-btn:hover {
+  background: #E2E2DC !important;
+  transform: translateY(-1px) scale(1.03) !important;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.4) !important;
+}
+
+/* Crimson-Glow theme: Home button explicit styling */
+[data-theme="crimson-glow"] .home-nav-btn {
+  display: inline-flex !important;
+  background: rgba(180, 20, 20, 0.75) !important;
+  border: 1.5px solid rgba(255, 120, 120, 0.7) !important;
+  color: #ffffff !important;
+  font-family: "Oswald", sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  letter-spacing: 1px !important;
+  border-radius: 999px !important;
+  box-shadow: 0 2px 10px rgba(180, 20, 20, 0.5) !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+[data-theme="crimson-glow"] .home-nav-btn svg {
+  stroke: #ffffff !important;
+}
+[data-theme="crimson-glow"] .home-nav-btn:hover {
+  background: rgba(220, 30, 30, 0.9) !important;
+  border-color: rgba(255, 160, 160, 0.9) !important;
+  transform: translateY(-1px) scale(1.03) !important;
+  box-shadow: 0 4px 16px rgba(200, 30, 30, 0.6) !important;
+}
+
+[data-theme="white-monochrome"] .deck-timer,
+[data-theme="white-monochrome"] .slide-counter-badge,
+[data-theme="white-monochrome"] .icon-action-btn,
+[data-theme="ivory-executive"] .deck-timer,
+[data-theme="ivory-executive"] .slide-counter-badge,
+[data-theme="ivory-executive"] .icon-action-btn {
+  background: #141414 !important;
+  border: 1px solid #343434 !important;
+  color: #FFFFFF !important;
+  border-radius: 6px !important;
+  font-size: 14px !important;
+}
+
+[data-theme="white-monochrome"] .deck-timer svg,
+[data-theme="ivory-executive"] .deck-timer svg {
+  stroke: #FFFFFF !important;
+}
+
+[data-theme="white-monochrome"] .icon-action-btn:hover,
+[data-theme="ivory-executive"] .icon-action-btn:hover {
+  background: #242424 !important;
+  border-color: #666666 !important;
+  color: #FFFFFF !important;
+}
+
+/* Persistent Footer (Fixed Bottom Controls) */
+[data-theme="white-monochrome"] .deck-footer,
+[data-theme="ivory-executive"] .deck-footer {
+  background: #080808 !important;
+  border-top: 1px solid #343434 !important;
+  box-shadow: none !important;
+}
+
+[data-theme="white-monochrome"] .nav-btn,
+[data-theme="white-monochrome"] .footer-action-btn,
+[data-theme="ivory-executive"] .nav-btn,
+[data-theme="ivory-executive"] .footer-action-btn {
+  background: #141414 !important;
+  border: 1px solid #343434 !important;
+  color: #FFFFFF !important;
+  border-radius: 6px !important;
+  font-family: "Inter", sans-serif !important;
+  font-weight: 600 !important;
+  font-size: 14px !important;
+  padding: 6px 14px !important;
+}
+
+[data-theme="white-monochrome"] .nav-btn.primary-nav-btn,
+[data-theme="ivory-executive"] .nav-btn.primary-nav-btn {
+  background: #FFFFFF !important;
+  border: 1px solid #FFFFFF !important;
+  color: #080808 !important;
+  font-weight: 700 !important;
+}
+
+[data-theme="white-monochrome"] .nav-btn.primary-nav-btn:hover,
+[data-theme="ivory-executive"] .nav-btn.primary-nav-btn:hover {
+  background: #E6E6E6 !important;
+  border-color: #E6E6E6 !important;
+  color: #080808 !important;
+}
+
+[data-theme="white-monochrome"] .nav-btn:hover,
+[data-theme="white-monochrome"] .footer-action-btn:hover,
+[data-theme="ivory-executive"] .nav-btn:hover,
+[data-theme="ivory-executive"] .footer-action-btn:hover {
+  background: #242424 !important;
+  border-color: #666666 !important;
+  color: #FFFFFF !important;
+}
+
+[data-theme="white-monochrome"] .slide-progress-track,
+[data-theme="ivory-executive"] .slide-progress-track {
+  background: #222222 !important;
+  height: 5px !important;
+}
+
+[data-theme="white-monochrome"] .slide-progress-bar,
+[data-theme="ivory-executive"] .slide-progress-bar {
+  background: #FFFFFF !important;
+}
+
+[data-theme="white-monochrome"] .slide-status-text,
+[data-theme="ivory-executive"] .slide-status-text {
+  color: #A6A6A6 !important;
+  font-family: "Inter", sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+}
+
+/* Global Headings in Monochrome Theme - Enhanced Bold Size */
+[data-theme="white-monochrome"] .slide-heading,
+[data-theme="ivory-executive"] .slide-heading {
+  font-family: "Oswald", sans-serif !important;
+  font-size: 38px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.02em !important;
+  line-height: 1.15 !important;
+}
+
+[data-theme="white-monochrome"] .tag-red-dot,
+[data-theme="white-monochrome"] .title-red-dot,
+[data-theme="ivory-executive"] .tag-red-dot,
+[data-theme="ivory-executive"] .title-red-dot {
+  color: #e6281b !important;
+}
+
+/* Section Tag - Larger & Prominent */
+[data-theme="white-monochrome"] .section-tag,
+[data-theme="ivory-executive"] .section-tag {
+  font-family: "Inter", sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  padding: 5px 12px !important;
+  border-radius: 4px !important;
+}
+
+/* Header Pills - Larger */
+[data-theme="white-monochrome"] .pill-badge,
+[data-theme="ivory-executive"] .pill-badge {
+  font-family: "Inter", sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  padding: 5px 12px !important;
+  border-radius: 4px !important;
+}
+
+
+/* ==========================================================================
+   ALTERNATING SLIDE BACKGROUNDS (Reference Pattern)
+   Black: 1, 2, 5, 7, 8, 10
+   Off-White: 3, 4, 6, 9, 11
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   BLACK SLIDES (1, 2, 5, 7, 8, 10)
+   -------------------------------------------------------------------------- */
+[data-theme="white-monochrome"] #slide-1,
+[data-theme="white-monochrome"] #slide-2,
+[data-theme="white-monochrome"] #slide-5,
+[data-theme="white-monochrome"] #slide-7,
+[data-theme="white-monochrome"] #slide-8,
+[data-theme="white-monochrome"] #slide-10,
+[data-theme="ivory-executive"] #slide-1,
+[data-theme="ivory-executive"] #slide-2,
+[data-theme="ivory-executive"] #slide-5,
+[data-theme="ivory-executive"] #slide-7,
+[data-theme="ivory-executive"] #slide-8,
+[data-theme="ivory-executive"] #slide-10 {
+  background: #080808 !important;
+  color: #E6E6E6 !important;
+  border: 1px solid #343434 !important;
+}
+
+[data-theme="white-monochrome"] #slide-2 .slide-heading,
+[data-theme="white-monochrome"] #slide-5 .slide-heading,
+[data-theme="white-monochrome"] #slide-7 .slide-heading,
+[data-theme="white-monochrome"] #slide-8 .slide-heading,
+[data-theme="white-monochrome"] #slide-10 .slide-heading,
+[data-theme="ivory-executive"] #slide-2 .slide-heading,
+[data-theme="ivory-executive"] #slide-5 .slide-heading,
+[data-theme="ivory-executive"] #slide-7 .slide-heading,
+[data-theme="ivory-executive"] #slide-8 .slide-heading,
+[data-theme="ivory-executive"] #slide-10 .slide-heading {
+  color: #FFFFFF !important;
+}
+
+[data-theme="white-monochrome"] #slide-2 .section-tag,
+[data-theme="white-monochrome"] #slide-5 .section-tag,
+[data-theme="white-monochrome"] #slide-7 .section-tag,
+[data-theme="white-monochrome"] #slide-8 .section-tag,
+[data-theme="white-monochrome"] #slide-10 .section-tag,
+[data-theme="ivory-executive"] #slide-2 .section-tag,
+[data-theme="ivory-executive"] #slide-5 .section-tag,
+[data-theme="ivory-executive"] #slide-7 .section-tag,
+[data-theme="ivory-executive"] #slide-8 .section-tag,
+[data-theme="ivory-executive"] #slide-10 .section-tag {
+  background: #141414 !important;
+  border: 1px solid #343434 !important;
+  color: #A6A6A6 !important;
+}
+
+[data-theme="white-monochrome"] #slide-2 .pill-badge,
+[data-theme="white-monochrome"] #slide-5 .pill-badge,
+[data-theme="white-monochrome"] #slide-7 .pill-badge,
+[data-theme="white-monochrome"] #slide-8 .pill-badge,
+[data-theme="white-monochrome"] #slide-10 .pill-badge,
+[data-theme="ivory-executive"] #slide-2 .pill-badge,
+[data-theme="ivory-executive"] #slide-5 .pill-badge,
+[data-theme="ivory-executive"] #slide-7 .pill-badge,
+[data-theme="ivory-executive"] #slide-8 .pill-badge,
+[data-theme="ivory-executive"] #slide-10 .pill-badge {
+  background: #141414 !important;
+  border: 1px solid #343434 !important;
+  color: #E6E6E6 !important;
+}
+
+[data-theme="white-monochrome"] #slide-2 .column-card,
+[data-theme="white-monochrome"] #slide-2 .glass-panel,
+[data-theme="white-monochrome"] #slide-5 .dept-col-card,
+[data-theme="white-monochrome"] #slide-7 .mp-left-col,
+[data-theme="white-monochrome"] #slide-7 .mp-right-col,
+[data-theme="white-monochrome"] #slide-8 .work-full-panel,
+[data-theme="white-monochrome"] #slide-10 .analysis-full-panel,
+[data-theme="ivory-executive"] #slide-2 .column-card,
+[data-theme="ivory-executive"] #slide-2 .glass-panel,
+[data-theme="ivory-executive"] #slide-5 .dept-col-card,
+[data-theme="ivory-executive"] #slide-7 .mp-left-col,
+[data-theme="ivory-executive"] #slide-7 .mp-right-col,
+[data-theme="ivory-executive"] #slide-8 .work-full-panel,
+[data-theme="ivory-executive"] #slide-10 .analysis-full-panel {
+  background: #141414 !important;
+  border: 1px solid #343434 !important;
+  color: #E6E6E6 !important;
+  box-shadow: none !important;
+  border-radius: 8px !important;
+}
+
+[data-theme="white-monochrome"] #slide-2 .card-section-header h3,
+[data-theme="white-monochrome"] #slide-5 .card-section-header h3,
+[data-theme="white-monochrome"] #slide-7 .card-section-header h3,
+[data-theme="white-monochrome"] #slide-8 .card-section-header h3,
+[data-theme="white-monochrome"] #slide-10 .card-section-header h3,
+[data-theme="ivory-executive"] #slide-2 .card-section-header h3,
+[data-theme="ivory-executive"] #slide-5 .card-section-header h3,
+[data-theme="ivory-executive"] #slide-7 .card-section-header h3,
+[data-theme="ivory-executive"] #slide-8 .card-section-header h3,
+[data-theme="ivory-executive"] #slide-10 .card-section-header h3 {
+  color: #FFFFFF !important;
+  font-family: "Oswald", sans-serif !important;
+  font-size: 24px !important;
+  text-transform: uppercase !important;
+}
+
+[data-theme="white-monochrome"] #slide-2 .icon-circle,
+[data-theme="white-monochrome"] #slide-5 .icon-circle,
+[data-theme="white-monochrome"] #slide-7 .icon-circle,
+[data-theme="white-monochrome"] #slide-8 .icon-circle,
+[data-theme="white-monochrome"] #slide-10 .icon-circle,
+[data-theme="ivory-executive"] #slide-2 .icon-circle,
+[data-theme="ivory-executive"] #slide-5 .icon-circle,
+[data-theme="ivory-executive"] #slide-7 .icon-circle,
+[data-theme="ivory-executive"] #slide-8 .icon-circle,
+[data-theme="ivory-executive"] #slide-10 .icon-circle {
+  background: #202020 !important;
+  border: 1px solid #343434 !important;
+  color: #FFFFFF !important;
+  box-shadow: none !important;
+}
+
+[data-theme="white-monochrome"] #slide-2 .icon-circle svg,
+[data-theme="white-monochrome"] #slide-5 .icon-circle svg,
+[data-theme="white-monochrome"] #slide-7 .icon-circle svg,
+[data-theme="white-monochrome"] #slide-8 .icon-circle svg,
+[data-theme="white-monochrome"] #slide-10 .icon-circle svg,
+[data-theme="ivory-executive"] #slide-2 .icon-circle svg,
+[data-theme="ivory-executive"] #slide-5 .icon-circle svg,
+[data-theme="ivory-executive"] #slide-7 .icon-circle svg,
+[data-theme="ivory-executive"] #slide-8 .icon-circle svg,
+[data-theme="ivory-executive"] #slide-10 .icon-circle svg {
+  stroke: #FFFFFF !important;
+}
+
+[data-theme="white-monochrome"] #slide-2 .takeaway-callout-strip,
+[data-theme="white-monochrome"] #slide-5 .takeaway-callout-strip,
+[data-theme="white-monochrome"] #slide-7 .takeaway-callout-strip,
+[data-theme="white-monochrome"] #slide-8 .takeaway-callout-strip,
+[data-theme="ivory-executive"] #slide-2 .takeaway-callout-strip,
+[data-theme="ivory-executive"] #slide-5 .takeaway-callout-strip,
+[data-theme="ivory-executive"] #slide-7 .takeaway-callout-strip,
+[data-theme="ivory-executive"] #slide-8 .takeaway-callout-strip {
+  background: #141414 !important;
+  border: 1px solid #343434 !important;
+  color: #E6E6E6 !important;
+  padding: 10px 14px !important;
+  border-radius: 6px !important;
+}
+
+[data-theme="white-monochrome"] #slide-2 .takeaway-callout-strip strong,
+[data-theme="white-monochrome"] #slide-5 .takeaway-callout-strip strong,
+[data-theme="white-monochrome"] #slide-7 .takeaway-callout-strip strong,
+[data-theme="white-monochrome"] #slide-8 .takeaway-callout-strip strong,
+[data-theme="ivory-executive"] #slide-2 .takeaway-callout-strip strong,
+[data-theme="ivory-executive"] #slide-5 .takeaway-callout-strip strong,
+[data-theme="ivory-executive"] #slide-7 .takeaway-callout-strip strong,
+[data-theme="ivory-executive"] #slide-8 .takeaway-callout-strip strong {
+  color: #FFFFFF !important;
+  font-size: 15px !important;
+}
+
+[data-theme="white-monochrome"] #slide-2 .takeaway-callout-strip span,
+[data-theme="white-monochrome"] #slide-5 .takeaway-callout-strip span,
+[data-theme="white-monochrome"] #slide-7 .takeaway-callout-strip span,
+[data-theme="white-monochrome"] #slide-8 .takeaway-callout-strip span,
+[data-theme="ivory-executive"] #slide-2 .takeaway-callout-strip span,
+[data-theme="ivory-executive"] #slide-5 .takeaway-callout-strip span,
+[data-theme="ivory-executive"] #slide-7 .takeaway-callout-strip span,
+[data-theme="ivory-executive"] #slide-8 .takeaway-callout-strip span {
+  color: #A6A6A6 !important;
+  font-size: 14px !important;
+}
+
+
+/* --------------------------------------------------------------------------
+   OFF-WHITE SLIDES (3, 4, 6, 9, 11)
+   -------------------------------------------------------------------------- */
+[data-theme="white-monochrome"] #slide-3,
+[data-theme="white-monochrome"] #slide-4,
+[data-theme="white-monochrome"] #slide-6,
+[data-theme="white-monochrome"] #slide-9,
+[data-theme="white-monochrome"] #slide-11,
+[data-theme="ivory-executive"] #slide-3,
+[data-theme="ivory-executive"] #slide-4,
+[data-theme="ivory-executive"] #slide-6,
+[data-theme="ivory-executive"] #slide-9,
+[data-theme="ivory-executive"] #slide-11 {
+  background: #F7F7F3 !important;
+  color: #303030 !important;
+  border: 1px solid #D8D8D2 !important;
+}
+
+[data-theme="white-monochrome"] #slide-3 .slide-heading,
+[data-theme="white-monochrome"] #slide-4 .slide-heading,
+[data-theme="white-monochrome"] #slide-6 .slide-heading,
+[data-theme="white-monochrome"] #slide-9 .slide-heading,
+[data-theme="white-monochrome"] #slide-11 .slide-heading,
+[data-theme="ivory-executive"] #slide-3 .slide-heading,
+[data-theme="ivory-executive"] #slide-4 .slide-heading,
+[data-theme="ivory-executive"] #slide-6 .slide-heading,
+[data-theme="ivory-executive"] #slide-9 .slide-heading,
+[data-theme="ivory-executive"] #slide-11 .slide-heading {
+  color: #111111 !important;
+}
+
+[data-theme="white-monochrome"] #slide-3 .section-tag,
+[data-theme="white-monochrome"] #slide-4 .section-tag,
+[data-theme="white-monochrome"] #slide-6 .section-tag,
+[data-theme="white-monochrome"] #slide-9 .section-tag,
+[data-theme="white-monochrome"] #slide-11 .section-tag,
+[data-theme="ivory-executive"] #slide-3 .section-tag,
+[data-theme="ivory-executive"] #slide-4 .section-tag,
+[data-theme="ivory-executive"] #slide-6 .section-tag,
+[data-theme="ivory-executive"] #slide-9 .section-tag,
+[data-theme="ivory-executive"] #slide-11 .section-tag {
+  background: #FFFFFF !important;
+  border: 1px solid #D8D8D2 !important;
+  color: #555555 !important;
+}
+
+[data-theme="white-monochrome"] #slide-3 .pill-badge,
+[data-theme="white-monochrome"] #slide-4 .pill-badge,
+[data-theme="white-monochrome"] #slide-6 .pill-badge,
+[data-theme="white-monochrome"] #slide-9 .pill-badge,
+[data-theme="white-monochrome"] #slide-11 .pill-badge,
+[data-theme="ivory-executive"] #slide-3 .pill-badge,
+[data-theme="ivory-executive"] #slide-4 .pill-badge,
+[data-theme="ivory-executive"] #slide-6 .pill-badge,
+[data-theme="ivory-executive"] #slide-9 .pill-badge,
+[data-theme="ivory-executive"] #slide-11 .pill-badge {
+  background: #FFFFFF !important;
+  border: 1px solid #D8D8D2 !important;
+  color: #111111 !important;
+}
+
+[data-theme="white-monochrome"] #slide-3 .column-card,
+[data-theme="white-monochrome"] #slide-3 .glass-panel,
+[data-theme="white-monochrome"] #slide-4 .column-card,
+[data-theme="white-monochrome"] #slide-4 .glass-panel,
+[data-theme="white-monochrome"] #slide-6 .lifecycle-stepper-box,
+[data-theme="white-monochrome"] #slide-6 .spec-card,
+[data-theme="white-monochrome"] #slide-9 .column-card,
+[data-theme="white-monochrome"] #slide-9 .glass-panel,
+[data-theme="white-monochrome"] #slide-11 .column-card,
+[data-theme="white-monochrome"] #slide-11 .glass-panel,
+[data-theme="ivory-executive"] #slide-3 .column-card,
+[data-theme="ivory-executive"] #slide-3 .glass-panel,
+[data-theme="ivory-executive"] #slide-4 .column-card,
+[data-theme="ivory-executive"] #slide-4 .glass-panel,
+[data-theme="ivory-executive"] #slide-6 .lifecycle-stepper-box,
+[data-theme="ivory-executive"] #slide-6 .spec-card,
+[data-theme="ivory-executive"] #slide-9 .column-card,
+[data-theme="ivory-executive"] #slide-9 .glass-panel,
+[data-theme="ivory-executive"] #slide-11 .column-card,
+[data-theme="ivory-executive"] #slide-11 .glass-panel {
+  background: #FFFFFF !important;
+  border: 1px solid #D8D8D2 !important;
+  color: #303030 !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03) !important;
+  border-radius: 8px !important;
+}
+
+[data-theme="white-monochrome"] #slide-3 .card-section-header h3,
+[data-theme="white-monochrome"] #slide-4 .card-section-header h3,
+[data-theme="white-monochrome"] #slide-6 .card-section-header h3,
+[data-theme="white-monochrome"] #slide-9 .card-section-header h3,
+[data-theme="white-monochrome"] #slide-11 .card-section-header h3,
+[data-theme="ivory-executive"] #slide-3 .card-section-header h3,
+[data-theme="ivory-executive"] #slide-4 .card-section-header h3,
+[data-theme="ivory-executive"] #slide-6 .card-section-header h3,
+[data-theme="ivory-executive"] #slide-9 .card-section-header h3,
+[data-theme="ivory-executive"] #slide-11 .card-section-header h3 {
+  color: #111111 !important;
+  font-family: "Oswald", sans-serif !important;
+  font-size: 24px !important;
+  text-transform: uppercase !important;
+}
+
+[data-theme="white-monochrome"] #slide-3 .icon-circle,
+[data-theme="white-monochrome"] #slide-4 .icon-circle,
+[data-theme="white-monochrome"] #slide-6 .icon-circle,
+[data-theme="white-monochrome"] #slide-9 .icon-circle,
+[data-theme="white-monochrome"] #slide-11 .icon-circle,
+[data-theme="ivory-executive"] #slide-3 .icon-circle,
+[data-theme="ivory-executive"] #slide-4 .icon-circle,
+[data-theme="ivory-executive"] #slide-6 .icon-circle,
+[data-theme="ivory-executive"] #slide-9 .icon-circle,
+[data-theme="ivory-executive"] #slide-11 .icon-circle {
+  background: #F0F0EB !important;
+  border: 1px solid #D8D8D2 !important;
+  color: #111111 !important;
+  box-shadow: none !important;
+}
+
+[data-theme="white-monochrome"] #slide-3 .icon-circle svg,
+[data-theme="white-monochrome"] #slide-4 .icon-circle svg,
+[data-theme="white-monochrome"] #slide-6 .icon-circle svg,
+[data-theme="white-monochrome"] #slide-9 .icon-circle svg,
+[data-theme="white-monochrome"] #slide-11 .icon-circle svg,
+[data-theme="ivory-executive"] #slide-3 .icon-circle svg,
+[data-theme="ivory-executive"] #slide-4 .icon-circle svg,
+[data-theme="ivory-executive"] #slide-6 .icon-circle svg,
+[data-theme="ivory-executive"] #slide-9 .icon-circle svg,
+[data-theme="ivory-executive"] #slide-11 .icon-circle svg {
+  stroke: #111111 !important;
+}
+
+[data-theme="white-monochrome"] #slide-6 .takeaway-callout-strip,
+[data-theme="white-monochrome"] #slide-11 .takeaway-callout-strip,
+[data-theme="ivory-executive"] #slide-6 .takeaway-callout-strip,
+[data-theme="ivory-executive"] #slide-11 .takeaway-callout-strip {
+  background: #FFFFFF !important;
+  border: 1px solid #D8D8D2 !important;
+  color: #303030 !important;
+  padding: 10px 14px !important;
+  border-radius: 6px !important;
+}
+
+[data-theme="white-monochrome"] #slide-6 .takeaway-callout-strip strong,
+[data-theme="white-monochrome"] #slide-11 .takeaway-callout-strip strong,
+[data-theme="ivory-executive"] #slide-6 .takeaway-callout-strip strong,
+[data-theme="ivory-executive"] #slide-11 .takeaway-callout-strip strong {
+  color: #111111 !important;
+  font-size: 15px !important;
+}
+
+[data-theme="white-monochrome"] #slide-6 .takeaway-callout-strip span,
+[data-theme="white-monochrome"] #slide-11 .takeaway-callout-strip span,
+[data-theme="ivory-executive"] #slide-6 .takeaway-callout-strip span,
+[data-theme="ivory-executive"] #slide-11 .takeaway-callout-strip span {
+  color: #555555 !important;
+  font-size: 14px !important;
+}
+
+
+/* ==========================================================================
+   INDIVIDUAL SLIDE STYLING (ENHANCED SIZES & CONTRAST)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   SLIDE 1: Title Slide (Black Background Cover Stage)
+   -------------------------------------------------------------------------- */
+[data-theme="white-monochrome"] .corp-cover-frame,
+[data-theme="ivory-executive"] .corp-cover-frame {
+  background: #080808 !important;
+  border: 1px solid #343434 !important;
+  box-shadow: none !important;
+}
+
+[data-theme="white-monochrome"] .corner-tick,
+[data-theme="ivory-executive"] .corner-tick {
+  border-color: #555555 !important;
+}
+
+[data-theme="white-monochrome"] .corp-cover-header,
+[data-theme="ivory-executive"] .corp-cover-header {
+  border-bottom: 1px solid #343434 !important;
+}
+
+[data-theme="white-monochrome"] .cch-univ-name,
+[data-theme="ivory-executive"] .cch-univ-name {
+  color: #FFFFFF !important;
+  font-family: "Oswald", sans-serif !important;
+  letter-spacing: 0.05em !important;
+  font-size: 15px !important;
+}
+
+[data-theme="white-monochrome"] .cch-univ-meta,
+[data-theme="ivory-executive"] .cch-univ-meta {
+  color: #A6A6A6 !important;
+  font-size: 12px !important;
+}
+
+[data-theme="white-monochrome"] .cch-badge,
+[data-theme="ivory-executive"] .cch-badge {
+  background: #141414 !important;
+  border: 1px solid #343434 !important;
+  color: #FFFFFF !important;
+  font-family: "Inter", sans-serif !important;
+  font-size: 12.5px !important;
+  font-weight: 600 !important;
+}
+
+[data-theme="white-monochrome"] .cch-badge-psu,
+[data-theme="ivory-executive"] .cch-badge-psu {
+  background: #202020 !important;
+  border: 1px solid #444444 !important;
+  color: #FFFFFF !important;
+  font-family: "Inter", sans-serif !important;
+  font-size: 12.5px !important;
+  font-weight: 600 !important;
+}
+
+[data-theme="white-monochrome"] .cct-eyebrow,
+[data-theme="ivory-executive"] .cct-eyebrow {
+  color: #A6A6A6 !important;
+  font-family: "Inter", sans-serif !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.1em !important;
+  font-size: 13px !important;
+}
+
+[data-theme="white-monochrome"] .cct-main-title,
+[data-theme="ivory-executive"] .cct-main-title {
+  font-family: "Oswald", sans-serif !important;
+  font-size: 56px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  color: #FFFFFF !important;
+  line-height: 1.05 !important;
+  letter-spacing: 0.02em !important;
+}
+
+[data-theme="white-monochrome"] .cct-highlight,
+[data-theme="ivory-executive"] .cct-highlight {
+  color: #A6A6A6 !important;
+}
+
+[data-theme="white-monochrome"] .cct-subtitle,
+[data-theme="ivory-executive"] .cct-subtitle {
+  color: #A6A6A6 !important;
+  font-size: 16.5px !important;
+  line-height: 1.5 !important;
+}
+
+[data-theme="white-monochrome"] .cct-card,
+[data-theme="ivory-executive"] .cct-card {
+  background: #141414 !important;
+  border: 1px solid #343434 !important;
+  border-radius: 6px !important;
+  padding: 12px 14px !important;
+}
+
+[data-theme="white-monochrome"] .cct-card-lbl,
+[data-theme="ivory-executive"] .cct-card-lbl {
+  color: #888888 !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+}
+
+[data-theme="white-monochrome"] .cct-card-val,
+[data-theme="ivory-executive"] .cct-card-val {
+  color: #FFFFFF !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+}
+
+[data-theme="white-monochrome"] .cct-card-sub,
+[data-theme="ivory-executive"] .cct-card-sub {
+  color: #A6A6A6 !important;
+  font-size: 12.5px !important;
+}
+
+[data-theme="white-monochrome"] .ccv-art-wrap,
+[data-theme="ivory-executive"] .ccv-art-wrap {
+  border: 1px solid #343434 !important;
+  border-radius: 8px !important;
+  overflow: hidden !important;
+}
+
+[data-theme="white-monochrome"] .ccv-hero-img,
+[data-theme="ivory-executive"] .ccv-hero-img {
+  filter: grayscale(100%) contrast(1.15) brightness(0.95) !important;
+}
+
+[data-theme="white-monochrome"] .ccv-glass-overlay,
+[data-theme="ivory-executive"] .ccv-glass-overlay {
+  background: rgba(8, 8, 8, 0.88) !important;
+  border-top: 1px solid #343434 !important;
+}
+
+[data-theme="white-monochrome"] .ccv-hud-header,
+[data-theme="ivory-executive"] .ccv-hud-header {
+  color: #FFFFFF !important;
+  font-family: "Oswald", sans-serif !important;
+  letter-spacing: 0.05em !important;
+  font-size: 13.5px !important;
+}
+
+[data-theme="white-monochrome"] .ccv-pulse,
+[data-theme="ivory-executive"] .ccv-pulse {
+  background: #FFFFFF !important;
+}
+
+[data-theme="white-monochrome"] .ccv-s-num,
+[data-theme="ivory-executive"] .ccv-s-num {
+  font-family: "Oswald", sans-serif !important;
+  font-size: 24px !important;
+  color: #FFFFFF !important;
+  font-weight: 700 !important;
+}
+
+[data-theme="white-monochrome"] .ccv-s-lbl,
+[data-theme="ivory-executive"] .ccv-s-lbl {
+  color: #A6A6A6 !important;
+  font-size: 11.5px !important;
+}
+
+[data-theme="white-monochrome"] .corp-cover-footer,
+[data-theme="ivory-executive"] .corp-cover-footer {
+  border-top: 1px solid #343434 !important;
+  color: #888888 !important;
+  font-size: 12px !important;
+}
+
+/* --------------------------------------------------------------------------
+   SLIDE 2: Executive Summary (Black Slide — Ref "WELCOME MESSAGE")
+   -------------------------------------------------------------------------- */
+[data-theme="white-monochrome"] #slide-2 .glance-box,
+[data-theme="ivory-executive"] #slide-2 .glance-box {
+  background: #0C0C0C !important;
+  border: 1px solid #282828 !important;
+  border-radius: 6px !important;
+  padding: 8px 12px !important;
+}
+
+[data-theme="white-monochrome"] #slide-2 .g-label,
+[data-theme="ivory-executive"] #slide-2 .g-label {
+  color: #888888 !important;
+  font-size: 13.5px !important;
+  text-transform: uppercase !important;
+  font-weight: 700 !important;
+}
+
+[data-theme="white-monochrome"] #slide-2 .g-value,
+[data-theme="ivory-executive"] #slide-2 .g-value {
+  color: #FFFFFF !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+}
+
+[data-theme="white-monochrome"] #slide-2 .g-value.highlight,
+[data-theme="white-monochrome"] #slide-2 .g-value.accent,
+[data-theme="ivory-executive"] #slide-2 .g-value.highlight,
+[data-theme="ivory-executive"] #slide-2 .g-value.accent {
+  color: #FFFFFF !important;
+}
+
+[data-theme="white-monochrome"] #slide-2 .divider-line,
+[data-theme="ivory-executive"] #slide-2 .divider-line {
+  background: #282828 !important;
+}
+
+[data-theme="white-monochrome"] #slide-2 .step-node .step-badge,
+[data-theme="ivory-executive"] #slide-2 .step-node .step-badge {
+  background: #202020 !important;
+  border: 1px solid #343434 !important;
+  color: #FFFFFF !important;
+  font-family: "Oswald", sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 16px !important;
+  padding: 4px 10px !important;
+  border-radius: 4px !important;
+}
+
+[data-theme="white-monochrome"] #slide-2 .step-node.accent-node .step-badge,
+[data-theme="ivory-executive"] #slide-2 .step-node.accent-node .step-badge {
+  background: #FFFFFF !important;
+  color: #080808 !important;
+  border-color: #FFFFFF !important;
+}
+
+[data-theme="white-monochrome"] #slide-2 .step-days,
+[data-theme="ivory-executive"] #slide-2 .step-days {
+  color: #A6A6A6 !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+}
+
+[data-theme="white-monochrome"] #slide-2 .step-title,
+[data-theme="ivory-executive"] #slide-2 .step-title {
+  color: #FFFFFF !important;
+  font-family: "Oswald", sans-serif !important;
+  font-size: 16.5px !important;
+  text-transform: uppercase !important;
+}
+
+[data-theme="white-monochrome"] #slide-2 .step-subtext,
+[data-theme="ivory-executive"] #slide-2 .step-subtext {
+  color: #888888 !important;
+  font-size: 13px !important;
+}
+
+[data-theme="white-monochrome"] #slide-2 .step-arrow,
+[data-theme="ivory-executive"] #slide-2 .step-arrow {
+  color: #555555 !important;
+  font-size: 18px !important;
+}
+
+[data-theme="white-monochrome"] #slide-2 .exec-portrait-card,
+[data-theme="ivory-executive"] #slide-2 .exec-portrait-card {
+  border: 1px solid #343434 !important;
+  border-radius: 8px !important;
+  overflow: hidden !important;
+}
+
+[data-theme="white-monochrome"] #slide-2 .exec-portrait-img,
+[data-theme="ivory-executive"] #slide-2 .exec-portrait-img {
+  filter: grayscale(100%) contrast(1.15) !important;
+}
+
+[data-theme="white-monochrome"] #slide-2 .exec-portrait-caption,
+[data-theme="ivory-executive"] #slide-2 .exec-portrait-caption {
+  background: rgba(8, 8, 8, 0.92) !important;
+  border-top: 1px solid #343434 !important;
+  padding: 12px 16px !important;
+}
+
+[data-theme="white-monochrome"] #slide-2 .epc-tag,
+[data-theme="ivory-executive"] #slide-2 .epc-tag {
+  color: #FFFFFF !important;
+  font-family: "Oswald", sans-serif !important;
+  letter-spacing: 0.08em !important;
+  font-size: 13px !important;
+}
+
+[data-theme="white-monochrome"] #slide-2 .epc-text,
+[data-theme="ivory-executive"] #slide-2 .epc-text {
+  color: #A6A6A6 !important;
+  font-size: 14px !important;
+  line-height: 1.45 !important;
+}
+
+[data-theme="white-monochrome"] #slide-2 .exec-metric-card,
+[data-theme="ivory-executive"] #slide-2 .exec-metric-card {
+  background: #141414 !important;
+  border: 1px solid #343434 !important;
+  border-radius: 8px !important;
+  padding: 14px !important;
+}
+
+[data-theme="white-monochrome"] #slide-2 .em-val,
+[data-theme="ivory-executive"] #slide-2 .em-val {
+  font-family: "Oswald", sans-serif !important;
+  font-size: 46px !important;
+  color: #FFFFFF !important;
+  font-weight: 700 !important;
+}
+
+[data-theme="white-monochrome"] #slide-2 .em-plus,
+[data-theme="ivory-executive"] #slide-2 .em-plus {
+  color: #A6A6A6 !important;
+}
+
+[data-theme="white-monochrome"] #slide-2 .em-label,
+[data-theme="ivory-executive"] #slide-2 .em-label {
+  color: #A6A6A6 !important;
+  font-size: 14.5px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  font-weight: 600 !important;
+}
+
+/* --------------------------------------------------------------------------
+   SLIDE 3: Introduction to the Study (Off-White Slide — Ref "OBJECTIVES")
+   -------------------------------------------------------------------------- */
+[data-theme="white-monochrome"] #slide-3 .card-lead,
+[data-theme="ivory-executive"] #slide-3 .card-lead {
+  color: #555555 !important;
+  font-size: 15.5px !important;
+  margin-bottom: 12px !important;
+}
+
+[data-theme="white-monochrome"] #slide-3 .cycle-pill,
+[data-theme="ivory-executive"] #slide-3 .cycle-pill {
+  background: #F7F7F3 !important;
+  border: 1px solid #E0E0DA !important;
+  border-radius: 6px !important;
+  padding: 8px 12px !important;
+}
+
+[data-theme="white-monochrome"] #slide-3 .c-num,
+[data-theme="ivory-executive"] #slide-3 .c-num {
+  background: #111111 !important;
+  color: #FFFFFF !important;
+  font-family: "Oswald", sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 18px !important;
+  min-width: 34px !important;
+  height: 34px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 4px !important;
+}
+
+[data-theme="white-monochrome"] #slide-3 .c-info strong,
+[data-theme="ivory-executive"] #slide-3 .c-info strong {
+  color: #111111 !important;
+  font-family: "Oswald", sans-serif !important;
+  font-size: 18.5px !important;
+  text-transform: uppercase !important;
+}
+
+[data-theme="white-monochrome"] #slide-3 .c-info span,
+[data-theme="ivory-executive"] #slide-3 .c-info span {
+  color: #555555 !important;
+  font-size: 14.5px !important;
+}
+
+[data-theme="white-monochrome"] #slide-3 .feature-item,
+[data-theme="ivory-executive"] #slide-3 .feature-item {
+  background: #F7F7F3 !important;
+  border: 1px solid #E0E0DA !important;
+  border-radius: 6px !important;
+  padding: 10px 12px !important;
+}
+
+[data-theme="white-monochrome"] #slide-3 .feature-item strong,
+[data-theme="ivory-executive"] #slide-3 .feature-item strong {
+  color: #111111 !important;
+  font-family: "Oswald", sans-serif !important;
+  font-size: 17.5px !important;
+  text-transform: uppercase !important;
+}
+
+[data-theme="white-monochrome"] #slide-3 .feature-item span,
+[data-theme="ivory-executive"] #slide-3 .feature-item span {
+  color: #555555 !important;
+  font-size: 14.5px !important;
+}
+
+[data-theme="white-monochrome"] #slide-3 .checklist-styled li,
+[data-theme="ivory-executive"] #slide-3 .checklist-styled li {
+  background: #F7F7F3 !important;
+  border: 1px solid #E0E0DA !important;
+  border-radius: 6px !important;
+  padding: 10px 14px !important;
+  font-size: 15px !important;
+  line-height: 1.45 !important;
+}
+
+[data-theme="white-monochrome"] #slide-3 .chk,
+[data-theme="ivory-executive"] #slide-3 .chk {
+  background: #111111 !important;
+  color: #FFFFFF !important;
+  border-radius: 4px !important;
+  font-weight: 700 !important;
+  font-size: 17px !important;
+  min-width: 26px !important;
+  height: 26px !important;
+}
+
+[data-theme="white-monochrome"] #slide-3 .checklist-styled strong,
+[data-theme="ivory-executive"] #slide-3 .checklist-styled strong {
+  color: #111111 !important;
+  font-size: 16px !important;
+}
+
+[data-theme="white-monochrome"] #slide-3 .checklist-styled span,
+[data-theme="ivory-executive"] #slide-3 .checklist-styled span {
+  color: #444444 !important;
+}
+
+/* --------------------------------------------------------------------------
+   SLIDE 4: Organisation Profile — SECL (Off-White Slide — Ref "WHO WE ARE!")
+   -------------------------------------------------------------------------- */
+[data-theme="white-monochrome"] #slide-4 .fact-card,
+[data-theme="ivory-executive"] #slide-4 .fact-card {
+  background: #F7F7F3 !important;
+  border: 1px solid #E0E0DA !important;
+  border-radius: 6px !important;
+  padding: 9px 12px !important;
+}
+
+[data-theme="white-monochrome"] #slide-4 .fact-title,
+[data-theme="ivory-executive"] #slide-4 .fact-title {
+  color: #777777 !important;
+  font-size: 13px !important;
+  text-transform: uppercase !important;
+  font-weight: 600 !important;
+}
+
+[data-theme="white-monochrome"] #slide-4 .fact-desc,
+[data-theme="ivory-executive"] #slide-4 .fact-desc {
+  color: #111111 !important;
+  font-weight: 600 !important;
+  font-size: 16px !important;
+}
+
+[data-theme="white-monochrome"] #slide-4 .secl-manpower-stats-box,
+[data-theme="ivory-executive"] #slide-4 .secl-manpower-stats-box {
+  background: #F7F7F3 !important;
+  border: 1px solid #D8D8D2 !important;
+  border-radius: 6px !important;
+}
+
+[data-theme="white-monochrome"] #slide-4 .stats-box-head,
+[data-theme="ivory-executive"] #slide-4 .stats-box-head {
+  border-bottom: 1px solid #D8D8D2 !important;
+  padding: 8px 12px !important;
+}
+
+[data-theme="white-monochrome"] #slide-4 .sb-title,
+[data-theme="ivory-executive"] #slide-4 .sb-title {
+  color: #111111 !important;
+  font-family: "Oswald", sans-serif !important;
+  font-size: 15px !important;
+  text-transform: uppercase !important;
+  font-weight: 700 !important;
+}
+
+[data-theme="white-monochrome"] #slide-4 .sb-pill,
+[data-theme="ivory-executive"] #slide-4 .sb-pill {
+  background: #FFFFFF !important;
+  border: 1px solid #D8D8D2 !important;
+  color: #555555 !important;
+  font-size: 12.5px !important;
+}
+
+[data-theme="white-monochrome"] #slide-4 .sb-stat,
+[data-theme="ivory-executive"] #slide-4 .sb-stat {
+  background: #FFFFFF !important;
+  border: 1px solid #E0E0DA !important;
+  border-radius: 6px !important;
+  padding: 9px 12px !important;
+}
+
+[data-theme="white-monochrome"] #slide-4 .sb-val,
+[data-theme="ivory-executive"] #slide-4 .sb-val {
+  font-family: "Oswald", sans-serif !important;
+  font-size: 28px !important;
+  color: #111111 !important;
+  font-weight: 700 !important;
+}
+
+[data-theme="white-monochrome"] #slide-4 .sb-lbl,
+[data-theme="ivory-executive"] #slide-4 .sb-lbl {
+  color: #303030 !important;
+  font-size: 13.5px !important;
+  font-weight: 500 !important;
+}
+
+[data-theme="white-monochrome"] #slide-4 .sb-sub,
+[data-theme="ivory-executive"] #slide-4 .sb-sub {
+  color: #777777 !important;
+  font-size: 12px !important;
+  text-transform: uppercase !important;
+  font-weight: 600 !important;
+}
+
+[data-theme="white-monochrome"] #slide-4 .coal-reserves-card,
+[data-theme="ivory-executive"] #slide-4 .coal-reserves-card {
+  background: #111111 !important;
+  border: 1px solid #343434 !important;
+  color: #FFFFFF !important;
+  border-radius: 6px !important;
+  padding: 10px 14px !important;
+}
+
+[data-theme="white-monochrome"] #slide-4 .crc-icon,
+[data-theme="ivory-executive"] #slide-4 .crc-icon {
+  background: #222222 !important;
+  border: 1px solid #444444 !important;
+  color: #FFFFFF !important;
+}
+
+[data-theme="white-monochrome"] #slide-4 .crc-label,
+[data-theme="ivory-executive"] #slide-4 .crc-label {
+  color: #A6A6A6 !important;
+  font-family: "Oswald", sans-serif !important;
+  letter-spacing: 0.05em !important;
+  font-size: 13.5px !important;
+}
+
+[data-theme="white-monochrome"] #slide-4 .crc-badge,
+[data-theme="ivory-executive"] #slide-4 .crc-badge {
+  background: #222222 !important;
+  border: 1px solid #444444 !important;
+  color: #FFFFFF !important;
+  font-size: 12.5px !important;
+}
+
+[data-theme="white-monochrome"] #slide-4 .crc-number,
+[data-theme="ivory-executive"] #slide-4 .crc-number {
+  font-family: "Oswald", sans-serif !important;
+  font-size: 24px !important;
+  color: #FFFFFF !important;
+  font-weight: 700 !important;
+}
+
+[data-theme="white-monochrome"] #slide-4 .crc-subtext,
+[data-theme="ivory-executive"] #slide-4 .crc-subtext {
+  color: #A6A6A6 !important;
+  font-size: 13.5px !important;
+}
+
+[data-theme="white-monochrome"] #slide-4 .cadre-group-item,
+[data-theme="ivory-executive"] #slide-4 .cadre-group-item {
+  border-bottom: 1px solid #E0E0DA !important;
+  padding: 6px 0 !important;
+}
+
+[data-theme="white-monochrome"] #slide-4 .cgi-label,
+[data-theme="ivory-executive"] #slide-4 .cgi-label {
+  color: #111111 !important;
+  font-family: "Oswald", sans-serif !important;
+  font-size: 15px !important;
+  text-transform: uppercase !important;
+}
+
+[data-theme="white-monochrome"] #slide-4 .ftag,
+[data-theme="ivory-executive"] #slide-4 .ftag {
+  background: #F7F7F3 !important;
+  border: 1px solid #D8D8D2 !important;
+  color: #111111 !important;
+  border-radius: 4px !important;
+  font-size: 13.5px !important;
+  padding: 4px 10px !important;
+}
+
+[data-theme="white-monochrome"] #slide-4 .ftag-red,
+[data-theme="ivory-executive"] #slide-4 .ftag-red {
+  background: #111111 !important;
+  border-color: #111111 !important;
+  color: #FFFFFF !important;
+}
+
+[data-theme="white-monochrome"] #slide-4 .inner-showcase-img,
+[data-theme="ivory-executive"] #slide-4 .inner-showcase-img {
+  filter: grayscale(100%) contrast(1.15) !important;
+}
+
+[data-theme="white-monochrome"] #slide-4 .image-showcase-box,
+[data-theme="ivory-executive"] #slide-4 .image-showcase-box {
+  border: 1px solid #D8D8D2 !important;
+  border-radius: 8px !important;
+  overflow: hidden !important;
+}
+
+[data-theme="white-monochrome"] #slide-4 .showcase-caption,
+[data-theme="ivory-executive"] #slide-4 .showcase-caption {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border-top: 1px solid #D8D8D2 !important;
+  color: #303030 !important;
+  font-size: 14px !important;
+  line-height: 1.45 !important;
+  padding: 10px 14px !important;
+}
+
+[data-theme="white-monochrome"] #slide-4 .sc-badge,
+[data-theme="ivory-executive"] #slide-4 .sc-badge {
+  background: #111111 !important;
+  color: #FFFFFF !important;
+  font-family: "Oswald", sans-serif !important;
+  font-size: 12.5px !important;
+  text-transform: uppercase !important;
+}
+
+/* --------------------------------------------------------------------------
+   SLIDE 5: Departmental Exposure (Black Slide — Ref "SERVICES")
+   -------------------------------------------------------------------------- */
+[data-theme="white-monochrome"] #slide-5 .four-dept-grid,
+[data-theme="ivory-executive"] #slide-5 .four-dept-grid {
+  gap: 14px !important;
+}
+
+[data-theme="white-monochrome"] #slide-5 .dept-col-card,
+[data-theme="ivory-executive"] #slide-5 .dept-col-card {
+  background: #141414 !important;
+  border: 1px solid #343434 !important;
+  border-radius: 8px !important;
+  padding: 16px !important;
+}
+
+[data-theme="white-monochrome"] #slide-5 .dept-col-header,
+[data-theme="ivory-executive"] #slide-5 .dept-col-header {
+  border-bottom: 1px solid #282828 !important;
+  padding-bottom: 10px !important;
+}
+
+[data-theme="white-monochrome"] #slide-5 .dept-col-badge,
+[data-theme="ivory-executive"] #slide-5 .dept-col-badge {
+  background: #FFFFFF !important;
+  color: #080808 !important;
+  font-family: "Oswald", sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 17px !important;
+  border-radius: 4px !important;
+  padding: 4px 12px !important;
+}
+
+[data-theme="white-monochrome"] #slide-5 .dept-col-duration,
+[data-theme="ivory-executive"] #slide-5 .dept-col-duration {
+  background: #202020 !important;
+  border: 1px solid #343434 !important;
+  color: #A6A6A6 !important;
+  font-size: 13px !important;
+  border-radius: 4px !important;
+  font-weight: 600 !important;
+}
+
+[data-theme="white-monochrome"] #slide-5 .dept-col-title,
+[data-theme="ivory-executive"] #slide-5 .dept-col-title {
+  font-family: "Oswald", sans-serif !important;
+  font-size: 22px !important;
+  color: #FFFFFF !important;
+  text-transform: uppercase !important;
+  margin-top: 8px !important;
+}
+
+[data-theme="white-monochrome"] #slide-5 .dept-col-role,
+[data-theme="ivory-executive"] #slide-5 .dept-col-role {
+  color: #A6A6A6 !important;
+  font-size: 14.5px !important;
+  margin-bottom: 10px !important;
+}
+
+[data-theme="white-monochrome"] #slide-5 .dept-col-bullets li,
+[data-theme="ivory-executive"] #slide-5 .dept-col-bullets li {
+  color: #CCCCCC !important;
+  font-size: 14px !important;
+  line-height: 1.5 !important;
+}
+
+[data-theme="white-monochrome"] #slide-5 .dept-col-bullets strong,
+[data-theme="ivory-executive"] #slide-5 .dept-col-bullets strong {
+  color: #FFFFFF !important;
+}
+
+/* --------------------------------------------------------------------------
+   SLIDE 6: Complete Lifecycle Process (Off-White Slide — Ref "WORK PROCESS")
+   CRYSTAL-CLEAR HIGH VISIBILITY PROCESS FLOWCHART STRIP
+   -------------------------------------------------------------------------- */
+[data-theme="white-monochrome"] #slide-6 .process-flowchart-strip,
+[data-theme="white-monochrome"] #slide-6 .process-flow-strip,
+[data-theme="ivory-executive"] #slide-6 .process-flowchart-strip,
+[data-theme="ivory-executive"] #slide-6 .process-flow-strip {
+  background: #FFFFFF !important;
+  border: 1.5px solid #D8D8D2 !important;
+  border-radius: 8px !important;
+  padding: 10px 14px !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 8px !important;
+}
+
+[data-theme="white-monochrome"] #slide-6 .pfs-step,
+[data-theme="ivory-executive"] #slide-6 .pfs-step {
+  background: #F4F4EE !important;
+  border: 1px solid #D8D8D2 !important;
+  padding: 6px 12px !important;
+  border-radius: 6px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+
+[data-theme="white-monochrome"] #slide-6 .pfs-num,
+[data-theme="ivory-executive"] #slide-6 .pfs-num {
+  background: #111111 !important;
+  color: #FFFFFF !important;
+  font-family: "Oswald", sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 15px !important;
+  min-width: 26px !important;
+  height: 26px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 50% !important;
+  line-height: 26px !important;
+  text-align: center !important;
+  padding: 0 !important;
+}
+
+[data-theme="white-monochrome"] #slide-6 .pfs-label,
+[data-theme="ivory-executive"] #slide-6 .pfs-label {
+  color: #111111 !important;
+  font-family: "Inter", sans-serif !important;
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.01em !important;
+}
+
+[data-theme="white-monochrome"] #slide-6 .pfs-arrow,
+[data-theme="ivory-executive"] #slide-6 .pfs-arrow {
+  color: #e6281b !important;
+  font-size: 18px !important;
+  font-weight: 900 !important;
+}
+
+[data-theme="white-monochrome"] #slide-6 .lifecycle-stepper-box,
+[data-theme="ivory-executive"] #slide-6 .lifecycle-stepper-box {
+  background: #FFFFFF !important;
+  border: 1px solid #D8D8D2 !important;
+  border-radius: 8px !important;
+  padding: 16px !important;
+}
+
+[data-theme="white-monochrome"] #slide-6 .lc-tag,
+[data-theme="ivory-executive"] #slide-6 .lc-tag {
+  background: #111111 !important;
+  color: #FFFFFF !important;
+  font-family: "Oswald", sans-serif !important;
+  font-size: 12.5px !important;
+  text-transform: uppercase !important;
+  padding: 4px 10px !important;
+}
+
+[data-theme="white-monochrome"] #slide-6 .s-step-num,
+[data-theme="ivory-executive"] #slide-6 .s-step-num {
+  background: #F7F7F3 !important;
+  border: 1.5px solid #111111 !important;
+  color: #111111 !important;
+  font-family: "Oswald", sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 17.5px !important;
+  min-width: 30px !important;
+  height: 30px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 50% !important;
+}
+
+[data-theme="white-monochrome"] #slide-6 .highlight-step .s-step-num,
+[data-theme="ivory-executive"] #slide-6 .highlight-step .s-step-num {
+  background: #111111 !important;
+  border-color: #111111 !important;
+  color: #FFFFFF !important;
+}
+
+[data-theme="white-monochrome"] #slide-6 .s-step-info strong,
+[data-theme="ivory-executive"] #slide-6 .s-step-info strong {
+  color: #111111 !important;
+  font-family: "Oswald", sans-serif !important;
+  font-size: 17.5px !important;
+  text-transform: uppercase !important;
+}
+
+[data-theme="white-monochrome"] #slide-6 .s-step-info span,
+[data-theme="ivory-executive"] #slide-6 .s-step-info span {
+  color: #555555 !important;
+  font-size: 14px !important;
+}
+
+[data-theme="white-monochrome"] #slide-6 .s-connector,
+[data-theme="ivory-executive"] #slide-6 .s-connector {
+  background: #D8D8D2 !important;
+}
+
+[data-theme="white-monochrome"] #slide-6 .principle-card,
+[data-theme="ivory-executive"] #slide-6 .principle-card {
+  background: #111111 !important;
+  border: 1px solid #343434 !important;
+  color: #FFFFFF !important;
+  border-radius: 6px !important;
+  padding: 14px 16px !important;
+}
+
+[data-theme="white-monochrome"] #slide-6 .principle-tag,
+[data-theme="ivory-executive"] #slide-6 .principle-tag {
+  background: #FFFFFF !important;
+  color: #111111 !important;
+  font-family: "Oswald", sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 12.5px !important;
+  border-radius: 4px !important;
+  padding: 3px 8px !important;
+}
+
+[data-theme="white-monochrome"] #slide-6 .principle-card p,
+[data-theme="ivory-executive"] #slide-6 .principle-card p {
+  color: #E6E6E6 !important;
+  font-size: 16px !important;
+  line-height: 1.5 !important;
+}
+
+[data-theme="white-monochrome"] #slide-6 .spec-card,
+[data-theme="ivory-executive"] #slide-6 .spec-card {
+  background: #FFFFFF !important;
+  border: 1px solid #D8D8D2 !important;
+  border-radius: 8px !important;
+  padding: 14px 16px !important;
+}
+
+[data-theme="white-monochrome"] #slide-6 .spec-header h4,
+[data-theme="ivory-executive"] #slide-6 .spec-header h4 {
+  color: #111111 !important;
+  font-family: "Oswald", sans-serif !important;
+  font-size: 21px !important;
+  text-transform: uppercase !important;
+}
+
+[data-theme="white-monochrome"] #slide-6 .spec-focus-tag,
+[data-theme="ivory-executive"] #slide-6 .spec-focus-tag {
+  background: #F7F7F3 !important;
+  border: 1px solid #D8D8D2 !important;
+  color: #555555 !important;
+  font-size: 12.5px !important;
+  text-transform: uppercase !important;
+}
+
+[data-theme="white-monochrome"] #slide-6 .bullet-list-styled strong,
+[data-theme="ivory-executive"] #slide-6 .bullet-list-styled strong {
+  color: #111111 !important;
+  font-size: 15px !important;
+}
+
+[data-theme="white-monochrome"] #slide-6 .bullet-list-styled li,
+[data-theme="ivory-executive"] #slide-6 .bullet-list-styled li {
+  color: #444444 !important;
+  font-size: 14px !important;
+  line-height: 1.5 !important;
+}
+
+/* --------------------------------------------------------------------------
+   SLIDE 7: Manpower Planning Linkage (Black Slide — Ref "CONCEPTS")
+   -------------------------------------------------------------------------- */
+[data-theme="white-monochrome"] #slide-7 .mp-q-box,
+[data-theme="ivory-executive"] #slide-7 .mp-q-box {
+  background: #0C0C0C !important;
+  border: 1px solid #282828 !important;
+  border-radius: 6px !important;
+  padding: 10px 12px !important;
+}
+
+[data-theme="white-monochrome"] #slide-7 .mp-q-badge,
+[data-theme="ivory-executive"] #slide-7 .mp-q-badge {
+  background: #FFFFFF !important;
+  color: #080808 !important;
+  font-family: "Oswald", sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 15px !important;
+  text-transform: uppercase !important;
+  border-radius: 4px !important;
+  padding: 3px 10px !important;
+}
+
+[data-theme="white-monochrome"] #slide-7 .mp-q-box p,
+[data-theme="ivory-executive"] #slide-7 .mp-q-box p {
+  color: #E6E6E6 !important;
+  font-size: 15.5px !important;
+  line-height: 1.45 !important;
+}
+
+[data-theme="white-monochrome"] #slide-7 .gap-formula-card,
+[data-theme="ivory-executive"] #slide-7 .gap-formula-card {
+  background: #0C0C0C !important;
+  border: 1px solid #343434 !important;
+  border-radius: 6px !important;
+  padding: 14px 16px !important;
+}
+
+[data-theme="white-monochrome"] #slide-7 .gap-label,
+[data-theme="ivory-executive"] #slide-7 .gap-label {
+  color: #A6A6A6 !important;
+  font-family: "Oswald", sans-serif !important;
+  font-size: 14px !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+}
+
+[data-theme="white-monochrome"] #slide-7 .f-term,
+[data-theme="ivory-executive"] #slide-7 .f-term {
+  background: #181818 !important;
+  border: 1px solid #343434 !important;
+  color: #FFFFFF !important;
+  font-family: "Oswald", sans-serif !important;
+  font-size: 19px !important;
+  text-transform: uppercase !important;
+  border-radius: 4px !important;
+  padding: 6px 14px !important;
+}
+
+[data-theme="white-monochrome"] #slide-7 .f-op,
+[data-theme="ivory-executive"] #slide-7 .f-op {
+  color: #FFFFFF !important;
+  font-weight: 700 !important;
+  font-size: 24px !important;
+}
+
+[data-theme="white-monochrome"] #slide-7 .f-result,
+[data-theme="ivory-executive"] #slide-7 .f-result {
+  background: #FFFFFF !important;
+  color: #080808 !important;
+  font-family: "Oswald", sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 19px !important;
+  text-transform: uppercase !important;
+  border-radius: 4px !important;
+  padding: 6px 14px !important;
+}
+
+[data-theme="white-monochrome"] #slide-7 .formula-note,
+[data-theme="ivory-executive"] #slide-7 .formula-note {
+  color: #A6A6A6 !important;
+  font-size: 14px !important;
+}
+
+[data-theme="white-monochrome"] #slide-7 .secl-routes-box,
+[data-theme="ivory-executive"] #slide-7 .secl-routes-box {
+  background: #0C0C0C !important;
+  border: 1px solid #282828 !important;
+  border-radius: 6px !important;
+  padding: 12px 14px !important;
+}
+
+[data-theme="white-monochrome"] #slide-7 .srb-title,
+[data-theme="ivory-executive"] #slide-7 .srb-title {
+  color: #A6A6A6 !important;
+  font-family: "Oswald", sans-serif !important;
+  font-size: 13.5px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.06em !important;
+}
+
+[data-theme="white-monochrome"] #slide-7 .srb-pill,
+[data-theme="ivory-executive"] #slide-7 .srb-pill {
+  background: #181818 !important;
+  border: 1px solid #343434 !important;
+  color: #E6E6E6 !important;
+  font-size: 14.5px !important;
+  border-radius: 4px !important;
+  padding: 8px 12px !important;
+}
+
+[data-theme="white-monochrome"] #slide-7 .srb-pill strong,
+[data-theme="ivory-executive"] #slide-7 .srb-pill strong {
+  color: #FFFFFF !important;
+  font-size: 15px !important;
+}
+
+/* --------------------------------------------------------------------------
+   SLIDE 8: Internship Work & Learning (Black Slide — Ref "ESTIMATE")
+   -------------------------------------------------------------------------- */
+[data-theme="white-monochrome"] #slide-8 .work-card,
+[data-theme="ivory-executive"] #slide-8 .work-card {
+  background: #0C0C0C !important;
+  border: 1px solid #282828 !important;
+  border-radius: 6px !important;
+}
+
+[data-theme="white-monochrome"] #slide-8 .w-tag,
+[data-theme="ivory-executive"] #slide-8 .w-tag {
+  background: #181818 !important;
+  border-bottom: 1px solid #282828 !important;
+  color: #FFFFFF !important;
+  font-family: "Oswald", sans-serif !important;
+  font-size: 18.5px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.04em !important;
+  padding: 12px 16px !important;
+}
+
+[data-theme="white-monochrome"] #slide-8 .mini-bullets li,
+[data-theme="ivory-executive"] #slide-8 .mini-bullets li {
+  color: #CCCCCC !important;
+  font-size: 14.5px !important;
+  line-height: 1.5 !important;
+}
+
+[data-theme="white-monochrome"] #slide-8 .mini-bullets strong,
+[data-theme="ivory-executive"] #slide-8 .mini-bullets strong {
+  color: #FFFFFF !important;
+  font-size: 15.5px !important;
+}
+
+/* --------------------------------------------------------------------------
+   SLIDE 9: Challenges & Findings (Off-White Slide — Ref "CASE STUDY")
+   -------------------------------------------------------------------------- */
+[data-theme="white-monochrome"] #slide-9 .challenge-item,
+[data-theme="ivory-executive"] #slide-9 .challenge-item {
+  background: #F7F7F3 !important;
+  border: 1px solid #E0E0DA !important;
+  border-radius: 6px !important;
+  padding: 10px 14px !important;
+}
+
+[data-theme="white-monochrome"] #slide-9 .ch-badge,
+[data-theme="ivory-executive"] #slide-9 .ch-badge {
+  background: #111111 !important;
+  color: #FFFFFF !important;
+  font-family: "Oswald", sans-serif !important;
+  font-weight: 700 !important;
+  border-radius: 4px !important;
+  font-size: 17px !important;
+  min-width: 32px !important;
+  height: 32px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+[data-theme="white-monochrome"] #slide-9 .ch-text,
+[data-theme="ivory-executive"] #slide-9 .ch-text {
+  color: #111111 !important;
+  font-size: 16.5px !important;
+  font-weight: 600 !important;
+  line-height: 1.45 !important;
+}
+
+[data-theme="white-monochrome"] #slide-9 .finding-row,
+[data-theme="ivory-executive"] #slide-9 .finding-row {
+  background: #F7F7F3 !important;
+  border: 1px solid #E0E0DA !important;
+  border-radius: 6px !important;
+  padding: 10px 14px !important;
+}
+
+[data-theme="white-monochrome"] #slide-9 .f-num,
+[data-theme="ivory-executive"] #slide-9 .f-num {
+  background: #111111 !important;
+  color: #FFFFFF !important;
+  font-family: "Oswald", sans-serif !important;
+  font-weight: 700 !important;
+  border-radius: 4px !important;
+  font-size: 17px !important;
+  min-width: 32px !important;
+  height: 32px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+[data-theme="white-monochrome"] #slide-9 .f-text,
+[data-theme="ivory-executive"] #slide-9 .f-text {
+  color: #111111 !important;
+  font-size: 16.5px !important;
+  font-weight: 600 !important;
+  line-height: 1.45 !important;
+}
+
+/* --------------------------------------------------------------------------
+   SLIDE 10: HR Analysis & Workforce Dynamics (Black Slide — Ref "ANALYTICAL")
+   -------------------------------------------------------------------------- */
+[data-theme="white-monochrome"] #slide-10 .route-pill,
+[data-theme="ivory-executive"] #slide-10 .route-pill {
+  background: #0C0C0C !important;
+  border: 1px solid #282828 !important;
+  border-radius: 6px !important;
+  padding: 10px 14px !important;
+}
+
+[data-theme="white-monochrome"] #slide-10 .route-pill.route-active,
+[data-theme="ivory-executive"] #slide-10 .route-pill.route-active {
+  background: #181818 !important;
+  border-color: #555555 !important;
+}
+
+[data-theme="white-monochrome"] #slide-10 .route-pill strong,
+[data-theme="ivory-executive"] #slide-10 .route-pill strong {
+  color: #FFFFFF !important;
+  font-family: "Oswald", sans-serif !important;
+  font-size: 17.5px !important;
+  text-transform: uppercase !important;
+}
+
+[data-theme="white-monochrome"] #slide-10 .route-pill span,
+[data-theme="ivory-executive"] #slide-10 .route-pill span {
+  color: #A6A6A6 !important;
+  font-size: 14.5px !important;
+}
+
+[data-theme="white-monochrome"] #slide-10 .kpi-card,
+[data-theme="ivory-executive"] #slide-10 .kpi-card {
+  background: #0C0C0C !important;
+  border: 1px solid #282828 !important;
+  border-radius: 6px !important;
+  padding: 14px !important;
+}
+
+[data-theme="white-monochrome"] #slide-10 .kpi-tag,
+[data-theme="ivory-executive"] #slide-10 .kpi-tag {
+  color: #888888 !important;
+  font-family: "Oswald", sans-serif !important;
+  font-size: 12.5px !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+}
+
+[data-theme="white-monochrome"] #slide-10 .kpi-name,
+[data-theme="ivory-executive"] #slide-10 .kpi-name {
+  color: #FFFFFF !important;
+  font-family: "Oswald", sans-serif !important;
+  font-size: 26px !important;
+  text-transform: uppercase !important;
+}
+
+[data-theme="white-monochrome"] #slide-10 .kpi-desc,
+[data-theme="ivory-executive"] #slide-10 .kpi-desc {
+  color: #CCCCCC !important;
+  font-size: 14.5px !important;
+  line-height: 1.45 !important;
+}
+
+[data-theme="white-monochrome"] #slide-10 .kpi-benchmark,
+[data-theme="ivory-executive"] #slide-10 .kpi-benchmark {
+  background: #181818 !important;
+  border: 1px solid #343434 !important;
+  color: #A6A6A6 !important;
+  font-size: 13.5px !important;
+}
+
+[data-theme="white-monochrome"] #slide-10 .unconfirmed-data-badge,
+[data-theme="ivory-executive"] #slide-10 .unconfirmed-data-badge {
+  background: #282828 !important;
+  color: #FFFFFF !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+}
+
+/* --------------------------------------------------------------------------
+   SLIDE 11: Conclusion (Off-White Slide — Ref "SYNTHESIS")
+   -------------------------------------------------------------------------- */
+[data-theme="white-monochrome"] #slide-11 .conclusion-hero-card,
+[data-theme="ivory-executive"] #slide-11 .conclusion-hero-card {
+  background: #FFFFFF !important;
+  border: 1px solid #D8D8D2 !important;
+  border-radius: 8px !important;
+  padding: 24px !important;
+}
+
+[data-theme="white-monochrome"] #slide-11 .card-meta-tag,
+[data-theme="ivory-executive"] #slide-11 .card-meta-tag {
+  background: #111111 !important;
+  color: #FFFFFF !important;
+  font-family: "Oswald", sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 12.5px !important;
+  text-transform: uppercase !important;
+  border-radius: 4px !important;
+  padding: 4px 10px !important;
+}
+
+[data-theme="white-monochrome"] #slide-11 .conclusion-hero-card h3,
+[data-theme="ivory-executive"] #slide-11 .conclusion-hero-card h3 {
+  font-family: "Oswald", sans-serif !important;
+  font-size: 32px !important;
+  color: #111111 !important;
+  text-transform: uppercase !important;
+}
+
+[data-theme="white-monochrome"] #slide-11 .quote-bar-decor,
+[data-theme="ivory-executive"] #slide-11 .quote-bar-decor {
+  background: #111111 !important;
+  width: 5px !important;
+}
+
+[data-theme="white-monochrome"] #slide-11 .concl-lead-text,
+[data-theme="ivory-executive"] #slide-11 .concl-lead-text {
+  color: #222222 !important;
+  font-size: 21.5px !important;
+  line-height: 1.8 !important;
+  font-weight: 500 !important;
+}
+
+
+/* ==========================================================================
+   MODALS & SPEAKER NOTES DRAWER IN MONOCHROME THEME
+   ========================================================================== */
+[data-theme="white-monochrome"] .modal-card,
+[data-theme="ivory-executive"] .modal-card {
+  background: #080808 !important;
+  border: 1px solid #343434 !important;
+  color: #FFFFFF !important;
+  border-radius: 12px !important;
+}
+
+[data-theme="white-monochrome"] .modal-header,
+[data-theme="ivory-executive"] .modal-header {
+  border-bottom: 1px solid #343434 !important;
+}
+
+[data-theme="white-monochrome"] .modal-title,
+[data-theme="ivory-executive"] .modal-title {
+  font-family: "Oswald", sans-serif !important;
+  font-size: 26px !important;
+  text-transform: uppercase !important;
+  color: #FFFFFF !important;
+}
+
+[data-theme="white-monochrome"] .modal-close-btn,
+[data-theme="ivory-executive"] .modal-close-btn {
+  background: #141414 !important;
+  border: 1px solid #343434 !important;
+  color: #FFFFFF !important;
+}
+
+[data-theme="white-monochrome"] .grid-thumb-card,
+[data-theme="ivory-executive"] .grid-thumb-card {
+  background: #141414 !important;
+  border: 1px solid #343434 !important;
+  color: #FFFFFF !important;
+}
+
+[data-theme="white-monochrome"] .grid-thumb-card.active,
+[data-theme="ivory-executive"] .grid-thumb-card.active {
+  border-color: #FFFFFF !important;
+}
+
+[data-theme="white-monochrome"] .thumb-badge,
+[data-theme="ivory-executive"] .thumb-badge {
+  background: #FFFFFF !important;
+  color: #080808 !important;
+  font-family: "Oswald", sans-serif !important;
+}
+
+[data-theme="white-monochrome"] .thumb-title,
+[data-theme="ivory-executive"] .thumb-title {
+  color: #FFFFFF !important;
+  font-family: "Inter", sans-serif !important;
+}
+
+/* Speaker Notes Drawer */
+[data-theme="white-monochrome"] .speaker-notes-drawer,
+[data-theme="ivory-executive"] .speaker-notes-drawer {
+  background: #080808 !important;
+  border-left: 1px solid #343434 !important;
+  color: #E6E6E6 !important;
+}
+
+[data-theme="white-monochrome"] .notes-header h3,
+[data-theme="ivory-executive"] .notes-header h3 {
+  font-family: "Oswald", sans-serif !important;
+  font-size: 22px !important;
+  text-transform: uppercase !important;
+  color: #FFFFFF !important;
+}
+
+[data-theme="white-monochrome"] .notes-bubble,
+[data-theme="ivory-executive"] .notes-bubble {
+  background: #141414 !important;
+  border: 1px solid #343434 !important;
+  color: #FFFFFF !important;
+  padding: 14px 16px !important;
+}
+
+[data-theme="white-monochrome"] .speech-text,
+[data-theme="ivory-executive"] .speech-text {
+  color: #FFFFFF !important;
+  font-size: 16px !important;
+  line-height: 1.65 !important;
+}
+
+[data-theme="white-monochrome"] .notes-context-box,
+[data-theme="ivory-executive"] .notes-context-box {
+  background: #141414 !important;
+  border: 1px solid #343434 !important;
+  padding: 12px 14px !important;
+}
+
+[data-theme="white-monochrome"] .notes-context-box li,
+[data-theme="ivory-executive"] .notes-context-box li {
+  color: #A6A6A6 !important;
+  font-size: 15.5px !important;
+  line-height: 1.55 !important;
+}
+
+
+/* ==========================================================================
+   BALANCED MASTER TYPOGRAPHY & LAYOUT SYSTEM (PERFECT FIT — NO OVERFLOW)
+   Calibrated for 1920x1080 canvas across Crimson, Blue, and White themes
+   ========================================================================== */
+
+/* --- GLOBAL FONT FIX: ALWAYS USE CLEAN, MODERN, HIGH-LEGIBILITY SANS-SERIF --- */
+.takeaway-callout-strip strong,
+.tcs-content strong,
+.principle-card p,
+.concl-lead-text,
+.card-section-header h3,
+.column-card h3,
+.lifecycle-header h3,
+.lh-title-row h3,
+.spec-header h4,
+.w-tag,
+.f-term,
+.f-result,
+.srb-title,
+.srb-pill,
+.mp-q-badge,
+.ch-text,
+.f-text,
+[data-theme] .takeaway-callout-strip strong,
+[data-theme] .tcs-content strong,
+[data-theme] .principle-card p,
+[data-theme] .concl-lead-text,
+[data-theme] .lifecycle-header h3,
+[data-theme] .lh-title-row h3,
+[data-theme] .w-tag,
+[data-theme] .f-term,
+[data-theme] .f-result,
+[data-theme] .srb-title,
+[data-theme] .srb-pill,
+[data-theme] .mp-q-badge,
+[data-theme] .ch-text,
+[data-theme] .f-text {
+  font-family: 'Plus Jakarta Sans', 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-style: normal !important;
+}
+
+/* ==========================================================================
+   STANDARDIZED PRESENTATION TYPOGRAPHY SYSTEM & AUDITED LAYOUT ARCHITECTURE
+   Design Resolution: 1920 × 1080 (16:9 Projector Optimized)
+   
+   Strict Uniform Hierarchy Across ALL Slides & ALL Themes:
+   - Main Headings:              56px (Line-Height: 1.15) [Min: 40px, slide-4: 50px]
+   - Major Subheadings:          32px (Line-Height: 1.25) [Min: 26px]
+   - Column / Card Subheadings:  26px - 28px (Line-Height: 1.25)
+   - Standard Body Text:         22px (Line-Height: 1.50) [Min: 20px]
+   - Standard Bullet Points:     22px (Line-Height: 1.45) [Min: 20px]
+   - Card Descriptions:          20px (Line-Height: 1.40) [Min: 18px]
+   - Chart Labels & Indicators:  18px (Line-Height: 1.30) [Min: 16px]
+   - Captions, Badges & Tags:    16px (Line-Height: 1.20) [Min: 14px]
+   
+   Universal Cross-Theme Compatibility: Red, Blue, and White
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. MAIN SLIDE HEADINGS (Target: 56px)
+   -------------------------------------------------------------------------- */
+:root .slide-heading,
+:root [data-theme] .slide-heading,
+:root [data-theme="crimson-glow"] .slide-heading,
+:root [data-theme="blue-corporate"] .slide-heading,
+:root [data-theme="white-monochrome"] .slide-heading,
+:root [data-theme="architect-slate"] .slide-heading,
+:root [data-theme="ivory-executive"] .slide-heading,
+:root #slide-1 .slide-heading,
+:root #slide-2 .slide-heading,
+:root #slide-4 .slide-heading,
+:root #slide-5 .slide-heading,
+:root #slide-6 .slide-heading,
+:root #slide-7 .slide-heading,
+:root #slide-8 .slide-heading,
+:root #slide-9 .slide-heading,
+:root #slide-11 .slide-heading,
+:root [data-theme="crimson-glow"] #slide-2 .slide-heading,
+:root [data-theme="crimson-glow"] #slide-5 .slide-heading,
+:root [data-theme="crimson-glow"] #slide-6 .slide-heading,
+:root [data-theme="crimson-glow"] #slide-7 .slide-heading,
+:root [data-theme="crimson-glow"] #slide-8 .slide-heading,
+:root [data-theme="crimson-glow"] #slide-9 .slide-heading,
+:root [data-theme="crimson-glow"] #slide-11 .slide-heading,
+:root [data-theme="blue-corporate"] #slide-2 .slide-heading,
+:root [data-theme="blue-corporate"] #slide-5 .slide-heading,
+:root [data-theme="blue-corporate"] #slide-6 .slide-heading,
+:root [data-theme="blue-corporate"] #slide-7 .slide-heading,
+:root [data-theme="blue-corporate"] #slide-8 .slide-heading,
+:root [data-theme="blue-corporate"] #slide-9 .slide-heading,
+:root [data-theme="blue-corporate"] #slide-11 .slide-heading,
+:root [data-theme="white-monochrome"] #slide-2 .slide-heading,
+:root [data-theme="white-monochrome"] #slide-5 .slide-heading,
+:root [data-theme="white-monochrome"] #slide-6 .slide-heading,
+:root [data-theme="white-monochrome"] #slide-7 .slide-heading,
+:root [data-theme="white-monochrome"] #slide-8 .slide-heading,
+:root [data-theme="white-monochrome"] #slide-9 .slide-heading,
+:root [data-theme="white-monochrome"] #slide-11 .slide-heading {
+  font-family: var(--font-display) !important;
+  font-size: var(--heading-font-size, 56px) !important;
+  font-weight: 800 !important;
+  line-height: var(--line-height-heading, 1.15) !important;
+  letter-spacing: -0.015em !important;
+  text-transform: uppercase !important;
+  margin-bottom: 4px !important;
+}
+
+/* Slide 4 single-line fitting (50px within 40-56px range) */
+:root #slide-4 .slide-heading,
+:root [data-theme] #slide-4 .slide-heading,
+:root [data-theme="crimson-glow"] #slide-4 .slide-heading,
+:root [data-theme="blue-corporate"] #slide-4 .slide-heading,
+:root [data-theme="white-monochrome"] #slide-4 .slide-heading {
+  font-size: 50px !important;
+  white-space: nowrap !important;
+}
+
+/* --------------------------------------------------------------------------
+   2. MAJOR SUBHEADINGS (Target: 32px)
+   -------------------------------------------------------------------------- */
+:root .card-section-header h3,
+:root .column-card h3,
+:root .work-full-panel h3,
+:root .conclusion-hero-card h3,
+:root [data-theme] .card-section-header h3,
+:root [data-theme] .column-card h3,
+:root [data-theme] .work-full-panel h3,
+:root [data-theme] .conclusion-hero-card h3,
+:root [data-theme="crimson-glow"] .card-section-header h3,
+:root [data-theme="crimson-glow"] .column-card h3,
+:root [data-theme="crimson-glow"] .work-full-panel h3,
+:root [data-theme="crimson-glow"] .conclusion-hero-card h3,
+:root [data-theme="blue-corporate"] .card-section-header h3,
+:root [data-theme="blue-corporate"] .column-card h3,
+:root [data-theme="blue-corporate"] .work-full-panel h3,
+:root [data-theme="blue-corporate"] .conclusion-hero-card h3,
+:root [data-theme="white-monochrome"] .card-section-header h3,
+:root [data-theme="white-monochrome"] .column-card h3,
+:root [data-theme="white-monochrome"] .work-full-panel h3,
+:root [data-theme="white-monochrome"] .conclusion-hero-card h3,
+:root #slide-2 .card-section-header h3,
+:root #slide-4 .card-section-header h3,
+:root #slide-7 .card-section-header h3,
+:root #slide-8 .card-section-header h3,
+:root #slide-9 .card-section-header h3,
+:root #slide-11 .conclusion-hero-card h3,
+:root [data-theme="blue-corporate"] #slide-2 .card-section-header h3,
+:root [data-theme="blue-corporate"] #slide-4 .card-section-header h3,
+:root [data-theme="blue-corporate"] #slide-7 .card-section-header h3,
+:root [data-theme="blue-corporate"] #slide-8 .card-section-header h3,
+:root [data-theme="blue-corporate"] #slide-9 .card-section-header h3,
+:root [data-theme="white-monochrome"] #slide-2 .card-section-header h3,
+:root [data-theme="white-monochrome"] #slide-4 .card-section-header h3,
+:root [data-theme="white-monochrome"] #slide-7 .card-section-header h3,
+:root [data-theme="white-monochrome"] #slide-8 .card-section-header h3,
+:root [data-theme="white-monochrome"] #slide-9 .card-section-header h3 {
+  font-family: var(--font-body) !important;
+  font-size: var(--subheading-font-size, 32px) !important;
+  font-weight: 800 !important;
+  line-height: var(--line-height-subheading, 1.25) !important;
+  letter-spacing: -0.01em !important;
+  margin-bottom: 4px !important;
+}
+
+/* Column-level Subheadings in dense 4-column layouts & Process flows */
+:root .dept-col-title,
+:root .lh-title-row h3,
+:root .spec-header h4,
+:root [data-theme] .dept-col-title,
+:root [data-theme] .lh-title-row h3,
+:root [data-theme] .spec-header h4,
+:root [data-theme="crimson-glow"] .dept-col-title,
+:root [data-theme="blue-corporate"] .dept-col-title,
+:root [data-theme="white-monochrome"] .dept-col-title,
+:root #slide-5 .dept-col-title,
+:root #slide-6 .lh-title-row h3,
+:root #slide-6 .spec-header h4,
+:root [data-theme="blue-corporate"] #slide-5 .dept-col-title,
+:root [data-theme="white-monochrome"] #slide-5 .dept-col-title {
+  font-family: var(--font-body) !important;
+  font-size: 26px !important;
+  font-weight: 800 !important;
+  line-height: 1.25 !important;
+  letter-spacing: normal !important;
+  margin-bottom: 4px !important;
+}
+
+/* --------------------------------------------------------------------------
+   3. STANDARD BODY TEXT (Target: 22px, Line-Height: 1.50)
+   -------------------------------------------------------------------------- */
+:root .concl-lead-text,
+:root .principle-card p,
+:root .ch-text,
+:root .f-text,
+:root .formula-equation .f-term,
+:root .formula-equation .f-result,
+:root [data-theme] .concl-lead-text,
+:root [data-theme] .principle-card p,
+:root [data-theme] .ch-text,
+:root [data-theme] .f-text,
+:root [data-theme] .formula-equation .f-term,
+:root [data-theme] .formula-equation .f-result,
+:root [data-theme="crimson-glow"] .concl-lead-text,
+:root [data-theme="crimson-glow"] .principle-card p,
+:root [data-theme="crimson-glow"] .ch-text,
+:root [data-theme="crimson-glow"] .f-text,
+:root [data-theme="blue-corporate"] .concl-lead-text,
+:root [data-theme="blue-corporate"] .principle-card p,
+:root [data-theme="blue-corporate"] .ch-text,
+:root [data-theme="blue-corporate"] .f-text,
+:root [data-theme="blue-corporate"] .f-term,
+:root [data-theme="blue-corporate"] .f-result,
+:root [data-theme="white-monochrome"] .concl-lead-text,
+:root [data-theme="white-monochrome"] .principle-card p,
+:root [data-theme="white-monochrome"] .ch-text,
+:root [data-theme="white-monochrome"] .f-text,
+:root [data-theme="white-monochrome"] .f-term,
+:root [data-theme="white-monochrome"] .f-result,
+:root #slide-6 .principle-card p,
+:root #slide-7 .f-term,
+:root #slide-7 .f-result,
+:root #slide-9 .ch-text,
+:root #slide-9 .f-text,
+:root #slide-11 .concl-lead-text,
+:root [data-theme="blue-corporate"] #slide-6 .principle-card p,
+:root [data-theme="blue-corporate"] #slide-7 .f-term,
+:root [data-theme="blue-corporate"] #slide-7 .f-result,
+:root [data-theme="blue-corporate"] #slide-9 .ch-text,
+:root [data-theme="blue-corporate"] #slide-9 .f-text,
+:root [data-theme="blue-corporate"] #slide-11 .concl-lead-text,
+:root [data-theme="white-monochrome"] #slide-6 .principle-card p,
+:root [data-theme="white-monochrome"] #slide-7 .f-term,
+:root [data-theme="white-monochrome"] #slide-7 .f-result,
+:root [data-theme="white-monochrome"] #slide-9 .ch-text,
+:root [data-theme="white-monochrome"] #slide-9 .f-text,
+:root [data-theme="white-monochrome"] #slide-11 .concl-lead-text {
+  font-family: var(--font-body) !important;
+  font-size: var(--body-font-size, 22px) !important;
+  line-height: var(--line-height-body, 1.50) !important;
+  font-weight: 500 !important;
+  font-style: normal !important;
+  margin: 0 !important;
+}
+
+:root .principle-card p,
+:root .ch-text,
+:root .f-text,
+:root [data-theme] .principle-card p,
+:root [data-theme] .ch-text,
+:root [data-theme] .f-text {
+  font-weight: 600 !important;
+}
+
+:root .concl-lead-text,
+:root [data-theme] .concl-lead-text {
+  line-height: 1.62 !important;
+}
+
+:root #slide-7 .f-term,
+:root [data-theme] #slide-7 .f-term {
+  padding: 8px 16px !important;
+  border-radius: 6px !important;
+  font-weight: 800 !important;
+}
+
+:root #slide-7 .f-result,
+:root [data-theme] #slide-7 .f-result {
+  padding: 8px 18px !important;
+  border-radius: 6px !important;
+  font-weight: 900 !important;
+}
+
+:root #slide-7 .f-op,
+:root [data-theme] #slide-7 .f-op {
+  font-size: 26px !important;
+  font-weight: 900 !important;
+}
+
+/* --------------------------------------------------------------------------
+   4. STANDARD BULLET POINTS (Target: 22px, Line-Height: 1.45)
+   -------------------------------------------------------------------------- */
+:root .dept-col-bullets li,
+:root .bullet-list-styled li,
+:root .mini-bullets li,
+:root [data-theme] .dept-col-bullets li,
+:root [data-theme] .bullet-list-styled li,
+:root [data-theme] .mini-bullets li,
+:root [data-theme="crimson-glow"] .dept-col-bullets li,
+:root [data-theme="crimson-glow"] .bullet-list-styled li,
+:root [data-theme="crimson-glow"] .mini-bullets li,
+:root [data-theme="blue-corporate"] .dept-col-bullets li,
+:root [data-theme="blue-corporate"] .bullet-list-styled li,
+:root [data-theme="blue-corporate"] .mini-bullets li,
+:root [data-theme="white-monochrome"] .dept-col-bullets li,
+:root [data-theme="white-monochrome"] .bullet-list-styled li,
+:root [data-theme="white-monochrome"] .mini-bullets li,
+:root #slide-5 .dept-col-bullets li,
+:root #slide-6 .bullet-list-styled li,
+:root #slide-8 .mini-bullets li,
+:root [data-theme="crimson-glow"] #slide-5 .dept-col-bullets li,
+:root [data-theme="crimson-glow"] #slide-6 .bullet-list-styled li,
+:root [data-theme="crimson-glow"] #slide-8 .mini-bullets li,
+:root [data-theme="blue-corporate"] #slide-5 .dept-col-bullets li,
+:root [data-theme="blue-corporate"] #slide-6 .bullet-list-styled li,
+:root [data-theme="blue-corporate"] #slide-8 .mini-bullets li,
+:root [data-theme="white-monochrome"] #slide-5 .dept-col-bullets li,
+:root [data-theme="white-monochrome"] #slide-6 .bullet-list-styled li,
+:root [data-theme="white-monochrome"] #slide-8 .mini-bullets li {
+  font-family: var(--font-body) !important;
+  font-size: var(--bullet-font-size, 22px) !important;
+  line-height: var(--line-height-body, 1.45) !important;
+  margin-bottom: 3px !important;
+  font-weight: 500 !important;
+}
+
+:root .dept-col-bullets li strong,
+:root .bullet-list-styled li strong,
+:root .mini-bullets li strong,
+:root [data-theme] .dept-col-bullets li strong,
+:root [data-theme] .bullet-list-styled li strong,
+:root [data-theme] .mini-bullets li strong,
+:root [data-theme="crimson-glow"] .dept-col-bullets li strong,
+:root [data-theme="crimson-glow"] .bullet-list-styled li strong,
+:root [data-theme="crimson-glow"] .mini-bullets li strong,
+:root [data-theme="blue-corporate"] .dept-col-bullets li strong,
+:root [data-theme="blue-corporate"] .bullet-list-styled li strong,
+:root [data-theme="blue-corporate"] .mini-bullets li strong,
+:root [data-theme="white-monochrome"] .dept-col-bullets li strong,
+:root [data-theme="white-monochrome"] .bullet-list-styled li strong,
+:root [data-theme="white-monochrome"] .mini-bullets li strong,
+:root #slide-5 .dept-col-bullets li strong,
+:root #slide-6 .bullet-list-styled li strong,
+:root #slide-8 .mini-bullets li strong {
+  font-size: var(--bullet-font-size, 22px) !important;
+  font-weight: 800 !important;
+}
+
+/* --------------------------------------------------------------------------
+   5. CARD DESCRIPTIONS & CONTENT ITEMS (Target: 20px, Line-Height: 1.40)
+   -------------------------------------------------------------------------- */
+:root .fact-desc,
+:root .glance-box .g-value,
+:root .s-step-info span,
+:root .s-step-info strong,
+:root .mp-q-box p,
+:root .srb-pill,
+:root .srb-pill strong,
+:root .showcase-caption span,
+:root .exec-portrait-caption .epc-text,
+:root .crc-subtext,
+:root .takeaway-callout-strip .tcs-content span,
+:root .takeaway-callout-strip .tcs-content strong,
+:root .tcs-content span,
+:root .tcs-content strong,
+:root .concl-takeaway-card span,
+:root .concl-takeaway-card strong,
+:root [data-theme] .fact-desc,
+:root [data-theme] .glance-box .g-value,
+:root [data-theme] .s-step-info span,
+:root [data-theme] .s-step-info strong,
+:root [data-theme] .mp-q-box p,
+:root [data-theme] .srb-pill,
+:root [data-theme] .srb-pill strong,
+:root [data-theme] .showcase-caption span,
+:root [data-theme] .exec-portrait-caption .epc-text,
+:root [data-theme] .crc-subtext,
+:root [data-theme] .takeaway-callout-strip .tcs-content span,
+:root [data-theme] .takeaway-callout-strip .tcs-content strong,
+:root [data-theme] .tcs-content span,
+:root [data-theme] .tcs-content strong,
+:root [data-theme] .concl-takeaway-card span,
+:root [data-theme] .concl-takeaway-card strong,
+:root [data-theme="crimson-glow"] .fact-desc,
+:root [data-theme="crimson-glow"] .glance-box .g-value,
+:root [data-theme="crimson-glow"] .s-step-info span,
+:root [data-theme="crimson-glow"] .mp-q-box p,
+:root [data-theme="crimson-glow"] .srb-pill,
+:root [data-theme="crimson-glow"] .tcs-content span,
+:root [data-theme="blue-corporate"] .fact-desc,
+:root [data-theme="blue-corporate"] .glance-box .g-value,
+:root [data-theme="blue-corporate"] .s-step-info span,
+:root [data-theme="blue-corporate"] .mp-q-box p,
+:root [data-theme="blue-corporate"] .srb-pill,
+:root [data-theme="blue-corporate"] .showcase-caption span,
+:root [data-theme="blue-corporate"] .epc-text,
+:root [data-theme="blue-corporate"] .crc-subtext,
+:root [data-theme="blue-corporate"] .tcs-content span,
+:root [data-theme="blue-corporate"] .concl-takeaway-card span,
+:root [data-theme="white-monochrome"] .fact-desc,
+:root [data-theme="white-monochrome"] .glance-box .g-value,
+:root [data-theme="white-monochrome"] .s-step-info span,
+:root [data-theme="white-monochrome"] .mp-q-box p,
+:root [data-theme="white-monochrome"] .srb-pill,
+:root [data-theme="white-monochrome"] .showcase-caption span,
+:root [data-theme="white-monochrome"] .epc-text,
+:root [data-theme="white-monochrome"] .crc-subtext,
+:root [data-theme="white-monochrome"] .tcs-content span,
+:root [data-theme="white-monochrome"] .concl-takeaway-card span,
+:root #slide-2 .g-value,
+:root #slide-2 .tcs-content span,
+:root #slide-2 .tcs-content strong,
+:root #slide-2 .epc-text,
+:root #slide-4 .fact-desc,
+:root #slide-4 .crc-subtext,
+:root #slide-4 .showcase-caption span,
+:root #slide-5 .tcs-content span,
+:root #slide-5 .tcs-content strong,
+:root #slide-6 .s-step-info span,
+:root #slide-6 .s-step-info strong,
+:root #slide-6 .tcs-content span,
+:root #slide-6 .tcs-content strong,
+:root #slide-7 .mp-q-box p,
+:root #slide-7 .srb-pill,
+:root #slide-7 .tcs-content span,
+:root #slide-7 .tcs-content strong,
+:root #slide-8 .tcs-content span,
+:root #slide-8 .tcs-content strong,
+:root #slide-11 .concl-takeaway-card strong,
+:root #slide-11 .concl-takeaway-card span {
+  font-family: var(--font-body) !important;
+  font-size: var(--card-body-font-size, 20px) !important;
+  line-height: var(--line-height-card, 1.40) !important;
+}
+
+:root .fact-desc,
+:root [data-theme] .fact-desc {
+  font-weight: 600 !important;
+}
+
+:root .glance-box .g-value,
+:root [data-theme] .glance-box .g-value {
+  font-weight: 700 !important;
+}
+
+:root .tcs-content strong,
+:root .srb-pill strong,
+:root .concl-takeaway-card strong,
+:root [data-theme] .tcs-content strong,
+:root [data-theme] .srb-pill strong,
+:root [data-theme] .concl-takeaway-card strong {
+  font-weight: 800 !important;
+  display: block !important;
+  margin-bottom: 2px !important;
+}
+
+:root .tcs-content span,
+:root .srb-pill,
+:root .concl-takeaway-card span,
+:root [data-theme] .tcs-content span,
+:root [data-theme] .srb-pill,
+:root [data-theme] .concl-takeaway-card span {
+  font-weight: 500 !important;
+}
+
+/* --------------------------------------------------------------------------
+   6. CHART LABELS, DATA POINTS & NUMBERS (Target: 18px)
+   -------------------------------------------------------------------------- */
+:root .g-label,
+:root .em-label,
+:root .fact-title,
+:root .sb-title,
+:root .sb-lbl,
+:root .crc-label,
+:root .cgi-label,
+:root .dept-col-role,
+:root .pfs-label,
+:root .gap-label,
+:root .formula-note,
+:root .srb-title,
+:root [data-theme] .g-label,
+:root [data-theme] .em-label,
+:root [data-theme] .fact-title,
+:root [data-theme] .sb-title,
+:root [data-theme] .sb-lbl,
+:root [data-theme] .crc-label,
+:root [data-theme] .cgi-label,
+:root [data-theme] .dept-col-role,
+:root [data-theme] .pfs-label,
+:root [data-theme] .gap-label,
+:root [data-theme] .formula-note,
+:root [data-theme] .srb-title,
+:root [data-theme="crimson-glow"] .g-label,
+:root [data-theme="crimson-glow"] .em-label,
+:root [data-theme="crimson-glow"] .fact-title,
+:root [data-theme="blue-corporate"] .g-label,
+:root [data-theme="blue-corporate"] .em-label,
+:root [data-theme="blue-corporate"] .fact-title,
+:root [data-theme="blue-corporate"] .sb-title,
+:root [data-theme="blue-corporate"] .sb-lbl,
+:root [data-theme="blue-corporate"] .crc-label,
+:root [data-theme="blue-corporate"] .dept-col-role,
+:root [data-theme="blue-corporate"] .pfs-label,
+:root [data-theme="blue-corporate"] .gap-label,
+:root [data-theme="blue-corporate"] .srb-title,
+:root [data-theme="white-monochrome"] .g-label,
+:root [data-theme="white-monochrome"] .em-label,
+:root [data-theme="white-monochrome"] .fact-title,
+:root [data-theme="white-monochrome"] .sb-title,
+:root [data-theme="white-monochrome"] .sb-lbl,
+:root [data-theme="white-monochrome"] .crc-label,
+:root [data-theme="white-monochrome"] .dept-col-role,
+:root [data-theme="white-monochrome"] .pfs-label,
+:root [data-theme="white-monochrome"] .gap-label,
+:root [data-theme="white-monochrome"] .srb-title,
+:root #slide-2 .g-label,
+:root #slide-2 .em-label,
+:root #slide-4 .fact-title,
+:root #slide-4 .sb-title,
+:root #slide-4 .sb-lbl,
+:root #slide-4 .crc-label,
+:root #slide-4 .cgi-label,
+:root #slide-5 .dept-col-role,
+:root #slide-6 .pfs-label,
+:root #slide-7 .gap-label,
+:root #slide-7 .formula-note,
+:root #slide-7 .srb-title {
+  font-family: var(--font-body) !important;
+  font-size: var(--chart-label-font-size, 18px) !important;
+  line-height: 1.30 !important;
+}
+
+:root .g-label,
+:root .em-label,
+:root .fact-title,
+:root .sb-title,
+:root .crc-label,
+:root .cgi-label,
+:root .gap-label,
+:root .srb-title,
+:root [data-theme] .g-label,
+:root [data-theme] .em-label,
+:root [data-theme] .fact-title,
+:root [data-theme] .sb-title,
+:root [data-theme] .crc-label,
+:root [data-theme] .cgi-label,
+:root [data-theme] .gap-label,
+:root [data-theme] .srb-title {
+  font-weight: 800 !important;
+}
+
+:root .dept-col-role,
+:root .pfs-label,
+:root [data-theme] .dept-col-role,
+:root [data-theme] .pfs-label {
+  font-weight: 700 !important;
+}
+
+:root .sb-lbl,
+:root .formula-note,
+:root [data-theme] .sb-lbl,
+:root [data-theme] .formula-note {
+  font-weight: 500 !important;
+}
+
+/* Step Badges and Numbers */
+:root .pfs-num,
+:root .s-step-num,
+:root .mp-q-badge,
+:root [data-theme] .pfs-num,
+:root [data-theme] .s-step-num,
+:root [data-theme] .mp-q-badge,
+:root [data-theme="blue-corporate"] .pfs-num,
+:root [data-theme="blue-corporate"] .s-step-num,
+:root [data-theme="white-monochrome"] .pfs-num,
+:root [data-theme="white-monochrome"] .s-step-num {
+  font-family: var(--font-body) !important;
+  font-size: 16px !important;
+  font-weight: 800 !important;
+}
+
+:root .ch-badge,
+:root .f-num,
+:root .dept-col-badge,
+:root .w-tag,
+:root [data-theme] .ch-badge,
+:root [data-theme] .f-num,
+:root [data-theme] .dept-col-badge,
+:root [data-theme] .w-tag,
+:root [data-theme="blue-corporate"] .ch-badge,
+:root [data-theme="blue-corporate"] .f-num,
+:root [data-theme="blue-corporate"] .dept-col-badge,
+:root [data-theme="blue-corporate"] .w-tag,
+:root [data-theme="white-monochrome"] .ch-badge,
+:root [data-theme="white-monochrome"] .f-num,
+:root [data-theme="white-monochrome"] .dept-col-badge,
+:root [data-theme="white-monochrome"] .w-tag {
+  font-family: var(--font-body) !important;
+  font-size: 20px !important;
+  font-weight: 800 !important;
+}
+
+:root .step-node .step-title,
+:root [data-theme] .step-node .step-title {
+  font-family: var(--font-body) !important;
+  font-size: 18px !important;
+  font-weight: 800 !important;
+}
+
+:root .step-node .step-subtext,
+:root [data-theme] .step-node .step-subtext {
+  font-family: var(--font-body) !important;
+  font-size: 16px !important;
+}
+
+:root .ftag,
+:root [data-theme] .ftag {
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  padding: 2px 7px !important;
+}
+
+/* Large Numerical Callout Numbers */
+:root #slide-2 .em-val,
+:root [data-theme] #slide-2 .em-val {
+  font-family: var(--font-display) !important;
+  font-size: 46px !important;
+  font-weight: 900 !important;
+  line-height: 1 !important;
+}
+
+:root #slide-4 .sb-val,
+:root [data-theme] #slide-4 .sb-val,
+:root #slide-4 .crc-number,
+:root [data-theme] #slide-4 .crc-number {
+  font-family: var(--font-display) !important;
+  font-size: 26px !important;
+  font-weight: 800 !important;
+}
+
+/* --------------------------------------------------------------------------
+   7. CAPTIONS, BADGES, TAGS & FOOTERS (Target: 16px)
+   -------------------------------------------------------------------------- */
+:root .section-tag,
+:root .pill-badge,
+:root .sub-caption,
+:root .slide-status-text,
+:root .card-meta-tag,
+:root .dept-col-duration,
+:root .crc-badge,
+:root .sc-badge,
+:root .epc-tag,
+:root .sb-pill,
+:root .sb-sub,
+:root .spec-focus-tag,
+:root .principle-tag,
+:root .step-badge,
+:root .step-days,
+:root [data-theme] .section-tag,
+:root [data-theme] .pill-badge,
+:root [data-theme] .sub-caption,
+:root [data-theme] .slide-status-text,
+:root [data-theme] .card-meta-tag,
+:root [data-theme] .dept-col-duration,
+:root [data-theme] .crc-badge,
+:root [data-theme] .sc-badge,
+:root [data-theme] .epc-tag,
+:root [data-theme] .sb-pill,
+:root [data-theme] .sb-sub,
+:root [data-theme] .spec-focus-tag,
+:root [data-theme] .principle-tag,
+:root [data-theme] .step-badge,
+:root [data-theme] .step-days,
+:root [data-theme="crimson-glow"] .section-tag,
+:root [data-theme="crimson-glow"] .pill-badge,
+:root [data-theme="blue-corporate"] .section-tag,
+:root [data-theme="blue-corporate"] .pill-badge,
+:root [data-theme="blue-corporate"] .sub-caption,
+:root [data-theme="white-monochrome"] .section-tag,
+:root [data-theme="white-monochrome"] .pill-badge,
+:root [data-theme="white-monochrome"] .sub-caption {
+  font-family: var(--font-body) !important;
+  font-size: var(--caption-font-size, 16px) !important;
+  line-height: 1.20 !important;
+}
+
+:root .section-tag,
+:root [data-theme] .section-tag {
+  font-size: 16px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.08em !important;
+  padding: 4px 12px !important;
+}
+
+:root .pill-badge,
+:root [data-theme] .pill-badge {
+  font-size: 15.5px !important;
+  font-weight: 700 !important;
+  padding: 4px 12px !important;
+}
+
+:root .sub-caption,
+:root [data-theme] .sub-caption {
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  line-height: 1.35 !important;
+}
+
+:root .takeaway-callout-strip .tcs-icon,
+:root [data-theme] .takeaway-callout-strip .tcs-icon {
+  font-size: 24px !important;
+}
+
+/* --------------------------------------------------------------------------
+   8. SLIDE-SPECIFIC AUDITED LAYOUTS & OVERFLOW PREVENTION (1920 × 1080)
+   -------------------------------------------------------------------------- */
+
+/* Slide 2: Executive Summary */
+#slide-2 {
+  padding: 10px 36px 8px 36px !important;
+}
+#slide-2 .column-card {
+  padding: 18px 22px !important;
+}
+#slide-2 .glance-grid {
+  gap: 8px !important;
+  margin-top: 6px !important;
+  margin-bottom: 6px !important;
+}
+#slide-2 .stepper-horizontal {
+  gap: 6px !important;
+  margin: 6px 0 !important;
+}
+
+/* Slide 3 (in HTML #slide-4): Organisation Profile — SECL */
+#slide-4 {
+  padding: 6px 36px 6px 36px !important;
+}
+#slide-4 .slide-header-bar {
+  margin-bottom: 5px !important;
+  padding-bottom: 2px !important;
+}
+#slide-4 .card-section-header {
+  margin-bottom: 2px !important;
+}
+#slide-4 .card-section-header h3 {
+  margin-bottom: 2px !important;
+}
+#slide-4 .profile-left-column {
+  padding: 8px 12px !important;
+}
+#slide-4 .profile-left-stack {
+  gap: 2px !important;
+}
+#slide-4 .secl-fact-grid {
+  gap: 3px !important;
+  margin: 2px 0 !important;
+}
+#slide-4 .fact-card {
+  padding: 3px 6px !important;
+}
+#slide-4 .secl-manpower-stats-box {
+  padding: 4px 6px !important;
+  margin: 2px 0 !important;
+}
+#slide-4 .sb-grid {
+  gap: 4px !important;
+}
+#slide-4 .coal-reserves-card {
+  padding: 3px 6px !important;
+  margin: 2px 0 !important;
+}
+#slide-4 .cadres-grouped-container {
+  gap: 2px !important;
+  margin-top: 2px !important;
+}
+#slide-4 .cadre-group-item {
+  padding: 2px 0 !important;
+}
+#slide-4 .cgi-tags {
+  gap: 3px !important;
+}
+#slide-4 .crc-sub-pill {
+  padding: 3px 6px !important;
+}
+#slide-4 .right-column-vision {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 12px !important;
+  height: 100% !important;
+  box-sizing: border-box !important;
+}
+#slide-4 .image-showcase-box {
+  flex: 1 !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  display: flex !important;
+  flex-direction: column !important;
+  overflow: hidden !important;
+  position: relative !important;
+}
+#slide-4 .showcase-caption {
+  padding: 6px 12px 8px 12px !important;
+  line-height: 1.32 !important;
+}
+
+/* Slide 4 (in HTML #slide-5): Departmental Exposure (4 Columns) */
+#slide-5 {
+  padding: 8px 36px 8px 36px !important;
+}
+#slide-5 .slide-header-bar {
+  margin-bottom: 6px !important;
+  padding-bottom: 2px !important;
+}
+#slide-5 .four-dept-grid,
+[data-theme] #slide-5 .four-dept-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 12px !important;
+  flex: 1 !important;
+  min-height: 0 !important;
+  align-items: stretch !important;
+  margin-bottom: 4px !important;
+}
+#slide-5 .dept-col-card,
+[data-theme] #slide-5 .dept-col-card {
+  padding: 12px 10px !important;
+  border-radius: 10px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100% !important;
+  box-sizing: border-box !important;
+  justify-content: flex-start !important;
+}
+#slide-5 .dept-col-bullets,
+[data-theme] #slide-5 .dept-col-bullets {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 4px !important;
+  margin: 0 !important;
+  padding-left: 16px !important;
+}
+#slide-5 .takeaway-callout-strip,
+[data-theme] #slide-5 .takeaway-callout-strip {
+  padding: 8px 14px !important;
+  margin-top: auto !important;
+}
+
+/* Slide 5 (in HTML #slide-6): Recruitment & Selection Process */
+#slide-6 {
+  padding: 14px 36px 12px 36px !important;
+}
+#slide-6 .slide-header-bar {
+  margin-bottom: 6px !important;
+  padding-bottom: 2px !important;
+}
+#slide-6 .process-flowchart-strip,
+[data-theme] #slide-6 .process-flowchart-strip {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding: 4px 8px !important;
+  margin-bottom: 6px !important;
+  gap: 4px !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+#slide-6 .pfs-step,
+[data-theme] #slide-6 .pfs-step {
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  padding: 2px 6px !important;
+  border-radius: 4px !important;
+  white-space: nowrap !important;
+}
+#slide-6 .lifecycle-stepper-box,
+[data-theme] #slide-6 .lifecycle-stepper-box {
+  padding: 6px 8px !important;
+  gap: 2px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  height: 100% !important;
+  box-sizing: border-box !important;
+}
+#slide-6 .step-bar-item,
+[data-theme] #slide-6 .step-bar-item {
+  padding: 2px 5px !important;
+  gap: 5px !important;
+  border-radius: 5px !important;
+}
+#slide-6 .s-connector,
+[data-theme] #slide-6 .s-connector {
+  height: 2px !important;
+  margin-left: 14px !important;
+}
+#slide-6 .analysis-spec-box,
+[data-theme] #slide-6 .analysis-spec-box {
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100% !important;
+  justify-content: space-between !important;
+  gap: 6px !important;
+  box-sizing: border-box !important;
+}
+#slide-6 .principle-card,
+[data-theme] #slide-6 .principle-card {
+  padding: 6px 10px !important;
+  border-radius: 8px !important;
+}
+#slide-6 .spec-grid,
+[data-theme] #slide-6 .spec-grid {
+  gap: 4px !important;
+  flex: 1 !important;
+}
+#slide-6 .spec-card,
+[data-theme] #slide-6 .spec-card {
+  padding: 6px 10px !important;
+  gap: 3px !important;
+  border-radius: 8px !important;
+}
+#slide-6 .takeaway-callout-strip,
+[data-theme] #slide-6 .takeaway-callout-strip {
+  padding: 6px 12px !important;
+  margin-top: 2px !important;
+}
+
+/* Slide 6 (in HTML #slide-7): Manpower Planning Linkage */
+#slide-7 {
+  padding: 10px 36px 8px 36px !important;
+}
+#slide-7 .manpower-layout,
+[data-theme] #slide-7 .manpower-layout {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 16px !important;
+  flex: 1 !important;
+  min-height: 0 !important;
+  align-items: stretch !important;
+}
+#slide-7 .mp-left-col,
+#slide-7 .mp-right-col,
+[data-theme] #slide-7 .mp-left-col,
+[data-theme] #slide-7 .mp-right-col {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  height: 100% !important;
+  padding: 16px 20px !important;
+  border-radius: 10px !important;
+  box-sizing: border-box !important;
+}
+#slide-7 .mp-questions-grid,
+[data-theme] #slide-7 .mp-questions-grid {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 8px !important;
+  margin-top: 6px !important;
+  margin-bottom: 8px !important;
+}
+#slide-7 .mp-q-box,
+[data-theme] #slide-7 .mp-q-box {
+  padding: 10px 12px !important;
+  gap: 6px !important;
+  border-radius: 8px !important;
+}
+#slide-7 .gap-formula-card,
+[data-theme] #slide-7 .gap-formula-card {
+  padding: 10px 14px !important;
+  margin-top: 6px !important;
+  margin-bottom: 8px !important;
+  border-radius: 8px !important;
+}
+#slide-7 .srb-pill,
+[data-theme] #slide-7 .srb-pill {
+  padding: 6px 12px !important;
+  border-radius: 6px !important;
+  margin-bottom: 4px !important;
+  display: block !important;
+}
+
+/* Slide 7 (in HTML #slide-8): Internship Work & Practical Learning */
+#slide-8 {
+  padding: 8px 36px 8px 36px !important;
+}
+#slide-8 .slide-header-bar {
+  margin-bottom: 6px !important;
+  padding-bottom: 2px !important;
+}
+#slide-8 .card-section-header {
+  margin-bottom: 2px !important;
+}
+#slide-8 .card-section-header h3 {
+  margin-bottom: 2px !important;
+}
+#slide-8 .work-full-panel,
+[data-theme] #slide-8 .work-full-panel {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  height: 100% !important;
+  padding: 6px 12px !important;
+  border-radius: 10px !important;
+  box-sizing: border-box !important;
+}
+#slide-8 .work-full-grid,
+[data-theme] #slide-8 .work-full-grid {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 6px !important;
+  margin-top: 2px !important;
+  margin-bottom: 2px !important;
+  flex: 1 !important;
+}
+#slide-8 .work-card,
+[data-theme] #slide-8 .work-card {
+  padding: 6px 10px !important;
+  border-radius: 10px !important;
+  gap: 2px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+  height: 100% !important;
+  box-sizing: border-box !important;
+}
+#slide-8 .w-header {
+  margin-bottom: 2px !important;
+}
+#slide-8 .mini-bullets,
+[data-theme] #slide-8 .mini-bullets {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 2px !important;
+  margin: 0 !important;
+  padding-left: 14px !important;
+}
+#slide-8 .mini-bullets li {
+  line-height: 1.35 !important;
+}
+#slide-8 .takeaway-callout-strip,
+[data-theme] #slide-8 .takeaway-callout-strip {
+  padding: 5px 10px !important;
+  margin-top: 2px !important;
+}
+
+/* Slide 8 (in HTML #slide-9): Challenges & Key Findings */
+#slide-9 {
+  padding: 10px 36px 8px 36px !important;
+}
+#slide-9 .two-column-balanced,
+[data-theme] #slide-9 .two-column-balanced {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 16px !important;
+  flex: 1 !important;
+  min-height: 0 !important;
+  align-items: stretch !important;
+}
+#slide-9 .column-card,
+[data-theme] #slide-9 .column-card {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+  padding: 16px 20px !important;
+  border-radius: 10px !important;
+  box-sizing: border-box !important;
+  height: 100% !important;
+}
+#slide-9 .challenges-stack,
+#slide-9 .findings-list,
+[data-theme] #slide-9 .challenges-stack,
+[data-theme] #slide-9 .findings-list {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 8px !important;
+  margin-top: 8px !important;
+  margin-bottom: 0 !important;
+  flex: 1 !important;
+  justify-content: space-between !important;
+}
+#slide-9 .challenge-item,
+#slide-9 .finding-row,
+[data-theme] #slide-9 .challenge-item,
+[data-theme] #slide-9 .finding-row {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  padding: 10px 16px !important;
+  border-radius: 8px !important;
+  box-sizing: border-box !important;
+}
+
+/* Slide 9 (in HTML #slide-11): Executive Conclusion */
+#slide-11 {
+  padding: 20px 36px !important;
+}
+#slide-11 .slide-content-layout {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  flex: 1 !important;
+}
+#slide-11 .conclusion-hero-card,
+[data-theme] #slide-11 .conclusion-hero-card {
+  padding: 36px 44px !important;
+  border-radius: 14px !important;
+  margin: auto 0 !important;
+}
+#slide-11 .conclusion-narrative-body,
+[data-theme] #slide-11 .conclusion-narrative-body {
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 20px !important;
+  margin-top: 16px !important;
+}
+
+/* --------------------------------------------------------------------------
+   9. CROSS-THEME HIGH CONTRAST & COLOR PRESERVATION
+   -------------------------------------------------------------------------- */
+
+/* Theme 1: Crimson Glow (Default Red Theme) */
+[data-theme="crimson-glow"] .takeaway-callout-strip strong { color: #ff5247 !important; }
+[data-theme="crimson-glow"] .takeaway-callout-strip span { color: #f1f5f9 !important; }
+[data-theme="crimson-glow"] #slide-5 .dept-col-card {
+  background: #141722 !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+[data-theme="crimson-glow"] #slide-5 .dept-col-badge {
+  background: #e6281b !important;
+  color: #ffffff !important;
+}
+[data-theme="crimson-glow"] #slide-7 .f-term {
+  background: rgba(255, 255, 255, 0.06) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  color: #f1f5f9 !important;
+}
+[data-theme="crimson-glow"] #slide-7 .f-result {
+  background: rgba(230, 40, 27, 0.18) !important;
+  border: 1.5px solid #e6281b !important;
+  color: #ffffff !important;
+}
+[data-theme="crimson-glow"] #slide-9 .column-card,
+[data-theme="crimson-glow"] #slide-9 .glass-panel {
+  background: rgba(14, 16, 22, 0.95) !important;
+  border: 1px solid rgba(255, 75, 43, 0.25) !important;
+}
+[data-theme="crimson-glow"] #slide-9 .card-section-header h3,
+[data-theme="crimson-glow"] #slide-9.slide-light .card-section-header h3,
+#slide-9.slide-light .card-section-header h3,
+:root #slide-9 .card-section-header h3,
+#slide-9 .card-section-header h3 {
+  color: #ffffff !important;
+  text-shadow: 0 0 16px rgba(255, 75, 43, 0.35) !important;
+}
+[data-theme="crimson-glow"] #slide-9 .card-section-header .icon-circle,
+:root #slide-9 .card-section-header .icon-circle,
+#slide-9 .card-section-header .icon-circle {
+  background: rgba(230, 40, 27, 0.2) !important;
+  border: 1.5px solid rgba(255, 75, 43, 0.5) !important;
+  color: #ff5247 !important;
+  box-shadow: 0 0 12px rgba(230, 40, 27, 0.3) !important;
+}
+[data-theme="crimson-glow"] #slide-9 .card-section-header .icon-circle svg,
+:root #slide-9 .card-section-header .icon-circle svg,
+#slide-9 .card-section-header .icon-circle svg {
+  stroke: #ff5247 !important;
+}
+[data-theme="crimson-glow"] #slide-9 .challenge-item,
+[data-theme="crimson-glow"] #slide-9 .finding-row {
+  background: #141722 !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+[data-theme="crimson-glow"] #slide-9 .ch-badge,
+[data-theme="crimson-glow"] #slide-9 .f-num {
+  background: #e6281b !important;
+  color: #ffffff !important;
+}
+[data-theme="crimson-glow"] #slide-9 .ch-text,
+[data-theme="crimson-glow"] #slide-9 .f-text {
+  color: #ffffff !important;
+}
+
+/* Theme 2: Blue Corporate (Corporate Navy/Blue Theme) */
+[data-theme="blue-corporate"] .takeaway-callout-strip strong { color: #2563eb !important; }
+[data-theme="blue-corporate"] .takeaway-callout-strip span { color: #1e293b !important; }
+[data-theme="blue-corporate"] #slide-5 .dept-col-card {
+  background: #ffffff !important;
+  border: 1.5px solid #bfdbfe !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05) !important;
+}
+[data-theme="blue-corporate"] #slide-5 .dept-col-badge {
+  background: #2563eb !important;
+  color: #ffffff !important;
+}
+[data-theme="blue-corporate"] #slide-5 .dept-col-title {
+  color: #0f172a !important;
+}
+[data-theme="blue-corporate"] #slide-5 .dept-col-role {
+  color: #2563eb !important;
+}
+[data-theme="blue-corporate"] #slide-5 .dept-col-bullets li {
+  color: #1e293b !important;
+}
+[data-theme="blue-corporate"] #slide-5 .dept-col-bullets li strong {
+  color: #0f172a !important;
+}
+[data-theme="blue-corporate"] #slide-6 .process-flowchart-strip {
+  background: #ffffff !important;
+  border: 1.5px solid #bfdbfe !important;
+}
+[data-theme="blue-corporate"] #slide-6 .pfs-num {
+  background: #2563eb !important;
+  color: #ffffff !important;
+}
+[data-theme="blue-corporate"] #slide-6 .lifecycle-stepper-box,
+[data-theme="blue-corporate"] #slide-6 .spec-card {
+  background: #ffffff !important;
+  border: 1.5px solid #bfdbfe !important;
+}
+[data-theme="blue-corporate"] #slide-6 .s-step-num {
+  background: #2563eb !important;
+  color: #ffffff !important;
+}
+[data-theme="blue-corporate"] #slide-6 .s-step-info strong {
+  color: #0f172a !important;
+}
+[data-theme="blue-corporate"] #slide-6 .s-step-info span {
+  color: #334155 !important;
+}
+[data-theme="blue-corporate"] #slide-6 .principle-card {
+  background: #f0f7ff !important;
+  border: 1.5px solid #93c5fd !important;
+}
+[data-theme="blue-corporate"] #slide-6 .principle-card p {
+  color: #0f172a !important;
+}
+[data-theme="blue-corporate"] #slide-6 .bullet-list-styled li {
+  color: #1e293b !important;
+}
+[data-theme="blue-corporate"] #slide-6 .bullet-list-styled li strong {
+  color: #0f172a !important;
+}
+[data-theme="blue-corporate"] #slide-7 .mp-left-col,
+[data-theme="blue-corporate"] #slide-7 .mp-right-col,
+[data-theme="blue-corporate"] #slide-7 .gap-formula-card {
+  background: #ffffff !important;
+  border: 1.5px solid #bfdbfe !important;
+}
+[data-theme="blue-corporate"] #slide-7 .mp-q-box {
+  background: #f0f7ff !important;
+  border: 1.5px solid #93c5fd !important;
+}
+[data-theme="blue-corporate"] #slide-7 .mp-q-badge {
+  background: #2563eb !important;
+  color: #ffffff !important;
+}
+[data-theme="blue-corporate"] #slide-7 .mp-q-box p {
+  color: #0f172a !important;
+}
+[data-theme="blue-corporate"] #slide-7 .f-term {
+  background: #eff6ff !important;
+  border: 1.5px solid #93c5fd !important;
+  color: #1e40af !important;
+}
+[data-theme="blue-corporate"] #slide-7 .f-result {
+  background: #dbeafe !important;
+  border: 1.5px solid #2563eb !important;
+  color: #1e3a8a !important;
+}
+[data-theme="blue-corporate"] #slide-7 .srb-pill {
+  background: #f0f7ff !important;
+  border: 1.5px solid #93c5fd !important;
+  color: #0f172a !important;
+}
+[data-theme="blue-corporate"] #slide-8 .work-card {
+  background: #ffffff !important;
+  border: 1.5px solid #bfdbfe !important;
+}
+[data-theme="blue-corporate"] #slide-8 .w-tag {
+  color: #2563eb !important;
+  border-bottom: 2px solid #bfdbfe !important;
+}
+[data-theme="blue-corporate"] #slide-8 .mini-bullets li {
+  color: #1e293b !important;
+}
+[data-theme="blue-corporate"] #slide-8 .mini-bullets li strong {
+  color: #0f172a !important;
+}
+[data-theme="blue-corporate"] #slide-9 .column-card,
+[data-theme="blue-corporate"] #slide-9 .glass-panel {
+  background: #ffffff !important;
+  border: 1.5px solid #bfdbfe !important;
+}
+[data-theme="blue-corporate"] #slide-9 .card-section-header h3 {
+  color: #0f172a !important;
+  text-shadow: none !important;
+}
+[data-theme="blue-corporate"] #slide-9 .card-section-header .icon-circle {
+  background: #eff6ff !important;
+  border: 1.5px solid #bfdbfe !important;
+  color: #2563eb !important;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.1) !important;
+}
+[data-theme="blue-corporate"] #slide-9 .card-section-header .icon-circle svg {
+  stroke: #2563eb !important;
+}
+[data-theme="blue-corporate"] #slide-9 .challenge-item,
+[data-theme="blue-corporate"] #slide-9 .finding-row {
+  background: #f0f7ff !important;
+  border: 1.5px solid #93c5fd !important;
+}
+[data-theme="blue-corporate"] #slide-9 .ch-badge,
+[data-theme="blue-corporate"] #slide-9 .f-num {
+  background: #2563eb !important;
+  color: #ffffff !important;
+}
+[data-theme="blue-corporate"] #slide-9 .ch-text,
+[data-theme="blue-corporate"] #slide-9 .f-text {
+  color: #0f172a !important;
+}
+
+/* Theme 3: White Monochrome (Minimalist Clean Light Theme) */
+[data-theme="white-monochrome"] .takeaway-callout-strip strong { color: #111111 !important; }
+[data-theme="white-monochrome"] .takeaway-callout-strip span { color: #222222 !important; }
+[data-theme="white-monochrome"] #slide-5 .dept-col-card {
+  background: #ffffff !important;
+  border: 1.5px solid #d8d8d2 !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04) !important;
+}
+[data-theme="white-monochrome"] #slide-5 .dept-col-badge {
+  background: #111111 !important;
+  color: #ffffff !important;
+}
+[data-theme="white-monochrome"] #slide-5 .dept-col-title {
+  color: #111111 !important;
+}
+[data-theme="white-monochrome"] #slide-5 .dept-col-role {
+  color: #334155 !important;
+}
+[data-theme="white-monochrome"] #slide-5 .dept-col-bullets li {
+  color: #222222 !important;
+}
+[data-theme="white-monochrome"] #slide-5 .dept-col-bullets li strong {
+  color: #111111 !important;
+}
+[data-theme="white-monochrome"] #slide-6 .process-flowchart-strip {
+  background: #ffffff !important;
+  border: 1.5px solid #d8d8d2 !important;
+}
+[data-theme="white-monochrome"] #slide-6 .pfs-num {
+  background: #111111 !important;
+  color: #ffffff !important;
+}
+[data-theme="white-monochrome"] #slide-6 .lifecycle-stepper-box,
+[data-theme="white-monochrome"] #slide-6 .spec-card {
+  background: #ffffff !important;
+  border: 1.5px solid #d8d8d2 !important;
+}
+[data-theme="white-monochrome"] #slide-6 .s-step-num {
+  background: #111111 !important;
+  color: #ffffff !important;
+}
+[data-theme="white-monochrome"] #slide-6 .s-step-info strong {
+  color: #111111 !important;
+}
+[data-theme="white-monochrome"] #slide-6 .s-step-info span {
+  color: #334155 !important;
+}
+[data-theme="white-monochrome"] #slide-6 .principle-card {
+  background: #f7f7f3 !important;
+  border: 1.5px solid #d8d8d2 !important;
+}
+[data-theme="white-monochrome"] #slide-6 .principle-card p {
+  color: #111111 !important;
+}
+[data-theme="white-monochrome"] #slide-6 .bullet-list-styled li {
+  color: #222222 !important;
+}
+[data-theme="white-monochrome"] #slide-6 .bullet-list-styled li strong {
+  color: #111111 !important;
+}
+[data-theme="white-monochrome"] #slide-7 .mp-left-col,
+[data-theme="white-monochrome"] #slide-7 .mp-right-col,
+[data-theme="white-monochrome"] #slide-7 .gap-formula-card {
+  background: #ffffff !important;
+  border: 1.5px solid #d8d8d2 !important;
+}
+[data-theme="white-monochrome"] #slide-7 .mp-q-box {
+  background: #f7f7f3 !important;
+  border: 1.5px solid #d8d8d2 !important;
+}
+[data-theme="white-monochrome"] #slide-7 .mp-q-badge {
+  background: #111111 !important;
+  color: #ffffff !important;
+}
+[data-theme="white-monochrome"] #slide-7 .mp-q-box p {
+  color: #111111 !important;
+}
+[data-theme="white-monochrome"] #slide-7 .f-term {
+  background: #f7f7f3 !important;
+  border: 1.5px solid #d8d8d2 !important;
+  color: #111111 !important;
+}
+[data-theme="white-monochrome"] #slide-7 .f-result {
+  background: #e5e5dc !important;
+  border: 1.5px solid #111111 !important;
+  color: #111111 !important;
+}
+[data-theme="white-monochrome"] #slide-7 .srb-pill {
+  background: #f7f7f3 !important;
+  border: 1.5px solid #d8d8d2 !important;
+  color: #111111 !important;
+}
+[data-theme="white-monochrome"] #slide-8 .work-card {
+  background: #ffffff !important;
+  border: 1.5px solid #d8d8d2 !important;
+}
+[data-theme="white-monochrome"] #slide-8 .w-tag {
+  color: #111111 !important;
+  border-bottom: 2px solid #d8d8d2 !important;
+}
+[data-theme="white-monochrome"] #slide-8 .mini-bullets li {
+  color: #222222 !important;
+}
+[data-theme="white-monochrome"] #slide-8 .mini-bullets li strong {
+  color: #111111 !important;
+}
+[data-theme="white-monochrome"] #slide-9 .column-card,
+[data-theme="white-monochrome"] #slide-9 .glass-panel {
+  background: #ffffff !important;
+  border: 1.5px solid #d8d8d2 !important;
+}
+[data-theme="white-monochrome"] #slide-9 .card-section-header h3 {
+  color: #111111 !important;
+  text-shadow: none !important;
+}
+[data-theme="white-monochrome"] #slide-9 .card-section-header .icon-circle {
+  background: #f0f0eb !important;
+  border: 1.5px solid #d8d8d2 !important;
+  color: #111111 !important;
+  box-shadow: none !important;
+}
+[data-theme="white-monochrome"] #slide-9 .card-section-header .icon-circle svg {
+  stroke: #111111 !important;
+}
+[data-theme="white-monochrome"] #slide-9 .challenge-item,
+[data-theme="white-monochrome"] #slide-9 .finding-row {
+  background: #f7f7f3 !important;
+  border: 1px solid #d8d8d2 !important;
+}
+[data-theme="white-monochrome"] #slide-9 .ch-badge,
+[data-theme="white-monochrome"] #slide-9 .f-num {
+  background: #111111 !important;
+  color: #ffffff !important;
+}
+[data-theme="white-monochrome"] #slide-9 .ch-text,
+[data-theme="white-monochrome"] #slide-9 .f-text {
+  color: #111111 !important;
 }

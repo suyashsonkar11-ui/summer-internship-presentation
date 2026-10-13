@@ -31,17 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
       estTime: "50s"
     },
     3: {
-      heading: "Slide 3: Introduction — HR Lifecycle & Study Objectives",
-      speech: "“Now coming to the theoretical foundation. HR mein hum complete employee lifecycle padhte hain—Acquisition se lekar Maintenance tak. Recruitment aur selection is lifecycle ka entry gate hain. Problem statement ye hai ki textbooks mein recruitment ko aksar ek routine administrative activity samjha jata hai. Lekin SECL jaise large public sector organisation mein recruitment strictly government rules, safety norms aur union agreements se juda hota hai. Agar recruitment manpower planning ke sath match na ho, toh workforce shortage ya extra cost ho sakti hai. Is study ka main purpose isi practical process ko samajhna aur document karna hai.”",
-      points: [
-        "Explain the 5 HRM lifecycle stages: Acquisition, Development, Utilisation, Engagement, Maintenance.",
-        "Highlight problem statement: Why recruitment cannot be treated as an isolated administrative task.",
-        "State study objectives: Connecting classroom concepts with real PSU practices."
-      ],
-      estTime: "50s"
-    },
-    4: {
-      heading: "Slide 4: Organisation Profile — SECL",
+      heading: "Slide 3: Organisation Profile — SECL",
       speech: "“Is slide mein SECL ka updated organisational profile aur operational scale explain kiya gaya hai. SECL 1985 mein establish hui thi aur Coal India Limited ki premier Miniratna Category-I subsidiary hai, jiska corporate headquarters Bilaspur mein hai. FY 2025–26 mein SECL ka raw coal production 176.28 Million Tonnes raha, aur 31 March 2025 tak total 57 operating mines hain jisme 38 underground aur 19 opencast mines shamil hain across 13 operating areas. Iske alawa 1 April 2024 ke anusar SECL ke paas 92,240.65 Million Tonnes ka massive coal reserve base hai, jisme Gevra aur Dipka jaise Asia ke mega opencast pits aate hain. HR perspective se, large-scale mining safety ke liye technical employees ki DGMS competency certifications aur executive cadres ki structured public sector governance ek crucial analytical balance demand karti hai.”",
       points: [
         "Corporate milestones: Established 1985, Bilaspur headquarters, Miniratna Category-I, Coal India Limited subsidiary.",
@@ -51,28 +41,38 @@ document.addEventListener('DOMContentLoaded', () => {
       ],
       estTime: "45s"
     },
-    5: {
-      heading: "Slide 5: HR Department & Internship Rotation",
-      speech: "“During my internship, mujhe SECL Headquarters ke 4 major HR wings mein rotational training mili. First was Executive Establishment, yaani EE, jahan executive officers ke service books, transfers aur promotions handle hote hain. Second was Manpower Planning, jahan future workforce requirements forecast hoti hain aur land-loser aur compassionate appointment cases process kiye jate hain. Third was Industrial Relations ya IR, jahan trade unions ke sath coordination aur NCWA wage agreements implement hote hain. And fourth was HRD, jahan MDI Bilaspur mein training aur induction programs chalte hain. Is rotation se mujhe samajh aaya ki sabhi HR wings ek dusre ke sath milkar kaam karti hain.”",
+    4: {
+      heading: "Slide 4: Departmental Exposure & Rotation — Point-to-Point Script",
+      speech: "“Departmental Exposure & Rotation — Point-to-Point Script:\n\n1. EE — Employee Administration (7 Days):\n• Transfer Documentation: Employees ke transfer papers check karna.\nExample: Transfer order aur related documents verify karna.\n• Document Arrangement: Service documents ko systematic order mein rakhna.\nExample: Employee ki file mein records sequence se maintain karna.\n• Record Movement: Files ki movement aur continuity track karna.\nExample: File kis department mein bheji gayi, uska record rakhna.\n\n2. Manpower — Workforce Planning Cell (7 Days):\n• Recruitment: Vacancies aur sanctioned posts se related cases process karna.\nExample: Approved vacancy ke against recruitment requirement check karna.\n• Promotion: Eligibility aur internal progression lists check karna.\nExample: Promotion ke liye employee ki eligibility verify karna.\n• Landowner Employment: State R&R policy ke according employment claims verify karna.\nExample: Land acquisition se related employment claim ke documents check karna.\n• Compassionate Appointment: NCWA ke provisions ke according eligible cases process karna.\nExample: Employee ki death ke baad eligible dependent ke appointment case ki jaanch.\n• Land/Lease Matters: Land acquisition, compensation aur lease documents review karna.\nExample: Land compensation se related records verify karna.\n\n3. IR — Industrial Relations (7 Days):\n• Employee–Management Relations: Management meetings aur union discussions ko samajhna.\nExample: Employee representatives aur management ke beech meeting.\n• Workplace Communication: Grievance redressal aur welfare procedures ko samajhna.\nExample: Employee ki workplace complaint ko resolve karne ki process.\n\n4. HRD — Human Resource Development (9 Days):\n• Training: Technical aur managerial training programmes ko samajhna.\nExample: Employees ke liye technical skills training.\n• Induction: Naye employees ko organization aur rules se introduce karna.\nExample: New joinee ko company policies aur safety rules batana.\n• Employee Development: Skills, capability aur safety standards improve karna.\nExample: DGMS safety requirements ke according training.”",
       points: [
-        "Walk through the 4 functional areas: EE (Records), Manpower (Workforce Planning), IR (Employee Relations), HRD (Training at MDI).",
-        "Explain rotation value: Bridging classroom HR theory with real PSU public sector practices.",
-        "Emphasize the 30-day immersion across departments."
+        "1. EE (7 Days): Transfer documentation, document arrangement, aur file movement continuity track karna.",
+        "2. Manpower (7 Days): Recruitment cases, internal promotions, land-loser R&R claims, NCWA compassionate appointments, land/lease matters.",
+        "3. IR (7 Days): Employee-management relations, union dialogue, grievance redressal aur Mines Act 1952 statutory welfare.",
+        "4. HRD (9 Days): Technical & managerial training, induction for new joinees at MDI, DGMS safety capability development.",
+        "Key Takeaway: 30-day rotation provided practical exposure across all 4 integrated HR departments at SECL Bilaspur."
       ],
-      estTime: "55s"
+      estTime: "1m 15s"
+    },
+    5: {
+      heading: "Slide 5: Recruitment & Selection Process — Point-to-Point Script",
+      speech: "“Recruitment & Selection Process — Point-to-Point Script:\n\n1. Manpower Requirement:\nSabse pehle organization decide karti hai ki kitne employees chahiye.\nExample: SECL ki kisi mine mein 10 naye workers ki zaroorat hai.\n\n2. Job Analysis:\nIsmein job ki duties, responsibilities aur working conditions identify ki jaati hain.\nExample: Mining supervisor ko workers aur mining operations supervise karne honge.\n\n3. Job Specification:\nIsmein candidate ki required qualification, skills aur experience decide hote hain.\nExample: Mining Engineer ke liye relevant engineering degree aur required certification.\n\n4. Recruitment:\nVacancy ko newspapers, employment news aur official portals par advertise kiya jaata hai.\nExample: SECL apni vacancy ka notification publish karti hai.\n\n5. Screening:\nApplications check karke eligible candidates ko shortlist kiya jaata hai.\nExample: Required qualification aur eligibility meet karne wale candidates ko next stage ke liye select karna.\n\n6. Selection:\nShortlisted candidates ka test, interview aur medical examination, applicable recruitment rules ke according hota hai.\nExample: Candidate ka CBT aur required medical fitness assessment.\n\n7. Appointment & Joining:\nSelected candidate ko appointment order diya jaata hai aur joining formalities complete hoti hain.\nExample: Candidate apne documents submit karke duty join karta hai.\n\n8. Employee Administration:\nJoining ke baad employee ke service records aur documents maintain kiye jaate hain.\nExample: Employee ki personal file aur service book maintain karna.\n\n9. Induction & Development:\nNaye employee ko organization ke rules, safety procedures aur job-related training di jaati hai.\nExample: Mine mein joining se pehle required safety training dena.\n\nSide wale 2 boxes:\n• Job Analysis (About the Job): Job analysis batata hai ki job mein kya kaam karna hai, kya responsibilities hain aur working conditions kaisi hain.\n• Job Specification (About the Person): Job specification batata hai ki us job ke liye candidate ki qualification, skills aur physical fitness requirements kya hain.\nExample: Job analysis = Mining Engineer ka kaam kya hai? Job specification = Mining Engineer banne ke liye candidate ko kya qualifications chahiye?\n\nBottom box:\n• Medical Fitness Requirement: Mining jobs mein safety bahut important hai. Isliye applicable rules ke according candidate ko joining se pehle required medical fitness examination pass karna hota hai.”",
+      points: [
+        "1. Manpower Requirement: Sabse pehle decide hota hai kitne employees chahiye (Example: SECL mine mein 10 naye workers).",
+        "2. Job Analysis: Duties, responsibilities aur working conditions identify karna (Example: Mining supervisor operations).",
+        "3. Job Specification: Required qualification, skills aur experience (Example: Mining Engineer degree & certificates).",
+        "4. Recruitment: Newspapers, Employment News aur official portals par notification advertise karna.",
+        "5. Screening: Applications check karke eligible candidates ko shortlist karna.",
+        "6. Selection: Shortlisted candidates ka CBT, interview aur statutory medical assessment.",
+        "7. Appointment & Joining: Appointment order issue karna aur document joining formalities complete karna.",
+        "8. Employee Administration: Personal file aur service book records maintain karna.",
+        "9. Induction & Development: Organization rules, safety procedures aur job-related training dena.",
+        "Side Boxes: Job Analysis (About the Job) vs Job Specification (About the Person).",
+        "Bottom Box: Mines Rules 1955 ke under compulsory Initial Medical Examination (IME) fitness pass karna."
+      ],
+      estTime: "1m 15s"
     },
     6: {
-      heading: "Slide 6: Recruitment & Selection Process — Step-by-Step Flow",
-      speech: "“Now let us look at the recruitment and selection process. SECL mein ye process 9 systematic stages mein complete hoti hai. Sabse pehle Manpower Requisition se vacancy identify hoti hai. Uske baad Job Analysis aur Job Specification banti hai, jisme duties aur qualifications decide hoti hain. Phir national newspapers aur online portal par notification nikala jata hai. Next, applications ki screening hoti hai aur Computer Based Test (CBT) aur personal interviews conduct hote hain. Selected candidates ka document verification aur DGMS safety rules ke under Initial Medical Examination (IME) hota hai. Finally, appointment and joining ke baad Executive Establishment mein service records bante hain aur MDI Bilaspur mein induction training start hoti hai.”",
-      points: [
-        "Trace the 9 stages: Manpower Requirement → Job Analysis → Job Specification → Recruitment → Screening → Selection → Appointment & Joining → Employee Administration → Induction & Development.",
-        "Explain Job Analysis: Defines job duties, tasks, and responsibilities in mining operations.",
-        "Explain Job Specification: Specifies qualifications, skills, experience, and DGMS safety certifications."
-      ],
-      estTime: "55s"
-    },
-    7: {
-      heading: "Slide 7: Manpower Planning & Recruitment Connection",
+      heading: "Slide 6: Manpower Planning & Recruitment Connection",
       speech: "“Manpower planning meri study ka bohot important part hai. Iska basic purpose ye samajhna hai ki organisation ko kitne employees chahiye aur kis type ki skills required hain. Simple formula hai: Required Workforce minus Available Workforce equals Manpower Gap. Agar gap positive hai, toh recruitment ki zaroorat hoti hai. SECL mein different intake routes hote hain: Open MT exam through CIL, internal departmental promotions, land-loser employment under rehabilitation policy, aur compassionate appointment under NCWA Clause 9.3.0. Yahan se mujhe clear hua ki recruitment actually manpower planning ki demand se start hota hai.”",
       points: [
         "4 core questions: How many? What skills? When needed? Where placed?",
@@ -82,8 +82,8 @@ document.addEventListener('DOMContentLoaded', () => {
       ],
       estTime: "55s"
     },
-    8: {
-      heading: "Slide 8: Internship Work & Practical Learning",
+    7: {
+      heading: "Slide 7: Internship Work & Practical Learning",
       speech: "“Is slide mein meri practical internship activities aur operational desk exposure ka summary hai. EE department mein maine dekha ki executive service records, transfer orders aur joining reports kitni accuracy ke sath maintain kiye jate hain. Manpower department mein sanctioned post limits ke according vacancies evaluate karna, land-loser rehabilitation cases aur compassionate appointments ki verification observe ki. IR department mein Joint Consultative Committees aur trade union correspondence samajhne ko mila. Aur HRD mein Management Trainees ke induction aur safety training modules dekhe. Is real exposure se public sector HR governance aur accurate documentation ki importance bohot clear hui.”",
       points: [
         "Practical Learning: Documentation & records, Manpower casework, Employee relations, Training & development.",
@@ -91,50 +91,27 @@ document.addEventListener('DOMContentLoaded', () => {
       ],
       estTime: "45s"
     },
+    8: {
+      heading: "Slide 8: Challenges & Key Findings",
+      speech: "“Challenges — Mujhe kya difficulties aayi?\n\n1. Limited Internship Duration: Internship sirf 30 days ki thi, isliye har HR department ko detail mein samajhne ka time limited tha.\n2. Different Departmental Processes: Har department ka kaam aur working process alag tha, isliye sabhi processes ko samajhna ek challenge tha.\n3. Confidentiality of HR Records: Employees ke personal records confidential hote hain, isliye un sabhi records ko access karna possible nahi tha.\n4. Limited Access to Recruitment Statistics: Internal recruitment ka complete data available nahi tha, isliye recruitment statistics ka detailed analysis nahi kar paya.\n\nKey Findings — Maine kya seekha?\n\n1. Recruitment is Connected with Manpower Planning: Hiring se pehle organization ko pata hona chahiye ki kitne employees ki zarurat hai.\n2. Recruitment and Selection are Different: Recruitment mein candidates ko apply karne ke liye attract kiya jata hai, jabki selection mein suitable candidate choose kiya jata hai.\n3. HR Functions Depend on Coordination: HR ke different departments ko milkar kaam karna padta hai, tabhi work smoothly hota hai.\n4. Employee Administration Continues After Selection: Candidate select hone ke baad bhi joining formalities aur employee records maintain karne padte hain.\n5. Training Supports Employee Development: Training se employees ko apna kaam samajhne aur skills improve karne mein help milti hai.\n\nPractical Example:\nAgar SECL mein kisi post ke liye employee hire hota hai, toh pehle manpower requirement identify hoti hai, phir recruitment aur selection hota. Selection ke baad joining formalities complete hoti hain aur employee ko training di ja sakti hai.\n\nConclusion:\nOverall, meri internship se maine seekha ki effective HR management ke liye proper planning, coordination, documentation aur employee training bahut important hain.”",
+      points: [
+        "Challenges: 1. Limited Internship Duration (30 days), 2. Different Departmental Processes, 3. Confidentiality of HR Records, 4. Limited Access to Recruitment Statistics.",
+        "Key Findings: 1. Recruitment Connected with Manpower Planning, 2. Recruitment & Selection are Different, 3. HR Coordination, 4. Post-Selection Administration, 5. Training.",
+        "Practical Example: SECL post hiring: Manpower requirement → Recruitment & Selection → Joining formalities → Employee training.",
+        "Conclusion: Proper planning, coordination, documentation aur employee training effective HR management ke liye essential hain."
+      ],
+      estTime: "55s"
+    },
     9: {
-      heading: "Slide 10: Challenges & Key Findings",
-      speech: "“Challenges — Mujhe kya difficulties aayi?\n\n1. Limited Internship Duration: Internship sirf 30 days ki thi, isliye har HR department ko detail mein samajhne ka time limited tha.\n2. Different Departmental Processes: Har department ka kaam aur working process alag tha, isliye sabhi processes ko samajhna ek challenge tha.\n3. Confidentiality of HR Records: Employees ke personal records confidential hote hain, isliye un sabhi records ko access karna possible nahi tha.\n4. Limited Access to Recruitment Statistics: Internal recruitment ka complete data available nahi tha, isliye recruitment statistics ka detailed analysis nahi kar paya.\n\nKey Findings — Maine kya seekha?\n\n1. Recruitment is Connected with Manpower Planning: Hiring se pehle organization ko pata hona chahiye ki kitne employees ki zarurat hai.\n2. Recruitment and Selection are Different: Recruitment mein candidates ko apply karne ke liye attract kiya jata hai, jabki selection mein suitable candidate choose kiya jata hai.\n3. HR Functions Depend on Coordination: HR ke different departments ko milkar kaam karna padta hai, tabhi work smoothly hota hai.\n4. Employee Administration Continues After Selection: Candidate select hone ke baad bhi joining formalities aur employee records maintain karne padte hain.\n5. Training Supports Employee Development: Training se employees ko apna kaam samajhne aur skills improve karne mein help milti hai.\n\nPractical Example:\nAgar SECL mein kisi post ke liye employee hire hota hai, toh pehle manpower requirement identify hoti hai, phir recruitment aur selection hota. Selection ke baad joining formalities complete hoti hain aur employee ko training di ja sakti hai.\n\nConclusion:\nOverall, meri internship se maine seekha ki effective HR management ke liye proper planning, coordination, documentation aur employee training bahut important hain.”",
+      heading: "Slide 9: Executive Conclusion",
+      speech: "“Meri SECL mein summer internship ne mujhe Recruitment, Selection, Manpower Planning aur other HR functions ko practically samajhne mein help ki. Departmental exposure ke through maine documentation, employee relations, employment-related cases aur training activities ke baare mein seekha. Is internship ne meri academic knowledge ko practical HR activities se connect kiya aur Human Resource Management ki understanding ko improve kiya.”",
       points: [
-        "Challenges: 1. Limited Internship Duration (30 days), 2. Different Departmental Processes, 3. Confidentiality of HR Records, 4. Limited Access to Recruitment Statistics.",
-        "Key Findings: 1. Recruitment Connected with Manpower Planning, 2. Recruitment & Selection are Different, 3. HR Coordination, 4. Post-Selection Administration, 5. Training.",
-        "Practical Example: SECL post hiring: Manpower requirement → Recruitment & Selection → Joining formalities → Employee training.",
-        "Conclusion: Proper planning, coordination, documentation aur employee training effective HR management ke liye essential hain."
+        "Practical HR Understanding: Recruitment, Selection, Manpower Planning aur other HR functions ko practically samjha.",
+        "Departmental Exposure: Documentation, employee relations, casework aur training activities seekhi.",
+        "Academic & Real-World Link: Academic concepts ko practical HR ground activities se connect karke HRM understanding improve ki."
       ],
-      estTime: "55s"
-    },
-    10: {
-      heading: "Slide 10: Challenges & Key Findings",
-      speech: "“Challenges — Mujhe kya difficulties aayi?\n\n1. Limited Internship Duration: Internship sirf 30 days ki thi, isliye har HR department ko detail mein samajhne ka time limited tha.\n2. Different Departmental Processes: Har department ka kaam aur working process alag tha, isliye sabhi processes ko samajhna ek challenge tha.\n3. Confidentiality of HR Records: Employees ke personal records confidential hote hain, isliye un sabhi records ko access karna possible nahi tha.\n4. Limited Access to Recruitment Statistics: Internal recruitment ka complete data available nahi tha, isliye recruitment statistics ka detailed analysis nahi kar paya.\n\nKey Findings — Maine kya seekha?\n\n1. Recruitment is Connected with Manpower Planning: Hiring se pehle organization ko pata hona chahiye ki kitne employees ki zarurat hai.\n2. Recruitment and Selection are Different: Recruitment mein candidates ko apply karne ke liye attract kiya jata hai, jabki selection mein suitable candidate choose kiya jata hai.\n3. HR Functions Depend on Coordination: HR ke different departments ko milkar kaam karna padta hai, tabhi work smoothly hota hai.\n4. Employee Administration Continues After Selection: Candidate select hone ke baad bhi joining formalities aur employee records maintain karne padte hain.\n5. Training Supports Employee Development: Training se employees ko apna kaam samajhne aur skills improve karne mein help milti hai.\n\nPractical Example:\nAgar SECL mein kisi post ke liye employee hire hota hai, toh pehle manpower requirement identify hoti hai, phir recruitment aur selection hota. Selection ke baad joining formalities complete hoti hain aur employee ko training di ja sakti hai.\n\nConclusion:\nOverall, meri internship se maine seekha ki effective HR management ke liye proper planning, coordination, documentation aur employee training bahut important hain.”",
-      points: [
-        "Challenges: 1. Limited Internship Duration (30 days), 2. Different Departmental Processes, 3. Confidentiality of HR Records, 4. Limited Access to Recruitment Statistics.",
-        "Key Findings: 1. Recruitment Connected with Manpower Planning, 2. Recruitment & Selection are Different, 3. HR Coordination, 4. Post-Selection Administration, 5. Training.",
-        "Practical Example: SECL post hiring: Manpower requirement → Recruitment & Selection → Joining formalities → Employee training.",
-        "Conclusion: Proper planning, coordination, documentation aur employee training effective HR management ke liye essential hain."
-      ],
-      estTime: "55s"
-    },
-    11: {
-      heading: "Slide 11: Conclusion",
-      speech: "“My summer internship at SECL helped me understand recruitment, selection, manpower planning and other HR functions. Through departmental exposure, I learned about documentation, employee relations, employment-related cases and training. The internship connected my academic knowledge with practical HR activities and improved my understanding of Human Resource Management.”",
-      points: [
-        "Core synthesis: Understanding recruitment, selection, manpower planning and other HR functions.",
-        "Departmental exposure: Practical learning in documentation, employee relations, employment-related cases and training.",
-        "Academic linkage: Bridging academic knowledge with practical HR activities to advance HRM understanding."
-      ],
-      estTime: "35s"
+      estTime: "30s"
     }
-  };
-
-  const hrAnalysisNotesBackup = {
-    heading: "Slide 10: HR Analysis & Workforce Dynamics",
-    speech: "“Is slide mein hum recruitment and workforce dynamics ka detailed HR analysis aur proposed evaluation metrics dekhte hain. Pehla key point ye hai ki recruitment hamesha systematic manpower forecasts se match hona chahiye. Manpower gaps ko address karne ke liye external hiring ke alawa internal promotions aur inter-area transfers bhi decisive mechanisms hain. Accurate documentation public-sector governance aur audit compliance ko support karti hai, jabki Manpower, EE, IR aur HRD ka cross-departmental coordination operations ko seamless banata hai. Iske sath humne recruitment effectiveness evaluate karne ke liye Time-to-Fill, Selection Ratio aur Joining Ratio jaise conceptual HR metrics propose kiye hain.”",
-    points: [
-      "Workforce alignment: Recruitment matches systematic manpower planning forecasts.",
-      "Internal routes: Departmental promotions & inter-area transfers address vacancies rapidly.",
-      "Governance & Synergy: Accurate personnel documentation and inter-wing coordination.",
-      "Proposed HR metrics: Time-to-Fill (hiring speed), Selection Ratio, and Joining Ratio."
-    ],
-    estTime: "45s"
   };
 
   // =========================================================================
@@ -158,6 +135,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const slideStatusText = document.getElementById('slideStatusText');
   const btnPrev = document.getElementById('btnPrev');
   const btnNext = document.getElementById('btnNext');
+  const btnGoHome = document.getElementById('btnGoHome');
+  const btnFooterHome = document.getElementById('btnFooterHome');
+  const headerBrandBadge = document.getElementById('headerBrandBadge');
   const scrollDownHint = document.getElementById('scrollDownHint');
   
   // Speaker Notes Elements
@@ -250,6 +230,7 @@ document.addEventListener('DOMContentLoaded', () => {
     updateUI();
     updateNotes();
   }
+  window.goToSlide = goToSlide;
 
   // Smooth slide navigation
   function scrollToSlide(index) {
@@ -338,13 +319,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function updateNotes() {
     const slideNum = currentSlideIndex + 1;
-    const activeSlide = slides[currentSlideIndex];
-    const slideTitle = activeSlide ? (activeSlide.getAttribute('data-slide-title') || '') : '';
-
-    let noteData = speakerNotesData[slideNum];
-    if (slideTitle && slideTitle.toLowerCase().includes('hr analysis')) {
-      noteData = hrAnalysisNotesBackup;
-    }
+    const noteData = speakerNotesData[slideNum];
 
     if (noteData) {
       notesSlideHeading.textContent = noteData.heading;
@@ -493,17 +468,49 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // =========================================================================
-  // THEME SWITCHER
   // =========================================================================
+  // THEME SWITCHER WITH LOCALSTORAGE PERSISTENCE
+  // =========================================================================
+  const THEME_STORAGE_KEY = 'secl_presentation_theme';
+  const VALID_THEMES = ['crimson-glow', 'blue-corporate', 'white-monochrome'];
+
+  function applyTheme(themeName) {
+    if (!VALID_THEMES.includes(themeName)) {
+      themeName = 'crimson-glow';
+    }
+    document.documentElement.setAttribute('data-theme', themeName);
+    try {
+      localStorage.setItem(THEME_STORAGE_KEY, themeName);
+    } catch (e) {
+      console.warn('LocalStorage unavailable for theme persistence', e);
+    }
+
+    themeBtns.forEach(btn => {
+      const btnTheme = btn.getAttribute('data-set-theme');
+      const isActive = btnTheme === themeName;
+      btn.classList.toggle('active', isActive);
+      btn.setAttribute('aria-checked', isActive ? 'true' : 'false');
+    });
+  }
+
   themeBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       const theme = btn.getAttribute('data-set-theme');
-      document.documentElement.setAttribute('data-theme', theme);
-      
-      themeBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
+      applyTheme(theme);
     });
   });
+
+  // Restore saved theme on load (default to 'white-monochrome' matching design reference)
+  try {
+    const savedTheme = localStorage.getItem(THEME_STORAGE_KEY);
+    if (savedTheme && VALID_THEMES.includes(savedTheme)) {
+      applyTheme(savedTheme);
+    } else {
+      applyTheme('white-monochrome');
+    }
+  } catch (e) {
+    applyTheme('white-monochrome');
+  }
 
   // =========================================================================
   // FULLSCREEN & EXPORT ACTIONS
@@ -598,6 +605,23 @@ document.addEventListener('DOMContentLoaded', () => {
   btnPrev.addEventListener('click', prevSlide);
   btnNext.addEventListener('click', nextSlide);
 
+  if (btnGoHome) {
+    btnGoHome.addEventListener('click', () => scrollToSlide(0));
+  }
+  if (btnFooterHome) {
+    btnFooterHome.addEventListener('click', () => scrollToSlide(0));
+  }
+  if (headerBrandBadge) {
+    headerBrandBadge.style.cursor = 'pointer';
+    headerBrandBadge.addEventListener('click', () => scrollToSlide(0));
+    headerBrandBadge.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        scrollToSlide(0);
+      }
+    });
+  }
+
   document.addEventListener('keydown', (e) => {
     // If modal is open, Escape closes it
     if (e.key === 'Escape') {
@@ -629,6 +653,8 @@ document.addEventListener('DOMContentLoaded', () => {
         break;
 
       case 'Home':
+      case 'h':
+      case 'H':
         e.preventDefault();
         scrollToSlide(0);
         break;

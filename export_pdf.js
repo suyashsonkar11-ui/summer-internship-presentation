@@ -12,8 +12,11 @@ async function exportFullHdPresentationPdf() {
   console.log('Output File:', outputFileName);
   console.log('================================================================');
 
+  const os = require('os');
+  const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'puppeteer_hd_'));
   const browser = await puppeteer.launch({
     headless: true,
+    userDataDir: tempDir,
     args: [
       '--no-sandbox',
       '--disable-setuid-sandbox',
@@ -61,9 +64,19 @@ async function exportFullHdPresentationPdf() {
   });
   console.log(`Verified ${slideCount} total slides in presentation.`);
 
+  const args = process.argv.slice(2);
+  const themeArg = args.find(a => a.startsWith('--theme='));
+  const targetTheme = themeArg ? themeArg.split('=')[1] : null;
+  if (targetTheme) {
+    console.log(`Setting target export theme: ${targetTheme}`);
+  }
+
   // Activate dedicated PDF EXPORT MODE
   console.log('Activating dedicated PDF export mode (body.pdf-export-mode)...');
-  await page.evaluate(() => {
+  await page.evaluate((theme) => {
+    if (theme) {
+      document.documentElement.setAttribute('data-theme', theme);
+    }
     document.body.classList.add('pdf-export-mode', 'puppeteer-hd-export');
     document.querySelectorAll('.slide-card').forEach(slide => {
       slide.classList.add('in-view');
@@ -73,7 +86,7 @@ async function exportFullHdPresentationPdf() {
     if (track) {
       track.style.transform = 'none';
     }
-  });
+  }, targetTheme);
 
   // Brief pause for CSS repaint & font/layout settlement
   await new Promise(resolve => setTimeout(resolve, 500));
@@ -98,6 +111,9 @@ async function exportFullHdPresentationPdf() {
   });
 
   await browser.close();
+  try {
+    fs.rmSync(tempDir, { recursive: true, force: true });
+  } catch (e) {}
 
   // Validate output file
   if (fs.existsSync(outputPath)) {
