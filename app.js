@@ -111,6 +111,16 @@ document.addEventListener('DOMContentLoaded', () => {
         "Academic & Real-World Link: Academic concepts ko practical HR ground activities se connect karke HRM understanding improve ki."
       ],
       estTime: "30s"
+    },
+    10: {
+      heading: "Slide 10: Thank You & Discussion",
+      speech: "“Thank you everyone for your time and kind attention. I express my sincere gratitude to my faculty guides at Guru Ghasidas Vishwavidyalaya, Bilaspur, and the officers and mentors at SECL Bilaspur for their invaluable guidance throughout my summer internship. I would now be delighted to answer any questions and invite discussion on the study.”",
+      points: [
+        "Acknowledge and thank the evaluators, faculty members, and audience.",
+        "Express gratitude to GGU Bilaspur and SECL Bilaspur mentors.",
+        "Open the session for questions, feedback, and discussion."
+      ],
+      estTime: "25s"
     }
   };
 
@@ -689,8 +699,12 @@ document.addEventListener('DOMContentLoaded', () => {
         break;
 
       default:
-        // Numeric keys 1-9 for quick jump
-        if (e.key >= '1' && e.key <= '9') {
+        // Numeric keys 1-9 and 0 for quick jump
+        if (e.key === '0') {
+          if (totalSlides >= 10) {
+            scrollToSlide(9);
+          }
+        } else if (e.key >= '1' && e.key <= '9') {
           const target = parseInt(e.key, 10) - 1;
           if (target < totalSlides) {
             scrollToSlide(target);

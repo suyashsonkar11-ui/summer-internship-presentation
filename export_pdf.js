@@ -12,11 +12,8 @@ async function exportFullHdPresentationPdf() {
   console.log('Output File:', outputFileName);
   console.log('================================================================');
 
-  const os = require('os');
-  const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'puppeteer_hd_'));
   const browser = await puppeteer.launch({
     headless: true,
-    userDataDir: tempDir,
     args: [
       '--no-sandbox',
       '--disable-setuid-sandbox',
