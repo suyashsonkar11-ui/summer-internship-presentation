@@ -66,10 +66,8 @@ async function exportFullHdPresentationPdf() {
 
   const args = process.argv.slice(2);
   const themeArg = args.find(a => a.startsWith('--theme='));
-  const targetTheme = themeArg ? themeArg.split('=')[1] : null;
-  if (targetTheme) {
-    console.log(`Setting target export theme: ${targetTheme}`);
-  }
+  const targetTheme = themeArg ? themeArg.split('=')[1] : 'crimson-glow';
+  console.log(`Setting target export theme: ${targetTheme}`);
 
   // Activate dedicated PDF EXPORT MODE
   console.log('Activating dedicated PDF export mode (body.pdf-export-mode)...');
